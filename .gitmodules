@@ -1,0 +1,3 @@
+[submodule "fbw-a32nx"]
+	path = fbw-a32nx
+	url = https://github.com/flybywiresim/a32nx

@@ -1,88 +1,88 @@
 class A32NX_PayloadConstructor {
     constructor() {
         this.paxStations = {
-            rows1_8: {
-                name: 'ROWS [1-15]',
-                seats: 111,
-                weight: 9324,
+            rows1_5: {
+                name: 'ROWS [1-5]',
+                seats: 23,
+                weight: Math.round(NXUnits.kgToUser(1955)),
                 pax: 0,
                 paxTarget: 0,
                 stationIndex: 0 + 1,
-                position: 30,
-                seatsRange: [1, 111],
-                simVar: "A32NX_PAX_TOTAL_ROWS_1_6"
+                position: 13.5,
+                seatsRange: [1, 23],
+                simVar: "SU95_PAX_TOTAL_ROWS_1_5"
             },
-            rows9_11: {
-                name: 'ROWS [16-26]',
-                seats: 93,
-                weight: 7812,
+            rows6_10: {
+                name: 'ROWS [6-10]',
+                seats: 25,
+                weight: Math.round(NXUnits.kgToUser(2125)),
                 pax: 0,
                 paxTarget: 0,
                 stationIndex: 1 + 1,
-                position: 5,
-                seatsRange: [112, 204],
-                simVar: "A32NX_PAX_TOTAL_ROWS_7_13"
+                position: 13.5,
+                seatsRange: [24, 48],
+                simVar: "SU95_PAX_TOTAL_ROWS_6_10"
             },
-            rows12_25: {
-                name: 'ROWS [27-36]',
-                seats: 90,
-                weight: 7560,
+            rows11_15: {
+                name: 'ROWS [11-15]',
+                seats: 25,
+                weight: Math.round(NXUnits.kgToUser(2125)),
                 pax: 0,
                 paxTarget: 0,
                 stationIndex: 2 + 1,
-                position: -30,
-                seatsRange: [205, 294],
-                simVar: "A32NX_PAX_TOTAL_ROWS_14_21"
+                position: -20,
+                seatsRange: [49, 73],
+                simVar: "SU95_PAX_TOTAL_ROWS_11_15"
             },
-            rows26_42: {
-                name: 'ROWS [37-54]',
-                seats: 142,
-                weight: 11928,
+            rows16_20: {
+                name: 'ROWS [16-20]',
+                seats: 25,
+                weight: Math.round(NXUnits.kgToUser(2125)),
                 pax: 0,
                 paxTarget: 0,
                 stationIndex: 3 + 1,
-                position: -70,
-                seatsRange: [295, 436],
-                simVar: "A32NX_PAX_TOTAL_ROWS_22_29"
+                position: -20,
+                seatsRange: [74, 98],
+                simVar: "SU95_PAX_TOTAL_ROWS_16_20"
             },
         };
 
         this.cargoStations = {
             fwdBag: {
-                name: 'BAGGAGE',
-                weight: 5800,
+                name: 'FWD BAGGAGE',
+                weight: Math.round(NXUnits.kgToUser(1947)),
                 load: 0,
                 stationIndex: 4 + 1,
-                position: 40.00,
+                position: 12.5,
                 visible: true,
-                simVar: 'A32NX_CARGO_FWD_BAGGAGE_CONTAINER',
+                simVar: 'SU95_CARGO_FWD_BAGGAGE',
             },
             aftCont: {
-                name: 'FWD CONTAINER CPT 1/2',
-                weight: 17061,
+                name: 'AFT BAGGAGE 1',
+                weight: Math.round(NXUnits.kgToUser(580)),
                 load: 0,
                 stationIndex: 5 + 1,
-                position: 0.00,
+                position: -18,
                 visible: true,
-                simVar: 'A32NX_CARGO_AFT_CONTAINER',
+                simVar: 'SU95_CARGO_AFT_BAGGAGE_1',
             },
             aftBag: {
-                name: 'AFT CONTAINER CPT 3/4',
-                weight: 18507,
+                name: 'AFT BAGGAGE 2',
+                weight: Math.round(NXUnits.kgToUser(1213)),
                 load: 0,
                 stationIndex: 6 + 1,
-                position: -55.00,
+                position: -18,
                 visible: true,
-                simVar: 'A32NX_CARGO_AFT_BAGGAGE',
+                simVar: 'SU95_CARGO_AFT_BAGGAGE_2',
             },
             aftBulk: {
-                name: 'AFT BULK/LOOSE CPT 5',
-                weight: 3468,
+                name: 'AFT BULK/LOOSE',
+                weight: Math.round(NXUnits.kgToUser(460)),
                 load: 0,
                 stationIndex: 7 + 1,
-                position: -80.00,
+                position: -18,
                 visible: true,
-                simVar: 'A32NX_CARGO_AFT_BULK_LOOSE',
+                simVar: 'SU95_CARGO_AFT_BULK_LOOSE',
             },
         };
     }
@@ -91,17 +91,18 @@ class A32NX_PayloadConstructor {
 const payloadConstruct = new A32NX_PayloadConstructor();
 const paxStations = payloadConstruct.paxStations;
 const cargoStations = payloadConstruct.cargoStations;
-const MAX_SEAT_AVAILABLE = 290;
+const MAX_SEAT_AVAILABLE = 98;
 
 /**
- * Calculate %MAC ZWFCG of all stations
- */
+     * Calculate %MAC ZWFCG of all stations
+     */
 function getZfwcg() {
-    const leMacZ = -21.63; // Accurate to 3 decimals, replaces debug weight values
-    const macSize = 25.49; // Accurate to 3 decimals, replaces debug weight values
+
+    const leMacZ = -3.900; // Accurate to 3 decimals, replaces debug weight values
+    const macSize = 11.950; // Accurate to 3 decimals, replaces debug weight values
 
     const emptyWeight = (SimVar.GetSimVarValue("EMPTY WEIGHT", getUserUnit()));
-    const emptyPosition = -28; // Value from flight_model.cfg
+    const emptyPosition = -5.66; // Value from flight_model.cfg
     const emptyMoment = emptyPosition * emptyWeight;
     const PAX_WEIGHT = SimVar.GetSimVarValue("L:A32NX_WB_PER_PAX_WEIGHT", "Number");
 

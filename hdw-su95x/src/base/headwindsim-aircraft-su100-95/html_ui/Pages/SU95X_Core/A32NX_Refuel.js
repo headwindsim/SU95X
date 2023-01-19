@@ -1,12 +1,12 @@
-// total refuel time for all fuel tank for A330 are roughly 33 minutes (1980 seconds) -> 1300 seconds wing + 680 seconds center
-const WING_FUELRATE_GAL_SEC = 18.5523; // 2 * (inner + outer wing fuel)/ 1300 seconds = 2 * (11095 + 964)/1300
-const CENTER_MODIFIER = 1.00075; // (center + trim)/680 seconds / WING_FUELRATE_GAL_SEC = 12625/680 /18.5523
+const WING_FUELRATE_GAL_SEC = 4.391; // 2 * (inner + outer wing fuel)/ 624 seconds = 2 * (110 + 1260)/624
+const WING_DEFUELRATE_MODIFIER = 3.75; //defuling takes much longer 90 minutes.
+const CENTER_MODIFIER = 0.9997; // center/336 seconds / WING_FUELRATE_GAL_SEC = 1475/336 /4.391
 
 class A32NX_Refuel {
     constructor() {}
 
     init() {
-        const totalFuelGallons = 36743;
+        const totalFuelGallons = 4215;
         const fuelWeight = SimVar.GetSimVarValue("FUEL WEIGHT PER GALLON", "kilograms");
         const centerCurrentSimVar = SimVar.GetSimVarValue("FUEL TANK CENTER QUANTITY", "Gallons");
         const LInnCurrentSimVar = SimVar.GetSimVarValue("FUEL TANK LEFT MAIN QUANTITY", "Gallons");
@@ -28,7 +28,7 @@ class A32NX_Refuel {
     }
 
     defuelTank(multiplier) {
-        return -WING_FUELRATE_GAL_SEC * multiplier;
+        return -WING_FUELRATE_GAL_SEC * multiplier / WING_DEFUELRATE_MODIFIER;
     }
     refuelTank(multiplier) {
         return WING_FUELRATE_GAL_SEC * multiplier;
@@ -62,7 +62,6 @@ class A32NX_Refuel {
         const LOutCurrentSimVar = SimVar.GetSimVarValue("FUEL TANK LEFT AUX QUANTITY", "Gallons");
         const RInnCurrentSimVar = SimVar.GetSimVarValue("FUEL TANK RIGHT MAIN QUANTITY", "Gallons");
         const ROutCurrentSimVar = SimVar.GetSimVarValue("FUEL TANK RIGHT AUX QUANTITY", "Gallons");
-
         let centerCurrent = centerCurrentSimVar;
         let LInnCurrent = LInnCurrentSimVar;
         let LOutCurrent = LOutCurrentSimVar;

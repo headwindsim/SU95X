@@ -36,7 +36,8 @@ class A32NX_Speeds {
         if (fhi === 1 && SimVar.GetSimVarValue("L:A32NX_FLAPS_CONF_INDEX", "Enum") === 1) {
             fhi = 5;
         }
-        const gw = this.round(SimVar.GetSimVarValue("TOTAL WEIGHT", "kg")) / 1000;
+        const fmGW = parseFloat((SimVar.GetSimVarValue("L:A32NX_FM_GROSS_WEIGHT", "Number")).toFixed(1));
+        const gw = (fmGW === 0) ? 40.0 : fmGW; // MZFW = 40000KG RRJ95-LR
         const ldg = Math.round(SimVar.GetSimVarValue("GEAR POSITION:0", "Enum"));
         const alt = this.round(Simplane.getAltitude());
 
@@ -46,7 +47,7 @@ class A32NX_Speeds {
 
         /** During Take Off allow to change this.isTo
          * Otherwise if we are in take off config and change the fhi, we no longer are in take off config */
-        if (fp === FmgcFlightPhases.TAKEOFF && Simplane.getAltitudeAboveGround() < 7.5) {
+        if (fp === FmgcFlightPhases.TAKEOFF && Simplane.getAltitudeAboveGround() < 1.5) {
             this.isTo = isTo;
         } else if (this.isTo && this.lastFhi !== fhi) {
             this.isTo = false;
@@ -54,7 +55,7 @@ class A32NX_Speeds {
 
         this.lastFhi = fhi;
         this.lastGw = gw;
-        this.cgw = Math.ceil(((gw > 80 ? 80 : gw) - 40) / 5);
+        this.cgw = Math.ceil(((gw > 50 ? 50 : gw) - 24) / 2);
         this.ldgPos = ldg;
         this.alt = alt;
 

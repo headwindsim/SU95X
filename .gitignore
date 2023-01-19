@@ -18,6 +18,7 @@
 !.eslintrc
 !jsconfig.json
 !.gitattributes
+!.gitmodules
 !.prettierrc.json
 !.prettierignore
 !.npmrc

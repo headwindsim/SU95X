@@ -10,7 +10,7 @@ function airplaneCanBoard() {
 }
 
 function setDefaultWeights(simbriefPaxWeight, simbriefBagWeight) {
-    const perPaxWeight = (simbriefPaxWeight === 0) ? Math.round(NXUnits.kgToUser(84)) : simbriefPaxWeight;
+    const perPaxWeight = (simbriefPaxWeight === 0) ? Math.round(NXUnits.kgToUser(85)) : simbriefPaxWeight;
     const perBagWeight = (simbriefBagWeight === 0) ? Math.round(NXUnits.kgToUser(20)) : simbriefBagWeight;
     const conversionFactor = (getUserUnit() == "Kilograms") ? 0.4535934 : 1;
     SimVar.SetSimVarValue("L:A32NX_WB_PER_PAX_WEIGHT", "Number", parseInt(perPaxWeight));
@@ -59,10 +59,10 @@ class A32NX_Boarding {
             paxRemaining -= pax;
         }
 
-        await fillStation(paxStations['rows26_42'], .326 , numberOfPax);
-        await fillStation(paxStations['rows12_25'], .207, numberOfPax);
-        await fillStation(paxStations['rows9_11'], .214, numberOfPax);
-        await fillStation(paxStations['rows1_8'], 1 , paxRemaining);
+        await fillStation(paxStations['rows6_10'], .26 , numberOfPax);
+        await fillStation(paxStations['rows16_20'], .26 , numberOfPax);
+        await fillStation(paxStations['rows11_15'], .26, numberOfPax);
+        await fillStation(paxStations['rows1_5'], 1 , paxRemaining);
         return;
     }
 

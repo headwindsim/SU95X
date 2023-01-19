@@ -99,9 +99,9 @@ class CDUIdentPage {
         }
 
         mcdu.setTemplate([
-            ["A330-900"],//This aircraft code is correct and does not include the engine type.
+            ["SSJ-95LR"],//This aircraft code is correct and does not include the engine type.
             ["\xa0ENG"],
-            ["RR-7000[color]green"],
+            ["SAM146-1S18[color]green"],
             ["\xa0ACTIVE NAV DATA BASE"],
             ["\xa0" + calculateActiveDate(date) + "[color]cyan", "AIRAC[color]green"],
             ["\xa0SECOND NAV DATA BASE"],
