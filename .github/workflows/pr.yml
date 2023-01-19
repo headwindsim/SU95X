@@ -1,0 +1,84 @@
+name: PR
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - ready_for_review
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.draft == false
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+      - name: install
+        run: sudo ./scripts/dev-env/run.sh ./scripts/setup.sh
+      - name: copy sources
+        run: sudo ./scripts/dev-env/run.sh ./scripts/copy.sh
+      - name: npm run lint
+        run: ./scripts/dev-env/run.sh npm run lint
+      - name: lint-rust.sh
+        run: |
+          ./scripts/dev-env/run.sh scripts/lint-rust.sh
+  test-rust:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.draft == false
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+      - name: copy sources
+        run: sudo ./scripts/dev-env/run.sh ./scripts/copy.sh
+      - name: test-rust.sh
+        run: |
+          ./scripts/dev-env/run.sh scripts/test-rust.sh
+  test-js:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.draft == false
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+      - name: npm install
+        run: ./scripts/dev-env/run.sh ./scripts/setup.sh
+      - name: copy sources
+        run: sudo ./scripts/dev-env/run.sh ./scripts/copy.sh
+      - name: npm test
+        run: npm test
+  build:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.draft == false
+    env:
+      A32NX_PRODUCTION_BUILD: 1
+      A32NX_INSTRUMENTS_BUILD_WORKERS: 2
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+      - name: Setup Package
+        run: |
+          ./scripts/dev-env/run.sh ./scripts/setup.sh
+      - name: Copy Sources
+        run: |
+          ./scripts/dev-env/run.sh ./scripts/copy.sh
+      - name: Build SU95X Package
+        run: |
+          ./scripts/dev-env/run.sh ./scripts/build.sh --no-tty -j 4
+      - name: Generate install.json
+        run: |
+          ./scripts/dev-env/run.sh node ./scripts/fragment.js
+
+          cp ./build-modules/modules.json ./headwindsim-aircraft-su100-95/install.json
+          ./scripts/dev-env/run.sh node ./scripts/install-source.js
+      - uses: actions/upload-artifact@v2
+        with:
+          name: HEADWIND-SU95X
+          path: ./**/headwindsim-aircraft-su100-95/
