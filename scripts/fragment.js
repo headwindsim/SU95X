@@ -49,9 +49,6 @@ const execute = async () => {
             }, {
                 name: 'Panels',
                 sourceDir: './SimObjects/Airplanes/Headwind_SU95/panel'
-            }, {
-                name: 'ContentInfo',
-                sourceDir: './ContentInfo'
             }]
         });
         console.log(result);
