@@ -49,7 +49,7 @@ jobs:
           ./scripts/dev-env/run.sh node ./scripts/install-source.js
           mkdir ./${{ env.BUILD_DIR_NAME }}
           cd ./hdw-su95x/out/
-          zip -r .../../${{ env.BUILD_DIR_NAME }}/${{ env.MAIN_ZIP_NAME }} ./headwindsim-aircraft-su100-95/
+          zip -r ../../${{ env.BUILD_DIR_NAME }}/${{ env.MAIN_ZIP_NAME }} ./headwindsim-aircraft-su100-95/
           cd ../../
       - name: Delete old release assets
         uses: mknejp/delete-release-assets@v1
