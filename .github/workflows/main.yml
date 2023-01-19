@@ -38,6 +38,9 @@ jobs:
       - name: Build SU95X Package
         run: |
           ./scripts/dev-env/run.sh ./scripts/build.sh --no-tty -j 4
+      - name: Cleanup
+        run: |
+          rm -rf ./src
       - name: Build ZIP files
         run: |
           ./scripts/dev-env/run.sh node ./scripts/fragment.js
