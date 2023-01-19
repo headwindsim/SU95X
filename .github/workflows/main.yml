@@ -45,10 +45,12 @@ jobs:
         run: |
           ./scripts/dev-env/run.sh node ./scripts/fragment.js
 
-          cp ./build-modules/modules.json ./headwindsim-aircraft-su100-95/install.json
+          cp ./build-modules/modules.json ./hdw-su95x/out/headwindsim-aircraft-su100-95/install.json
           ./scripts/dev-env/run.sh node ./scripts/install-source.js
           mkdir ./${{ env.BUILD_DIR_NAME }}
-          zip -r ./${{ env.BUILD_DIR_NAME }}/${{ env.MAIN_ZIP_NAME }} ./headwindsim-aircraft-su100-95/
+          cd ./hdw-su95x/out/
+          zip -r .../../${{ env.BUILD_DIR_NAME }}/${{ env.MAIN_ZIP_NAME }} ./headwindsim-aircraft-su100-95/
+          cd ../../
       - name: Delete old release assets
         uses: mknejp/delete-release-assets@v1
         with:
