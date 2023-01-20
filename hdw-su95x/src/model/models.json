@@ -30,53 +30,7 @@
         "../../hdw-su95x/out/headwindsim-aircraft-su100-95/SimObjects/Airplanes/Headwind_SU95/model/A320_NEO_INTERIOR_LOD04.bin"
       ]
     },
-    "additions": [
-      {
-        "combineFiles": [
-          "./su95-interior/A320_NEO_INTERIOR_LOD00.gltf"
-        ],
-        "nodes": [
-          {
-            "translation": [
-              0.575,
-              0.9002199172973633,
-              20.2373104095459
-            ],
-            "rotation": [
-              0.0,
-              0.0,
-              0.0,
-              1.0
-            ],
-            "scale": [
-              1.0,
-              1.0,
-              1.0
-            ],
-            "name": "CAPTAIN_AVATAR"
-          },
-          {
-            "translation": [
-              -0.575,
-              0.9002199172973633,
-              20.2373104095459
-            ],
-            "rotation": [
-              0.0,
-              0.0,
-              0.0,
-              1.0
-            ],
-            "scale": [
-              1.0,
-              1.0,
-              1.0
-            ],
-            "name": "FIRSTOFFICER_AVATAR"
-          }
-        ]
-      }
-    ],
+    "additions": [],
     "modifications": [],
     "splitAnimations": []
   },
