@@ -113,17 +113,17 @@ export const ServicesPage = () => {
 
     // Ground Services
     const [cabinDoorOpen] = useSimVar('A:INTERACTIVE POINT OPEN:0', 'Percent over 100', 100);
-    const [aftDoorOpen] = useSimVar('A:INTERACTIVE POINT OPEN:1', 'Percent over 100', 100);
-    const [cargoDoorOpen] = useSimVar('A:INTERACTIVE POINT OPEN:2', 'Percent over 100', 100);
-    const [gpuActive] = useSimVar('A:INTERACTIVE POINT OPEN:3', 'Percent over 100', 100);
+    const [aftDoorOpen] = useSimVar('A:INTERACTIVE POINT OPEN:3', 'Percent over 100', 100);
+    const [cargoDoorOpen] = useSimVar('A:INTERACTIVE POINT OPEN:5', 'Percent over 100', 100);
+    const [gpuActive] = useSimVar('A:INTERACTIVE POINT OPEN:8', 'Percent over 100', 100);
     const [fuelingActive] = useSimVar('A:INTERACTIVE POINT OPEN:9', 'Percent over 100', 100);
 
     // Wheel Chocks and Cones
     const [isGroundEquipmentVisible] = useSimVar('L:A32NX_GND_EQP_IS_VISIBLE', 'bool', 500);
     const [wheelChocksEnabled] = useSimVar('L:A32NX_MODEL_WHEELCHOCKS_ENABLED', 'bool', 500);
     const [conesEnabled] = useSimVar('L:A32NX_MODEL_CONES_ENABLED', 'bool', 500);
-    const wheelChocksVisible = wheelChocksEnabled && isGroundEquipmentVisible;
-    const conesVisible = conesEnabled && isGroundEquipmentVisible;
+    const wheelChocksVisible = false; //wheelChocksEnabled && isGroundEquipmentVisible;
+    const conesVisible = false; //conesEnabled && isGroundEquipmentVisible;
 
     // Service events
     const toggleCabinDoor = () => SimVar.SetSimVarValue('K:TOGGLE_AIRCRAFT_EXIT', 'enum', 1);
@@ -131,9 +131,9 @@ export const ServicesPage = () => {
         SimVar.SetSimVarValue('K:TOGGLE_JETWAY', 'bool', false);
         SimVar.SetSimVarValue('K:TOGGLE_RAMPTRUCK', 'bool', false);
     };
-    const toggleCargoDoor = () => SimVar.SetSimVarValue('K:TOGGLE_AIRCRAFT_EXIT', 'enum', 3);
+    const toggleCargoDoor = () => SimVar.SetSimVarValue('K:TOGGLE_AIRCRAFT_EXIT', 'enum', 6);
     const toggleBaggageTruck = () => SimVar.SetSimVarValue('K:REQUEST_LUGGAGE', 'bool', true);
-    const toggleAftDoor = () => SimVar.SetSimVarValue('K:TOGGLE_AIRCRAFT_EXIT', 'enum', 2);
+    const toggleAftDoor = () => SimVar.SetSimVarValue('K:TOGGLE_AIRCRAFT_EXIT', 'enum', 4);
     const toggleCateringTruck = () => SimVar.SetSimVarValue('K:REQUEST_CATERING', 'bool', true);
     const toggleFuelTruck = () => SimVar.SetSimVarValue('K:REQUEST_FUEL_KEY', 'bool', true);
     const toggleGpu = () => SimVar.SetSimVarValue('K:REQUEST_POWER_SUPPLY', 'bool', true);
@@ -626,18 +626,12 @@ export const ServicesPage = () => {
                     >
                         AFT CARGO
                     </div>
-                    <div
-                        className="text-xl font-bold text-utility-amber"
-                        style={{ position: 'absolute', left: 705, right: 0, top: 585 }}
-                    >
-                        BULK
-                    </div>
                 </div>
             )}
             {!!gpuActive && (
                 <div
                     className="text-xl font-bold text-utility-amber"
-                    style={{ position: 'absolute', left: 705, right: 0, top: 70 }}
+                    style={{ position: 'absolute', left: 705, right: 0, top: 585 }}
                 >
                     GPU
                 </div>

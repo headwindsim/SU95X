@@ -58,7 +58,7 @@ export const FuelPage = () => {
     
     const wingTotalRefuelTimeSeconds = 624;
     const CenterTotalRefuelTimeSeconds = 336;
-    const defuel_multiplier = 3.75;
+    const defuelMultiplier = 3.75;
 
     const { usingMetric } = Units;
     const [currentUnit] = useState(usingMetric ? 'KG' : 'LB');
@@ -244,7 +244,7 @@ export const FuelPage = () => {
             return ' 0.5';
         }
         if ((totalTarget) < (totalCurrentGallon())) { // defueling time
-            estimatedTimeSeconds *= defuel_multiplier;
+            estimatedTimeSeconds *= defuelMultiplier;
         }
         return ` ${Math.round(estimatedTimeSeconds / 60)}`;
     };

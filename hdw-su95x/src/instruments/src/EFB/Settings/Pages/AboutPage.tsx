@@ -52,7 +52,7 @@ const BuildInfoEntry = ({ title, value, underline = 0 }: BuildInfoEntryProps) =>
 
 export const AboutPage = () => {
     const [buildInfo, setBuildInfo] = useState<BuildInfo | undefined>(undefined);
-    const [sessionId] = usePersistentProperty('A32NX_SENTRY_SESSION_ID');
+    const [sessionId] = usePersistentProperty('SU95X_SENTRY_SESSION_ID');
     const [version, setVersion] = useSessionStorage('SIM_VERSION', '');
     const [sentryEnabled] = usePersistentProperty(SENTRY_CONSENT_KEY, SentryConsentState.Refused);
     const [listener] = useState(RegisterViewListener('JS_LISTENER_COMMUNITY', undefined, false));

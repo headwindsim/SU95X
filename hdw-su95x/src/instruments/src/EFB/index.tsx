@@ -21,7 +21,7 @@ import { store } from './Store/store';
 import { Error } from './Assets/Error';
 
 const EFBLoad = () => {
-    const [, setSessionId] = usePersistentProperty('A32NX_SENTRY_SESSION_ID');
+    const [, setSessionId] = usePersistentProperty('SU95X_SENTRY_SESSION_ID');
     useEffect(() => () => setSessionId(''), []);
 
     const [err, setErr] = useState(false);
@@ -44,7 +44,7 @@ interface ErrorFallbackProps {
 }
 
 export const ErrorFallback = ({ resetErrorBoundary }: ErrorFallbackProps) => {
-    const [sessionId] = usePersistentProperty('A32NX_SENTRY_SESSION_ID');
+    const [sessionId] = usePersistentProperty('SU95X_SENTRY_SESSION_ID');
     const [sentryEnabled] = usePersistentProperty(SENTRY_CONSENT_KEY, SentryConsentState.Refused);
 
     return (
@@ -81,7 +81,7 @@ const setSessionId = () => {
     const nanoid = customAlphabet(ALPHABET, SESSION_ID_LENGTH);
     const generatedSessionID = nanoid();
 
-    NXDataStore.set('A32NX_SENTRY_SESSION_ID', generatedSessionID);
+    NXDataStore.set('SU95X_SENTRY_SESSION_ID', generatedSessionID);
 };
 
 const setup = () => {

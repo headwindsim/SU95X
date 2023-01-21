@@ -43,7 +43,7 @@ export const OverviewPage = () => {
 
     return (
         <div className="overflow-hidden p-6 mr-3 w-min rounded-lg border-2 h-content-section-reduced border-theme-accent">
-            <h1 className="font-bold">Sukhoi Superjet 100-95</h1>
+            <h1 className="font-bold">Sukhoi Superjet 100</h1>
             <p>{airline}</p>
 
             <div className="flex justify-center items-center mt-6">
@@ -52,7 +52,7 @@ export const OverviewPage = () => {
 
             <div className="flex flex-row mt-8 space-x-16">
                 <div className="flex flex-col space-y-8">
-                    <InformationEntry title={t('Dispatch.Overview.Model')} info="SSJ-100-95LR [SU95]">
+                    <InformationEntry title={t('Dispatch.Overview.Model')} info="RRJ-95LR [SU95]">
                         <IconPlane className="fill-current" size={23} stroke={1.5} strokeLinejoin="miter" />
                     </InformationEntry>
 
