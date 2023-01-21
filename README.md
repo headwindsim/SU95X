@@ -32,7 +32,7 @@ For Git Bash/Linux:
 ./scripts/dev-env/run.sh ./scripts/copy.sh
 ```
 
-#### 3. Build all A32NX module by running following command on powershell. 
+#### 3. Build all A32NX module by running following command on powershell.
 
 For powershell:
 ```shell
@@ -54,6 +54,11 @@ For powershell:
 For Git Bash/Linux:
 ```shell
 ./scripts/dev-env/run.sh ./scripts/packge.sh
+```
+
+#### (Optional) For faster development create sympolic link from the plane output to the MSFS community folder.
+```shell
+mklink /J "C:\path\to\community\folder\headwindsim-aircraft-su100-95" "C:\path\to\cloned\repo\headwindsim-aircraft-su100-95"
 ```
 
 ## Open source

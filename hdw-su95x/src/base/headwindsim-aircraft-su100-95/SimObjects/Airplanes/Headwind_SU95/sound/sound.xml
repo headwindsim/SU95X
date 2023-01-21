@@ -15,6 +15,13 @@
         <Parameter Name="Insulation_ExitOpen" Value="-12"/>
     </AcousticParameters>
 
+    <EngineSoundPresets>
+        <Sound WwiseEvent="Combustion" ConeHeading="180" WwiseData="true" EngineIndex="1" FadeOutType="2" FadeOutTime="5" NodeName="fx_exhaust_left"/>
+        <Sound WwiseEvent="Combustion" ConeHeading="180" WwiseData="true" EngineIndex="2" FadeOutType="2" FadeOutTime="5"  NodeName="fx_exhaust_right"/>
+        <Sound WwiseEvent="JetWhine" ConeHeading="0" WwiseData="true" EngineIndex="1" RPMMin="1" NodeName="fx_exhaust_left"/>
+        <Sound WwiseEvent="JetWhine" ConeHeading="0" WwiseData="true" EngineIndex="2" RPMMin="1" NodeName="fx_exhaust_right"/>
+    </EngineSoundPresets>
+
     <!-- AlwaysPlaySounds ========================================================================================== -->
 
     <AlwaysPlaySounds>
@@ -1438,39 +1445,39 @@
 
         <!-- Miscellaneous ==========================================================================================  -->
 
-        <Sound WwiseData="true" WwiseEvent="wiper_slowL" NodeName="WIPER_BASE_L" SimVar="CIRCUIT POWER SETTING" Units="percent" Index="77" Continuous="true">
+        <Sound WwiseData="true" WwiseEvent="wiper_slowL" NodeName="KNOB_AUTOPILOT_KNOB1_L" SimVar="CIRCUIT POWER SETTING" Units="percent" Index="77" Continuous="true">
             <Range LowerBound="75" UpperBound="75" />
             <Requires SimVar="CIRCUIT ON" Units="Bool" Index="77">
             <Range LowerBound="1" />
             </Requires>
         </Sound>
 
-        <Sound WwiseData="true" WwiseEvent="wiper_fastL" NodeName="WIPER_BASE_L" SimVar="CIRCUIT POWER SETTING" Units="percent" Index="77" Continuous="true">
+        <Sound WwiseData="true" WwiseEvent="wiper_fastL" NodeName="KNOB_AUTOPILOT_KNOB1_L" SimVar="CIRCUIT POWER SETTING" Units="percent" Index="77" Continuous="true">
             <Range LowerBound="100" />
             <Requires SimVar="CIRCUIT ON" Units="Bool" Index="77">
             <Range LowerBound="1" />
             </Requires>
         </Sound>
 
-        <Sound WwiseData="true" WwiseEvent="wiper_parkL" NodeName="WIPER_BASE_L" SimVar="CIRCUIT ON" Units="Bool" Index="77" Continuous="false">
+        <Sound WwiseData="true" WwiseEvent="wiper_parkL" NodeName="KNOB_AUTOPILOT_KNOB1_L" SimVar="CIRCUIT ON" Units="Bool" Index="77" Continuous="false">
             <Range UpperBound="0" />
         </Sound>
 
-        <Sound WwiseData="true" WwiseEvent="wiper_slowR" NodeName="WIPER_BASE_R" SimVar="CIRCUIT POWER SETTING" Units="percent" Index="80" Continuous="true">
+        <Sound WwiseData="true" WwiseEvent="wiper_slowR" NodeName="KNOB_AUTOPILOT_KNOB1_R" SimVar="CIRCUIT POWER SETTING" Units="percent" Index="80" Continuous="true">
             <Range LowerBound="75" UpperBound="75" />
             <Requires SimVar="CIRCUIT ON" Units="Bool" Index="80">
             <Range LowerBound="1" />
             </Requires>
         </Sound>
 
-        <Sound WwiseData="true" WwiseEvent="wiper_fastR" NodeName="WIPER_BASE_R" SimVar="CIRCUIT POWER SETTING" Units="percent" Index="80" Continuous="true">
+        <Sound WwiseData="true" WwiseEvent="wiper_fastR" NodeName="KNOB_AUTOPILOT_KNOB1_R" SimVar="CIRCUIT POWER SETTING" Units="percent" Index="80" Continuous="true">
             <Range LowerBound="100" />
             <Requires SimVar="CIRCUIT ON" Units="Bool" Index="80">
             <Range LowerBound="1" />
             </Requires>
         </Sound>
 
-        <Sound WwiseData="true" WwiseEvent="wiper_parkR" NodeName="WIPER_BASE_R" SimVar="CIRCUIT ON" Units="Bool" Index="80" Continuous="false">
+        <Sound WwiseData="true" WwiseEvent="wiper_parkR" NodeName="KNOB_AUTOPILOT_KNOB1_R" SimVar="CIRCUIT ON" Units="Bool" Index="80" Continuous="false">
             <Range UpperBound="0" />
         </Sound>
 
@@ -1575,7 +1582,7 @@
 
         <!-- RAIN ========================================================================================== -->
 
-		<Sound WwiseData="true" WwiseEvent="LightRainL" SimVar="AMBIENT PRECIP RATE" Units="millimeters of water" Index="0" NodeName="WIPER_BASE_L" ViewPoint="Inside" Continuous="true">
+		<Sound WwiseData="true" WwiseEvent="LightRainL" SimVar="AMBIENT PRECIP RATE" Units="millimeters of water" Index="0" NodeName="KNOB_AUTOPILOT_KNOB1_L" ViewPoint="Inside" Continuous="true">
 			<Range LowerBound="0.01" />
 			<WwiseRTPC SimVar="AMBIENT PRECIP RATE" Units="millimeters of water" Index="0" RTPCName="SIMVAR_AMBIENT_PRECIP_RATE"/>
 			<WwiseRTPC SimVar="AIRSPEED TRUE" Units="KNOTS" Index="0" RTPCName="SIMVAR_AIRSPEED_TRUE"/>
@@ -1584,7 +1591,7 @@
 			</Requires>
 		</Sound>
 
-		<Sound WwiseData="true" WwiseEvent="LightRainR" SimVar="AMBIENT PRECIP RATE" Units="millimeters of water" Index="0" NodeName="WIPER_BASE_R" ViewPoint="Inside" Continuous="true">
+		<Sound WwiseData="true" WwiseEvent="LightRainR" SimVar="AMBIENT PRECIP RATE" Units="millimeters of water" Index="0" NodeName="KNOB_AUTOPILOT_KNOB1_R" ViewPoint="Inside" Continuous="true">
 			<Range LowerBound="0.01" />
 			<WwiseRTPC SimVar="AMBIENT PRECIP RATE" Units="millimeters of water" Index="0" RTPCName="SIMVAR_AMBIENT_PRECIP_RATE"/>
 			<WwiseRTPC SimVar="AIRSPEED TRUE" Units="KNOTS" Index="0" RTPCName="SIMVAR_AIRSPEED_TRUE"/>
@@ -1593,7 +1600,7 @@
 			</Requires>
 		</Sound>
 
-		<Sound WwiseData="true" WwiseEvent="ModerateRainL" SimVar="AMBIENT PRECIP RATE" Units="millimeters of water" Index="0" NodeName="WIPER_BASE_L" ViewPoint="Inside" Continuous="true">
+		<Sound WwiseData="true" WwiseEvent="ModerateRainL" SimVar="AMBIENT PRECIP RATE" Units="millimeters of water" Index="0" NodeName="KNOB_AUTOPILOT_KNOB1_L" ViewPoint="Inside" Continuous="true">
 			<Range LowerBound="2" />
 			<WwiseRTPC SimVar="AMBIENT PRECIP RATE" Units="millimeters of water" Index="0" RTPCName="SIMVAR_AMBIENT_PRECIP_RATE"/>
 			<WwiseRTPC SimVar="AIRSPEED TRUE" Units="KNOTS" Index="0" RTPCName="SIMVAR_AIRSPEED_TRUE"/>
@@ -1602,7 +1609,7 @@
 			</Requires>
 		</Sound>
 
-		<Sound WwiseData="true" WwiseEvent="ModerateRainR" SimVar="AMBIENT PRECIP RATE" Units="millimeters of water" Index="0" NodeName="WIPER_BASE_R" ViewPoint="Inside" Continuous="true">
+		<Sound WwiseData="true" WwiseEvent="ModerateRainR" SimVar="AMBIENT PRECIP RATE" Units="millimeters of water" Index="0" NodeName="KNOB_AUTOPILOT_KNOB1_R" ViewPoint="Inside" Continuous="true">
 			<Range LowerBound="2" />
 			<WwiseRTPC SimVar="AMBIENT PRECIP RATE" Units="millimeters of water" Index="0" RTPCName="SIMVAR_AMBIENT_PRECIP_RATE"/>
 			<WwiseRTPC SimVar="AIRSPEED TRUE" Units="KNOTS" Index="0" RTPCName="SIMVAR_AIRSPEED_TRUE"/>
@@ -1611,7 +1618,7 @@
 			</Requires>
 		</Sound>
 
-		<Sound WwiseData="true" WwiseEvent="HeavyRainL" SimVar="AMBIENT PRECIP RATE" Units="millimeters of water" Index="0" NodeName="WIPER_BASE_L" ViewPoint="Inside" Continuous="true">
+		<Sound WwiseData="true" WwiseEvent="HeavyRainL" SimVar="AMBIENT PRECIP RATE" Units="millimeters of water" Index="0" NodeName="KNOB_AUTOPILOT_KNOB1_L" ViewPoint="Inside" Continuous="true">
 			<Range LowerBound="15" />
 			<WwiseRTPC SimVar="AMBIENT PRECIP RATE" Units="millimeters of water" Index="0" RTPCName="SIMVAR_AMBIENT_PRECIP_RATE"/>
 			<WwiseRTPC SimVar="AIRSPEED TRUE" Units="KNOTS" Index="0" RTPCName="SIMVAR_AIRSPEED_TRUE"/>
@@ -1620,7 +1627,7 @@
 			</Requires>
 		</Sound>
 
-		<Sound WwiseData="true" WwiseEvent="HeavyRainR" SimVar="AMBIENT PRECIP RATE" Units="millimeters of water" Index="0" NodeName="WIPER_BASE_R" ViewPoint="Inside" Continuous="true">
+		<Sound WwiseData="true" WwiseEvent="HeavyRainR" SimVar="AMBIENT PRECIP RATE" Units="millimeters of water" Index="0" NodeName="KNOB_AUTOPILOT_KNOB1_R" ViewPoint="Inside" Continuous="true">
 			<Range LowerBound="15" />
 			<WwiseRTPC SimVar="AMBIENT PRECIP RATE" Units="millimeters of water" Index="0" RTPCName="SIMVAR_AMBIENT_PRECIP_RATE"/>
 			<WwiseRTPC SimVar="AIRSPEED TRUE" Units="KNOTS" Index="0" RTPCName="SIMVAR_AIRSPEED_TRUE"/>
@@ -1631,7 +1638,7 @@
 
         <!-- CRC and Caution ========================================================================================-->
 
-        <Sound WwiseData="true" WwiseEvent="CRC" NodeName="WIPER_BASE_L" ViewPoint="Inside" LocalVar="A32NX_MASTER_WARNING">
+        <Sound WwiseData="true" WwiseEvent="CRC" NodeName="KNOB_EFIS_CS_LOUDSPKR" ViewPoint="Inside" LocalVar="A32NX_MASTER_WARNING">
             <Range LowerBound="0.5" />
             <Requires SimVar="ELECTRICAL MAIN BUS VOLTAGE" Units="VOLTS" Index="1">
                 <Range LowerBound="28" />
@@ -1817,52 +1824,52 @@
         <Sound WwiseData="true" WwiseEvent="aural_v1" />
         <Sound WwiseEvent="cavcharge" WwiseData="true" NodeName="PEDALS_LEFT" Continuous="false" />
         <Sound WwiseEvent="3click" WwiseData="true" NodeName="PEDALS_LEFT" Continuous="false" />
-        <Sound WwiseData="true" WwiseEvent="fwdgalley" NodeName="WIPER_BASE_L" />
-        <Sound WwiseData="true" WwiseEvent="cpdlc_ring" NodeName="WIPER_BASE_L" />
+        <Sound WwiseData="true" WwiseEvent="fwdgalley" NodeName="FUSES02" />
+        <Sound WwiseData="true" WwiseEvent="cpdlc_ring" NodeName="FUSES02" />
 
         <!-- New RA callouts ====================================================================================-->
-        <Sound WwiseData="true" WwiseEvent="new_5" NodeName="WIPER_BASE_L" />
-        <Sound WwiseData="true" WwiseEvent="new_10" NodeName="WIPER_BASE_L" />
-        <Sound WwiseData="true" WwiseEvent="new_20" NodeName="WIPER_BASE_L" />
-        <Sound WwiseData="true" WwiseEvent="new_30" NodeName="WIPER_BASE_L" />
-        <Sound WwiseData="true" WwiseEvent="new_40" NodeName="WIPER_BASE_L" />
-        <Sound WwiseData="true" WwiseEvent="new_50" NodeName="WIPER_BASE_L" />
-        <Sound WwiseData="true" WwiseEvent="new_100" NodeName="WIPER_BASE_L" />
-        <Sound WwiseData="true" WwiseEvent="new_200" NodeName="WIPER_BASE_L" />
-        <Sound WwiseData="true" WwiseEvent="new_300" NodeName="WIPER_BASE_L" />
-        <Sound WwiseData="true" WwiseEvent="new_400" NodeName="WIPER_BASE_L" />
-        <Sound WwiseData="true" WwiseEvent="new_500" NodeName="WIPER_BASE_L" />
-        <Sound WwiseData="true" WwiseEvent="new_1000" NodeName="WIPER_BASE_L" />
-        <Sound WwiseData="true" WwiseEvent="new_2500" NodeName="WIPER_BASE_L" />
-        <Sound WwiseData="true" WwiseEvent="new_retard" NodeName="WIPER_BASE_L" />
-        <Sound WwiseData="true" WwiseEvent="aural_minimumnew" NodeName="WIPER_BASE_L" />
-        <Sound WwiseData="true" WwiseEvent="aural_100above" NodeName="WIPER_BASE_L" />
+        <Sound WwiseData="true" WwiseEvent="new_5" NodeName="KNOB_EFIS_CS_LOUDSPKR" />
+        <Sound WwiseData="true" WwiseEvent="new_10" NodeName="KNOB_EFIS_CS_LOUDSPKR" />
+        <Sound WwiseData="true" WwiseEvent="new_20" NodeName="KNOB_EFIS_CS_LOUDSPKR" />
+        <Sound WwiseData="true" WwiseEvent="new_30" NodeName="KNOB_EFIS_CS_LOUDSPKR" />
+        <Sound WwiseData="true" WwiseEvent="new_40" NodeName="KNOB_EFIS_CS_LOUDSPKR" />
+        <Sound WwiseData="true" WwiseEvent="new_50" NodeName="KNOB_EFIS_CS_LOUDSPKR" />
+        <Sound WwiseData="true" WwiseEvent="new_100" NodeName="KNOB_EFIS_CS_LOUDSPKR" />
+        <Sound WwiseData="true" WwiseEvent="new_200" NodeName="KNOB_EFIS_CS_LOUDSPKR" />
+        <Sound WwiseData="true" WwiseEvent="new_300" NodeName="KNOB_EFIS_CS_LOUDSPKR" />
+        <Sound WwiseData="true" WwiseEvent="new_400" NodeName="KNOB_EFIS_CS_LOUDSPKR" />
+        <Sound WwiseData="true" WwiseEvent="new_500" NodeName="KNOB_EFIS_CS_LOUDSPKR" />
+        <Sound WwiseData="true" WwiseEvent="new_1000" NodeName="KNOB_EFIS_CS_LOUDSPKR" />
+        <Sound WwiseData="true" WwiseEvent="new_2500" NodeName="KNOB_EFIS_CS_LOUDSPKR" />
+        <Sound WwiseData="true" WwiseEvent="new_retard" NodeName="KNOB_EFIS_CS_LOUDSPKR" />
+        <Sound WwiseData="true" WwiseEvent="aural_minimumnew" NodeName="KNOB_EFIS_CS_LOUDSPKR" />
+        <Sound WwiseData="true" WwiseEvent="aural_100above" NodeName="KNOB_EFIS_CS_LOUDSPKR" />
 
         <!-- TCAS callouts ====================================================================================-->
 
-        <Sound WwiseData="true" WwiseEvent="clear_of_conflict" NodeName="WIPER_BASE_L" />
-        <Sound WwiseData="true" WwiseEvent="climb_climb" NodeName="WIPER_BASE_L" />
-        <Sound WwiseData="true" WwiseEvent="climb_climb_now" NodeName="WIPER_BASE_L" />
-        <Sound WwiseData="true" WwiseEvent="climb_crossing_climb" NodeName="WIPER_BASE_L" />
-        <Sound WwiseData="true" WwiseEvent="descend_crossing_descend" NodeName="WIPER_BASE_L" />
-        <Sound WwiseData="true" WwiseEvent="descend_descend" NodeName="WIPER_BASE_L" />
-        <Sound WwiseData="true" WwiseEvent="descend_descend_now" NodeName="WIPER_BASE_L" />
-        <Sound WwiseData="true" WwiseEvent="increase_climb" NodeName="WIPER_BASE_L" />
-        <Sound WwiseData="true" WwiseEvent="increase_descent" NodeName="WIPER_BASE_L" />
-        <Sound WwiseData="true" WwiseEvent="level_off_level_off" NodeName="WIPER_BASE_L" />
-        <Sound WwiseData="true" WwiseEvent="maint_vs_crossing_maint" NodeName="WIPER_BASE_L" />
-        <Sound WwiseData="true" WwiseEvent="maint_vs_maint" NodeName="WIPER_BASE_L" />
-        <Sound WwiseData="true" WwiseEvent="monitor_vs" NodeName="WIPER_BASE_L" />
-        <Sound WwiseData="true" WwiseEvent="traffic" NodeName="WIPER_BASE_L" />
-        <Sound WwiseData="true" WwiseEvent="traffic_traffic" NodeName="WIPER_BASE_L" />
-        <Sound WwiseData="true" WwiseEvent="TCAS_sys_test_OK" NodeName="WIPER_BASE_L" />
+        <Sound WwiseData="true" WwiseEvent="clear_of_conflict" NodeName="KNOB_EFIS_CS_LOUDSPKR" />
+        <Sound WwiseData="true" WwiseEvent="climb_climb" NodeName="KNOB_EFIS_CS_LOUDSPKR" />
+        <Sound WwiseData="true" WwiseEvent="climb_climb_now" NodeName="KNOB_EFIS_CS_LOUDSPKR" />
+        <Sound WwiseData="true" WwiseEvent="climb_crossing_climb" NodeName="KNOB_EFIS_CS_LOUDSPKR" />
+        <Sound WwiseData="true" WwiseEvent="descend_crossing_descend" NodeName="KNOB_EFIS_CS_LOUDSPKR" />
+        <Sound WwiseData="true" WwiseEvent="descend_descend" NodeName="KNOB_EFIS_CS_LOUDSPKR" />
+        <Sound WwiseData="true" WwiseEvent="descend_descend_now" NodeName="KNOB_EFIS_CS_LOUDSPKR" />
+        <Sound WwiseData="true" WwiseEvent="increase_climb" NodeName="KNOB_EFIS_CS_LOUDSPKR" />
+        <Sound WwiseData="true" WwiseEvent="increase_descent" NodeName="KNOB_EFIS_CS_LOUDSPKR" />
+        <Sound WwiseData="true" WwiseEvent="level_off_level_off" NodeName="KNOB_EFIS_CS_LOUDSPKR" />
+        <Sound WwiseData="true" WwiseEvent="maint_vs_crossing_maint" NodeName="KNOB_EFIS_CS_LOUDSPKR" />
+        <Sound WwiseData="true" WwiseEvent="maint_vs_maint" NodeName="KNOB_EFIS_CS_LOUDSPKR" />
+        <Sound WwiseData="true" WwiseEvent="monitor_vs" NodeName="KNOB_EFIS_CS_LOUDSPKR" />
+        <Sound WwiseData="true" WwiseEvent="traffic" NodeName="KNOB_EFIS_CS_LOUDSPKR" />
+        <Sound WwiseData="true" WwiseEvent="traffic_traffic" NodeName="KNOB_EFIS_CS_LOUDSPKR" />
+        <Sound WwiseData="true" WwiseEvent="TCAS_sys_test_OK" NodeName="KNOB_EFIS_CS_LOUDSPKR" />
 
         <!-- ROPS callouts ==================================================================================== -->
 
-        <Sound WwiseData="true" WwiseEvent="brake_max_braking" NodeName="WIPER_BASE_L" />
-        <Sound WwiseData="true" WwiseEvent="keep_max_reverse" NodeName="WIPER_BASE_L" />
-        <Sound WwiseData="true" WwiseEvent="runway_too_short" NodeName="WIPER_BASE_L" />
-        <Sound WwiseData="true" WwiseEvent="set_max_reverse" NodeName="WIPER_BASE_L" />
+        <Sound WwiseData="true" WwiseEvent="brake_max_braking" NodeName="KNOB_EFIS_CS_LOUDSPKR" />
+        <Sound WwiseData="true" WwiseEvent="keep_max_reverse" NodeName="KNOB_EFIS_CS_LOUDSPKR" />
+        <Sound WwiseData="true" WwiseEvent="runway_too_short" NodeName="KNOB_EFIS_CS_LOUDSPKR" />
+        <Sound WwiseData="true" WwiseEvent="set_max_reverse" NodeName="KNOB_EFIS_CS_LOUDSPKR" />
 
     </AvionicSounds>
 
@@ -2041,8 +2048,8 @@
         <Sound WwiseData="true" WwiseEvent="deice_windshield_switch_off" ViewPoint="Inside"/>
 
         <!-- Exterior ========================================================================================== -->
-        <Sound WwiseData="true" WwiseEvent="wipers_forward" NodeName="WIPER_BASE_L"/>
-        <Sound WwiseData="true" WwiseEvent="wipers_backward" NodeName="WIPER_BASE_L"/>
+        <Sound WwiseData="true" WwiseEvent="wipers_forward" NodeName="KNOB_AUTOPILOT_KNOB1_L"/>
+        <Sound WwiseData="true" WwiseEvent="wipers_backward" NodeName="KNOB_AUTOPILOT_KNOB1_L"/>
 
     </AnimationSounds>
 
