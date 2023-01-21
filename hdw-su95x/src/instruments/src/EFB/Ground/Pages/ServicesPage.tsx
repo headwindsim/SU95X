@@ -599,7 +599,7 @@ export const ServicesPage = () => {
             {!!cabinDoorOpen && (
                 <div
                     className="text-xl font-bold text-utility-amber"
-                    style={{ position: 'absolute', left: 515, right: 0, top: 227 }}
+                    style={{ position: 'absolute', left: 515, right: 0, top: 103 }}
                 >
                     CABIN
                 </div>
@@ -607,7 +607,7 @@ export const ServicesPage = () => {
             {!!aftDoorOpen && (
                 <div
                     className="text-xl font-bold text-utility-amber"
-                    style={{ position: 'absolute', left: 705, right: 0, top: 103 }}
+                    style={{ position: 'absolute', left: 705, right: 0, top: 585 }}
                 >
                     CABIN
                 </div>
@@ -625,7 +625,7 @@ export const ServicesPage = () => {
             {!!gpuActive && (
                 <div
                     className="text-xl font-bold text-utility-amber"
-                    style={{ position: 'absolute', left: 705, right: 0, top: 585 }}
+                    style={{ position: 'absolute', left: 705, right: 0, top: 70 }}
                 >
                     GPU
                 </div>
