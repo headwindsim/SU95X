@@ -620,12 +620,6 @@ export const ServicesPage = () => {
                     >
                         FWD CARGO
                     </div>
-                    <div
-                        className="text-xl font-bold text-utility-amber"
-                        style={{ position: 'absolute', left: 705, right: 0, top: 530 }}
-                    >
-                        AFT CARGO
-                    </div>
                 </div>
             )}
             {!!gpuActive && (
