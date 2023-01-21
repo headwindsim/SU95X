@@ -45,17 +45,6 @@ For Git Bash/Linux:
 
 #### 4. The package is now ready to use. Copy the folder "headwind-aircraft-a330-900" to your CommunityPackage folder in MSFS.
 
-#### (Optional) If you want to use the MSFS Dev Tools you can run the following command (after build completed) to copy the files to the PackageSources.
-
-For powershell:
-```shell
-.\scripts\dev-env\run.cmd ./scripts/package.sh
-```
-For Git Bash/Linux:
-```shell
-./scripts/dev-env/run.sh ./scripts/packge.sh
-```
-
 #### (Optional) For faster development create sympolic link from the plane output to the MSFS community folder.
 ```shell
 mklink /J "C:\path\to\community\folder\headwindsim-aircraft-su100-95" "C:\path\to\cloned\repo\headwindsim-aircraft-su100-95"
