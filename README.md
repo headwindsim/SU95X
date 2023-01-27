@@ -47,7 +47,7 @@ For Git Bash/Linux:
 
 #### (Optional) For faster development create sympolic link from the plane output to the MSFS community folder.
 ```shell
-mklink /J "C:\path\to\community\folder\headwindsim-aircraft-su100-95" "C:\path\to\cloned\repo\headwindsim-aircraft-su100-95"
+mklink /J "C:\path\to\community\folder\headwindsim-aircraft-su100-95" "C:\path\to\cloned\repo\hdw-su95x\out\headwindsim-aircraft-su100-95"
 ```
 
 ## Open source
