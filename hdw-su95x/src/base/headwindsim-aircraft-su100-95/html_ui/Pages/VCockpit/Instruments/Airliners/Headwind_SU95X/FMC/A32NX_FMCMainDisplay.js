@@ -485,7 +485,7 @@ class FMCMainDisplay extends BaseAirliners {
         this.descentSpeedLimit = 250;
         this.descentSpeedLimitAlt = 10000;
         this.descentSpeedLimitPilot = false;
-        this.managedSpeedClimb = 290;
+        this.managedSpeedClimb = 280;
         this.managedSpeedClimbIsPilotEntered = false;
         this.managedSpeedClimbMach = .78;
         // this.managedSpeedClimbMachIsPilotEntered = false;
@@ -1571,17 +1571,17 @@ class FMCMainDisplay extends BaseAirliners {
 
     getClbManagedSpeedFromCostIndex() {
         const dCI = (this.costIndex / 999) ** 2;
-        return 290 * (1 - dCI) + 330 * dCI;
+        return 280 * (1 - dCI) + 305 * dCI;
     }
 
     getCrzManagedSpeedFromCostIndex() {
         const dCI = (this.costIndex / 999) ** 2;
-        return 290 * (1 - dCI) + 310 * dCI;
+        return 280 * (1 - dCI) + 305 * dCI;
     }
 
     getDesManagedSpeedFromCostIndex() {
         const dCI = this.costIndex / 999;
-        return 288 * (1 - dCI) + 300 * dCI;
+        return 280 * (1 - dCI) + 300 * dCI;
     }
 
     getAppManagedSpeed() {
