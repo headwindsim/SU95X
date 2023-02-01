@@ -219,7 +219,7 @@ export class FbwAircraftSentryClient {
 
         console.log('[SentryClient] Sentry initialized');
 
-        NXDataStore.getAndSubscribe('SU95X_SENTRY_SESSION_ID', (_, value) => {
+        NXDataStore.getAndSubscribe('SENTRY_SESSION_ID', (_, value) => {
             if (value) {
                 Sentry.setTag('session_id', value);
                 console.log('[SentryClient] Sentry tag "session_id" set to', value);
