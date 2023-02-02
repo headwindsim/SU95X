@@ -21,7 +21,7 @@ import { store } from './Store/store';
 import { Error } from './Assets/Error';
 
 const EFBLoad = () => {
-    const [, setSessionId] = usePersistentProperty('SU95X_SENTRY_SESSION_ID');
+    const [, setSessionId] = usePersistentProperty('SENTRY_SESSION_ID');
     useEffect(() => () => setSessionId(''), []);
 
     const [err, setErr] = useState(false);
@@ -44,7 +44,7 @@ interface ErrorFallbackProps {
 }
 
 export const ErrorFallback = ({ resetErrorBoundary }: ErrorFallbackProps) => {
-    const [sessionId] = usePersistentProperty('SU95X_SENTRY_SESSION_ID');
+    const [sessionId] = usePersistentProperty('SENTRY_SESSION_ID');
     const [sentryEnabled] = usePersistentProperty(SENTRY_CONSENT_KEY, SentryConsentState.Refused);
 
     return (
@@ -59,7 +59,7 @@ export const ErrorFallback = ({ resetErrorBoundary }: ErrorFallbackProps) => {
                     {sentryEnabled === SentryConsentState.Given && (
                         <>
                             <h2 className="text-3xl leading-relaxed">
-                                You have opted into anonymous error reporting and this issue has been relayed to us. If you want immediate support, please share the following code to a member of staff in the #support channel on the FlyByWire Discord server:
+                                You have opted into anonymous error reporting and this issue has been relayed to us. If you want immediate support, please share the following code to a member of staff in the #support channel on the Headwind Simulations Discord server:
                             </h2>
 
                             <h1 className="text-4xl font-extrabold tracking-wider text-center">{sessionId}</h1>
@@ -81,7 +81,7 @@ const setSessionId = () => {
     const nanoid = customAlphabet(ALPHABET, SESSION_ID_LENGTH);
     const generatedSessionID = nanoid();
 
-    NXDataStore.set('SU95X_SENTRY_SESSION_ID', generatedSessionID);
+    NXDataStore.set('SENTRY_SESSION_ID', generatedSessionID);
 };
 
 const setup = () => {
