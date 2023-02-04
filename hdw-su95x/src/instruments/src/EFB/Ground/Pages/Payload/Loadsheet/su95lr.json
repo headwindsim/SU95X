@@ -165,7 +165,7 @@
       "index": 0,
       "stationIndex": 1,
       "position": 15.8,
-      "fill": 0.184,
+      "fill": 0.18,
       "simVar": "SU95_PAX_TOTAL_ROWS_1_4"
     },
     {
@@ -327,7 +327,7 @@
       "index": 1,
       "stationIndex": 2,
       "position": 5.0,
-      "fill": 0.204,
+      "fill": 0.205,
       "simVar": "SU95_PAX_TOTAL_ROWS_5_8"
     },
     {
@@ -489,7 +489,7 @@
       "index": 2,
       "stationIndex": 3,
       "position": -6.4,
-      "fill": 0.204,
+      "fill": 0.205,
       "simVar": "SU95_PAX_TOTAL_ROWS_9_12"
     },
     {
@@ -648,7 +648,7 @@
           "yOffset": 0
         }
       ],
-      "fill": 0.204,
+      "fill": 0.205,
       "index": 3,
       "stationIndex": 4,
       "position": -16.6,
@@ -810,7 +810,7 @@
           "yOffset": 0
         }
       ],
-      "fill": 0.204,
+      "fill": 0.205,
       "index": 3,
       "stationIndex": 5,
       "position": -27.5,
