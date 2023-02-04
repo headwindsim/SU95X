@@ -16,6 +16,7 @@
 !package-lock.json
 !.editorconfig
 !.eslintrc
+!.eslintignore
 !jsconfig.json
 !.gitattributes
 !.gitmodules
