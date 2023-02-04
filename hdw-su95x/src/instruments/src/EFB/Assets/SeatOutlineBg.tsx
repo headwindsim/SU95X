@@ -1,4 +1,4 @@
-﻿/* eslint-disable max-len */
+/* eslint-disable max-len */
 import React from 'react';
 
 interface SeatOutlineBgProps {
@@ -12,16 +12,12 @@ export const SeatOutlineBg = ({ stroke, highlight }: SeatOutlineBgProps) => (
             <path id="Cockpit_Door" className="st0" stroke="#D2D3D4" strokeWidth={0.5} strokeMiterlimit={10} d="M86.7 82.1V67.9" />
             <g id="Walls">
                 <path id="Aft_Wall" className="st1" stroke={stroke} strokeWidth={0.5} strokeMiterlimit={10} d="M681.4 105.1V45" />
-                <path id="Fwd_Right_Wall" className="st1" stroke={stroke} strokeWidth={0.5} strokeMiterlimit={10} d="M 132.4 33.1 v 24.43 h -14.4 V 33.1" />
-                <path id="Fwd_Middle_Wall" className="st1" stroke={stroke} strokeWidth={0.5} strokeMiterlimit={10} d="M 132.4 63.1 v 24.43 h -14.4 V 63.1 H 132.4" />
-                <path id="Fwd_Left_Wall" className="st1" stroke={stroke} strokeWidth={0.5} strokeMiterlimit={10} d="M 117.6 116.97 V 92.33 h 14.4 v 24.64" />
+                <path id="Fwd_Right_Wall" className="st1" stroke={stroke} strokeWidth={0.5} strokeMiterlimit={10} d="M119.4 33v34.9h-1.8V33" />
+                <path id="Fwd_Left_Wall" className="st1" stroke={stroke} strokeWidth={0.5} strokeMiterlimit={10} d="M117.6 117.1V81.9h1.8v35.2" />
             </g>
             <g id="Lavatories">
                 <path id="Aft_Left_Lavatory" className="st0" stroke="#D2D3D4" strokeWidth={0.5} strokeMiterlimit={10} d="M610.8 116.3V81.9h21.7v14.8h-3.1v17.4" />
                 <path id="Aft_Right_Lavatory" className="st0" stroke="#D2D3D4" strokeWidth={0.5} strokeMiterlimit={10} d="M629.4 36v17.4h3.1v14.8h-21.7V33.7" />
-                <path id="Mid_Left_Lavatory" className="st1" stroke={stroke} strokeWidth={0.5} strokeMiterlimit={10} d="M425.6 116.97 V 92.33 h 14.4 v 24.64" />
-                <path id="Mid_Middle_Lavatory" className="st1" stroke={stroke} strokeWidth={0.5} strokeMiterlimit={10} d="M440.4 63.1 v 24.43 h -14.4 V 63.1 H 440.4" />
-                <path id="Mid_Right_Lavatory" className="st1" stroke={stroke} strokeWidth={0.5} strokeMiterlimit={10} d="M440.4 33.1 v 24.43 h -14.4 V 33.1" />
                 <path id="Fwd_Lavatory" className="st0" stroke="#D2D3D4" strokeWidth={0.5} strokeMiterlimit={10} d="M78 113.5V81.9h23.4v19.5h-3.3v14.9" />
             </g>
             <g id="Galleys">
