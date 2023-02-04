@@ -5,11 +5,11 @@
     "es2021": true
   },
   "ignorePatterns": [
-    "/a32nx/**",
-    "/headwindsim-aircraft-su100-95/html_ui/SU95X_JS/fmgc/**",
-    "/headwindsim-aircraft-su100-95/html_ui/SU95X_JS/atsu/**",
-    "/headwindsim-aircraft-su100-95/html_ui/SU95X_JS/sentry-client/**",
-    "/headwindsim-aircraft-su100-95/html_ui/Pages/VCockpit/Instruments/SU95X/**",
+    "/fbw-a32nx/**",
+    "/hdw-su95x/out/headwindsim-aircraft-su100-95/html_ui/SU95X_JS/fmgc/**",
+    "/hdw-su95x/out//headwindsim-aircraft-su100-95/html_ui/SU95X_JS/atsu/**",
+    "/hdw-su95x/out//headwindsim-aircraft-su100-95/html_ui/SU95X_JS/sentry-client/**",
+    "/hdw-su95x/out//headwindsim-aircraft-su100-95/html_ui/Pages/VCockpit/Instruments/SU95X/**",
     "typings/**",
     "/msfs-avionics-mirror/**"
   ],
