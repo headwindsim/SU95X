@@ -12,6 +12,7 @@ enum DataTypesID {
   PayloadStation6,
   PayloadStation7,
   PayloadStation8,
+  PayloadStation9,
   FuelLeftMain,
   FuelRightMain,
   FuelCenterMain,
@@ -155,14 +156,16 @@ class SimVars {
   ID PumpStateRight;
   ID ConversionFactor;
   ID PerPaxWeight;
-  ID PaxRows1to6Actual;
-  ID PaxRows7to13Actual;
-  ID PaxRows14to21Actual;
-  ID PaxRows22to29Actual;
-  ID PaxRows1to6Desired;
-  ID PaxRows7to13Desired;
-  ID PaxRows14to21Desired;
-  ID PaxRows22to29Desired;
+  ID PaxRows1to4Actual;
+  ID PaxRows5to8Actual;
+  ID PaxRows9to12Actual;
+  ID PaxRows13to16Actual;
+  ID PaxRows17to20Actual;
+  ID PaxRows1to4Desired;
+  ID PaxRows5to8Desired;
+  ID PaxRows9to12Desired;
+  ID PaxRows13to16Desired;
+  ID PaxRows17to20Desired;
   ID CargoFwdContainerActual;
   ID CargoAftContainerActual;
   ID CargoAftBaggageActual;
@@ -222,14 +225,16 @@ class SimVars {
     PumpStateRight = register_named_variable("A32NX_PUMP_STATE:2");
     ConversionFactor = register_named_variable("A32NX_EFB_UNIT_CONVERSION_FACTOR");
     PerPaxWeight = register_named_variable("A32NX_WB_PER_PAX_WEIGHT");
-    PaxRows1to6Actual = register_named_variable("SU95_PAX_TOTAL_ROWS_1_5");
-    PaxRows7to13Actual = register_named_variable("SU95_PAX_TOTAL_ROWS_6_10");
-    PaxRows14to21Actual = register_named_variable("SU95_PAX_TOTAL_ROWS_11_15");
-    PaxRows22to29Actual = register_named_variable("SU95_PAX_TOTAL_ROWS_16_20");
-    PaxRows1to6Desired = register_named_variable("SU95_PAX_TOTAL_ROWS_1_5_DESIRED");
-    PaxRows7to13Desired = register_named_variable("SU95_PAX_TOTAL_ROWS_6_10_DESIRED");
-    PaxRows14to21Desired = register_named_variable("SU95_PAX_TOTAL_ROWS_11_15_DESIRED");
-    PaxRows22to29Desired = register_named_variable("SU95_PAX_TOTAL_ROWS_16_20_DESIRED");
+    PaxRows1to4Actual = register_named_variable("SU95_PAX_TOTAL_ROWS_1_4");
+    PaxRows5to8Actual = register_named_variable("SU95_PAX_TOTAL_ROWS_5_8");
+    PaxRows9to12Actual = register_named_variable("SU95_PAX_TOTAL_ROWS_9_12");
+    PaxRows13to16Actual = register_named_variable("SU95_PAX_TOTAL_ROWS_13_16");
+    PaxRows17to20Actual = register_named_variable("SU95_PAX_TOTAL_ROWS_17_20");
+    PaxRows1to4Desired = register_named_variable("SU95_PAX_TOTAL_ROWS_1_4_DESIRED");
+    PaxRows5to8Desired = register_named_variable("SU95_PAX_TOTAL_ROWS_5_8_DESIRED");
+    PaxRows9to12Desired = register_named_variable("SU95_PAX_TOTAL_ROWS_9_12_DESIRED");
+    PaxRows13to16Desired = register_named_variable("SU95_PAX_TOTAL_ROWS_13_16_DESIRED");
+    PaxRows17to20Desired = register_named_variable("SU95_PAX_TOTAL_ROWS_17_20_DESIRED");
     CargoFwdContainerActual = register_named_variable("SU95_CARGO_FWD_BAGGAGE");
     CargoAftContainerActual = register_named_variable("SU95_CARGO_AFT_BAGGAGE_1");
     CargoAftBaggageActual = register_named_variable("SU95_CARGO_AFT_BAGGAGE_2");
@@ -367,14 +372,16 @@ class SimVars {
   FLOAT64 getPumpStateRight() { return get_named_variable_value(PumpStateRight); }
   FLOAT64 getPerPaxWeight() { return get_named_variable_value(PerPaxWeight); }
   FLOAT64 getConversionFactor() { return get_named_variable_value(ConversionFactor); }
-  FLOAT64 getPaxRows1to6Actual() { return get_named_variable_value(PaxRows1to6Actual); }
-  FLOAT64 getPaxRows7to13Actual() { return get_named_variable_value(PaxRows7to13Actual); }
-  FLOAT64 getPaxRows14to21Actual() { return get_named_variable_value(PaxRows14to21Actual); }
-  FLOAT64 getPaxRows22to29Actual() { return get_named_variable_value(PaxRows22to29Actual); }
-  FLOAT64 getPaxRows1to6Desired() { return get_named_variable_value(PaxRows1to6Desired); }
-  FLOAT64 getPaxRows7to13Desired() { return get_named_variable_value(PaxRows7to13Desired); }
-  FLOAT64 getPaxRows14to21Desired() { return get_named_variable_value(PaxRows14to21Desired); }
-  FLOAT64 getPaxRows22to29Desired() { return get_named_variable_value(PaxRows22to29Desired); }
+  FLOAT64 getPaxRows1to4Actual() { return get_named_variable_value(PaxRows1to4Actual); }
+  FLOAT64 getPaxRows5to8Actual() { return get_named_variable_value(PaxRows5to8Actual); }
+  FLOAT64 getPaxRows9to12Actual() { return get_named_variable_value(PaxRows9to12Actual); }
+  FLOAT64 getPaxRows13to16Actual() { return get_named_variable_value(PaxRows13to16Actual); }
+  FLOAT64 getPaxRows17to20Actual() { return get_named_variable_value(PaxRows17to20Actual); }
+  FLOAT64 getPaxRows1to4Desired() { return get_named_variable_value(PaxRows1to4Desired); }
+  FLOAT64 getPaxRows5to8Desired() { return get_named_variable_value(PaxRows5to8Desired); }
+  FLOAT64 getPaxRows9to12Desired() { return get_named_variable_value(PaxRows9to12Desired); }
+  FLOAT64 getPaxRows13to16Desired() { return get_named_variable_value(PaxRows13to16Desired); }
+  FLOAT64 getPaxRows17to20Desired() { return get_named_variable_value(PaxRows17to20Desired); }
   FLOAT64 getCargoFwdContainerActual() { return get_named_variable_value(CargoFwdContainerActual); }
   FLOAT64 getCargoAftContainerActual() { return get_named_variable_value(CargoAftContainerActual); }
   FLOAT64 getCargoAftBaggageActual() { return get_named_variable_value(CargoAftBaggageActual); }

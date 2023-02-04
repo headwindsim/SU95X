@@ -35,17 +35,19 @@ export const Payload = () => {
 
     const [emptyWeight] = useSimVar('A:EMPTY WEIGHT', usingMetric ? 'Kilograms' : 'Pounds', 2_000);
 
-    const [paxA] = useSimVar('L:SU95_PAX_TOTAL_ROWS_1_5', 'Number');
-    const [paxB] = useSimVar('L:SU95_PAX_TOTAL_ROWS_6_10', 'Number');
-    const [paxC] = useSimVar('L:SU95_PAX_TOTAL_ROWS_11_15', 'Number');
-    const [paxD] = useSimVar('L:SU95_PAX_TOTAL_ROWS_16_20', 'Number');
+    const [paxA] = useSimVar('L:SU95_PAX_TOTAL_ROWS_1_4', 'Number');
+    const [paxB] = useSimVar('L:SU95_PAX_TOTAL_ROWS_5_8', 'Number');
+    const [paxC] = useSimVar('L:SU95_PAX_TOTAL_ROWS_9_12', 'Number');
+    const [paxD] = useSimVar('L:SU95_PAX_TOTAL_ROWS_13_16', 'Number');
+    const [paxE] = useSimVar('L:SU95_PAX_TOTAL_ROWS_17_20', 'Number');
 
-    const pax = [paxA, paxB, paxC, paxD];
+    const pax = [paxA, paxB, paxC, paxD, paxE];
 
-    const [paxADesired, setPaxADesired] = useSimVar('L:SU95_PAX_TOTAL_ROWS_1_5_DESIRED', 'number');
-    const [paxBDesired, setPaxBDesired] = useSimVar('L:SU95_PAX_TOTAL_ROWS_6_10_DESIRED', 'number');
-    const [paxCDesired, setPaxCDesired] = useSimVar('L:SU95_PAX_TOTAL_ROWS_11_15_DESIRED', 'number');
-    const [paxDDesired, setPaxDDesired] = useSimVar('L:SU95_PAX_TOTAL_ROWS_16_20_DESIRED', 'number');
+    const [paxADesired, setPaxADesired] = useSimVar('L:SU95_PAX_TOTAL_ROWS_1_4_DESIRED', 'number');
+    const [paxBDesired, setPaxBDesired] = useSimVar('L:SU95_PAX_TOTAL_ROWS_5_8_DESIRED', 'number');
+    const [paxCDesired, setPaxCDesired] = useSimVar('L:SU95_PAX_TOTAL_ROWS_9_12_DESIRED', 'number');
+    const [paxDDesired, setPaxDDesired] = useSimVar('L:SU95_PAX_TOTAL_ROWS_13_16_DESIRED', 'number');
+    const [paxEDesired, setPaxEDesired] = useSimVar('L:SU95_PAX_TOTAL_ROWS_17_20_DESIRED', 'number');
 
     const [stationSize, setStationLen] = useState<number[]>([]);
     const totalPax = useMemo(() => pax && pax.length > 0 && pax.reduce((a, b) => a + b), [...pax]);
@@ -56,8 +58,8 @@ export const Payload = () => {
     const [cFlags, setCFlags] = useBitFlags('PAX_FLAGS_C');
     const [dFlags, setDFlags] = useBitFlags('PAX_FLAGS_D');
 
-    const paxDesired = [paxADesired, paxBDesired, paxCDesired, paxDDesired];
-    const [setPaxDesired] = useState([setPaxADesired, setPaxBDesired, setPaxCDesired, setPaxDDesired]);
+    const paxDesired = [paxADesired, paxBDesired, paxCDesired, paxDDesired, paxEDesired];
+    const [setPaxDesired] = useState([setPaxADesired, setPaxBDesired, setPaxCDesired, setPaxDDesired, setPaxEDesired]);
     const totalPaxDesired = useMemo(() => (paxDesired && paxDesired.length > 0 && paxDesired.reduce((a, b) => parseInt(a) + parseInt(b))), [...paxDesired]);
 
     const [aFlagsDesired, setAFlagsDesired] = useBitFlags('PAX_FLAGS_A_DESIRED');
