@@ -76,9 +76,9 @@ jobs:
         run: |
           ./scripts/dev-env/run.sh node ./scripts/fragment.js
 
-          cp ./build-modules/modules.json ./headwindsim-aircraft-su100-95/install.json
+          cp ./build-modules/modules.json ./hdw-su95x/out/headwindsim-aircraft-su100-95/install.json
           ./scripts/dev-env/run.sh node ./scripts/install-source.js
       - uses: actions/upload-artifact@v2
         with:
           name: HEADWIND-SU95X
-          path: ./**/headwindsim-aircraft-su100-95/
+          path: ./hdw-su95x/out/headwindsim-aircraft-su100-95/

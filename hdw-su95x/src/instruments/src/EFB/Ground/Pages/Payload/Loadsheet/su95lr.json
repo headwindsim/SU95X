@@ -19,7 +19,7 @@
   },
   "seatMap": [
     {
-      "name": "ROWS [1-5]",
+      "name": "ROWS [1-4]",
       "rows": [
         {
           "seats": [
@@ -34,44 +34,6 @@
               "x": 0,
               "y": 0,
               "yOffset": 0
-            },
-            {
-              "type": 0,
-              "x": 0,
-              "y": 0,
-              "yOffset": 0
-            }
-          ],
-          "x": 0,
-          "y": 0,
-          "xOffset": 0,
-          "yOffset": 0
-        },
-        {
-          "seats": [
-            {
-              "type": 0,
-              "x": 0,
-              "y": 0,
-              "yOffset": 0
-            },
-            {
-              "type": 0,
-              "x": 0,
-              "y": 0,
-              "yOffset": 0
-            },
-            {
-              "type": 0,
-              "x": 0,
-              "y": 0,
-              "yOffset": 0
-            },
-            {
-              "type": 0,
-              "x": 0,
-              "y": 0,
-              "yOffset": 19
             },
             {
               "type": 0,
@@ -202,12 +164,12 @@
       ],
       "index": 0,
       "stationIndex": 1,
-      "position": 11.5,
-      "fill": 0.22,
-      "simVar": "SU95_PAX_TOTAL_ROWS_1_5"
+      "position": 15.8,
+      "fill": 0.18,
+      "simVar": "SU95_PAX_TOTAL_ROWS_1_4"
     },
     {
-      "name": "ROWS [6-10]",
+      "name": "ROWS [5-8]",
       "rows": [
         {
           "seats": [
@@ -351,44 +313,6 @@
             },
             {
               "type": 0,
-              "x": 0,
-              "y": 0,
-              "yOffset": 0
-            }
-          ],
-          "x": 0,
-          "y": 0,
-          "xOffset": 0,
-          "yOffset": 0
-        },
-        {
-          "seats": [
-            {
-              "type": 1,
-              "x": 0,
-              "y": 0,
-              "yOffset": 0
-            },
-            {
-              "type": 1,
-              "x": 0,
-              "y": 0,
-              "yOffset": 0
-            },
-            {
-              "type": 0,
-              "x": 0,
-              "y": 0,
-              "yOffset": 0
-            },
-            {
-              "type": 0,
-              "x": 0,
-              "y": 0,
-              "yOffset": 19
-            },
-            {
-              "type": 1,
               "x": 0,
               "y": 0,
               "yOffset": 0
@@ -402,51 +326,13 @@
       ],
       "index": 1,
       "stationIndex": 2,
-      "position": 11.5,
-      "fill": 0.26,
-      "simVar": "SU95_PAX_TOTAL_ROWS_6_10"
+      "position": 5.0,
+      "fill": 0.205,
+      "simVar": "SU95_PAX_TOTAL_ROWS_5_8"
     },
     {
-      "name": "ROWS [11-15]",
+      "name": "ROWS [9-12]",
       "rows": [
-        {
-          "seats": [
-            {
-              "type": 0,
-              "x": 0,
-              "y": 0,
-              "yOffset": 0
-            },
-            {
-              "type": 0,
-              "x": 0,
-              "y": 0,
-              "yOffset": 0
-            },
-            {
-              "type": 0,
-              "x": 0,
-              "y": 0,
-              "yOffset": 0
-            },
-            {
-              "type": 0,
-              "x": 0,
-              "y": 0,
-              "yOffset": 19
-            },
-            {
-              "type": 0,
-              "x": 0,
-              "y": 0,
-              "yOffset": 0
-            }
-          ],
-          "x": 0,
-          "y": 0,
-          "xOffset": 0,
-          "yOffset": 0
-        },
         {
           "seats": [
             {
@@ -602,51 +488,13 @@
       ],
       "index": 2,
       "stationIndex": 3,
-      "position": -22.5,
-      "fill": 0.26,
-      "simVar": "SU95_PAX_TOTAL_ROWS_11_15"
+      "position": -6.4,
+      "fill": 0.205,
+      "simVar": "SU95_PAX_TOTAL_ROWS_9_12"
     },
     {
-      "name": "ROWS [16-20]",
+      "name": "ROWS [13-16]",
       "rows": [
-        {
-          "seats": [
-            {
-              "type": 0,
-              "x": 0,
-              "y": 0,
-              "yOffset": 0
-            },
-            {
-              "type": 0,
-              "x": 0,
-              "y": 0,
-              "yOffset": 0
-            },
-            {
-              "type": 0,
-              "x": 0,
-              "y": 0,
-              "yOffset": 0
-            },
-            {
-              "type": 0,
-              "x": 0,
-              "y": 0,
-              "yOffset": 19
-            },
-            {
-              "type": 0,
-              "x": 0,
-              "y": 0,
-              "yOffset": 0
-            }
-          ],
-          "x": 0,
-          "y": 0,
-          "xOffset": 0,
-          "yOffset": 0
-        },
         {
           "seats": [
             {
@@ -800,11 +648,173 @@
           "yOffset": 0
         }
       ],
-      "fill": 0.26,
+      "fill": 0.205,
       "index": 3,
       "stationIndex": 4,
-      "position": -22.5,
-      "simVar": "SU95_PAX_TOTAL_ROWS_16_20"
+      "position": -16.6,
+      "simVar": "SU95_PAX_TOTAL_ROWS_13_16"
+    },
+    {
+      "name": "ROWS [17-20]",
+      "rows": [
+        {
+          "seats": [
+            {
+              "type": 0,
+              "x": 0,
+              "y": 0,
+              "yOffset": 0
+            },
+            {
+              "type": 0,
+              "x": 0,
+              "y": 0,
+              "yOffset": 0
+            },
+            {
+              "type": 0,
+              "x": 0,
+              "y": 0,
+              "yOffset": 0
+            },
+            {
+              "type": 0,
+              "x": 0,
+              "y": 0,
+              "yOffset": 19
+            },
+            {
+              "type": 0,
+              "x": 0,
+              "y": 0,
+              "yOffset": 0
+            }
+          ],
+          "x": 0,
+          "y": 0,
+          "xOffset": 0,
+          "yOffset": 0
+        },
+        {
+          "seats": [
+            {
+              "type": 0,
+              "x": 0,
+              "y": 0,
+              "yOffset": 0
+            },
+            {
+              "type": 0,
+              "x": 0,
+              "y": 0,
+              "yOffset": 0
+            },
+            {
+              "type": 0,
+              "x": 0,
+              "y": 0,
+              "yOffset": 0
+            },
+            {
+              "type": 0,
+              "x": 0,
+              "y": 0,
+              "yOffset": 19
+            },
+            {
+              "type": 0,
+              "x": 0,
+              "y": 0,
+              "yOffset": 0
+            }
+          ],
+          "x": 0,
+          "y": 0,
+          "xOffset": 0,
+          "yOffset": 0
+        },
+        {
+          "seats": [
+            {
+              "type": 0,
+              "x": 0,
+              "y": 0,
+              "yOffset": 0
+            },
+            {
+              "type": 0,
+              "x": 0,
+              "y": 0,
+              "yOffset": 0
+            },
+            {
+              "type": 0,
+              "x": 0,
+              "y": 0,
+              "yOffset": 0
+            },
+            {
+              "type": 0,
+              "x": 0,
+              "y": 0,
+              "yOffset": 19
+            },
+            {
+              "type": 0,
+              "x": 0,
+              "y": 0,
+              "yOffset": 0
+            }
+          ],
+          "x": 0,
+          "y": 0,
+          "xOffset": 0,
+          "yOffset": 0
+        },
+        {
+          "seats": [
+            {
+              "type": 0,
+              "x": 0,
+              "y": 0,
+              "yOffset": 0
+            },
+            {
+              "type": 0,
+              "x": 0,
+              "y": 0,
+              "yOffset": 0
+            },
+            {
+              "type": 0,
+              "x": 0,
+              "y": 0,
+              "yOffset": 0
+            },
+            {
+              "type": 0,
+              "x": 0,
+              "y": 0,
+              "yOffset": 19
+            },
+            {
+              "type": 0,
+              "x": 0,
+              "y": 0,
+              "yOffset": 0
+            }
+          ],
+          "x": 0,
+          "y": 0,
+          "xOffset": 0,
+          "yOffset": 0
+        }
+      ],
+      "fill": 0.205,
+      "index": 3,
+      "stationIndex": 5,
+      "position": -27.5,
+      "simVar": "SU95_PAX_TOTAL_ROWS_17_20"
     }
   ],
   "cargoMap": [
@@ -812,8 +822,8 @@
       "name": "FWD BAGGAGE",
       "weight": 1947,
       "index": 0,
-      "stationIndex": 5,
-      "position": 10.0,
+      "stationIndex": 6,
+      "position": 12.6,
       "progressBarWidth": 160,
       "simVar": "SU95_CARGO_FWD_BAGGAGE"
     },
@@ -821,8 +831,8 @@
       "name": "AFT BAGGAGE 1",
       "weight": 580,
       "index": 1,
-      "stationIndex": 6,
-      "position": -19.5,
+      "stationIndex": 7,
+      "position": -16.2,
       "progressBarWidth": 100,
       "simVar": "SU95_CARGO_AFT_BAGGAGE_1"
     },
@@ -830,8 +840,8 @@
       "name": "AFT BAGGAGE 2",
       "weight": 1213,
       "index": 2,
-      "stationIndex": 7,
-      "position": -19.5,
+      "stationIndex": 8,
+      "position": -23.8,
       "progressBarWidth": 100,
       "simVar": "SU95_CARGO_AFT_BAGGAGE_2"
     },
@@ -839,8 +849,8 @@
       "name": "AFT BULK/LOOSE",
       "weight": 460,
       "index": 3,
-      "stationIndex": 8,
-      "position": -19.5,
+      "stationIndex": 9,
+      "position": -30.6,
       "progressBarWidth": 100,
       "simVar": "SU95_CARGO_AFT_BULK_LOOSE"
     }
