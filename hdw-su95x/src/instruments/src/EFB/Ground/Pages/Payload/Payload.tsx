@@ -57,6 +57,7 @@ export const Payload = () => {
     const [bFlags, setBFlags] = useBitFlags('PAX_FLAGS_B');
     const [cFlags, setCFlags] = useBitFlags('PAX_FLAGS_C');
     const [dFlags, setDFlags] = useBitFlags('PAX_FLAGS_D');
+    const [eFlags, setEFlags] = useBitFlags('PAX_FLAGS_E');
 
     const paxDesired = [paxADesired, paxBDesired, paxCDesired, paxDDesired, paxEDesired];
     const [setPaxDesired] = useState([setPaxADesired, setPaxBDesired, setPaxCDesired, setPaxDDesired, setPaxEDesired]);
@@ -66,11 +67,12 @@ export const Payload = () => {
     const [bFlagsDesired, setBFlagsDesired] = useBitFlags('PAX_FLAGS_B_DESIRED');
     const [cFlagsDesired, setCFlagsDesired] = useBitFlags('PAX_FLAGS_C_DESIRED');
     const [dFlagsDesired, setDFlagsDesired] = useBitFlags('PAX_FLAGS_D_DESIRED');
+    const [eFlagsDesired, setEFlagsDesired] = useBitFlags('PAX_FLAGS_E_DESIRED');
 
-    const activeFlags = [aFlags, bFlags, cFlags, dFlags];
-    const desiredFlags = [aFlagsDesired, bFlagsDesired, cFlagsDesired, dFlagsDesired];
-    const setActiveFlags = useMemo(() => [setAFlags, setBFlags, setCFlags, setDFlags], []);
-    const setDesiredFlags = useMemo(() => [setAFlagsDesired, setBFlagsDesired, setCFlagsDesired, setDFlagsDesired], []);
+    const activeFlags = [aFlags, bFlags, cFlags, dFlags, eFlags];
+    const desiredFlags = [aFlagsDesired, bFlagsDesired, cFlagsDesired, dFlagsDesired, eFlagsDesired];
+    const setActiveFlags = useMemo(() => [setAFlags, setBFlags, setCFlags, setDFlags, setEFlags], []);
+    const setDesiredFlags = useMemo(() => [setAFlagsDesired, setBFlagsDesired, setCFlagsDesired, setDFlagsDesired, setEFlagsDesired], []);
 
     const [clicked, setClicked] = useState(false);
 
