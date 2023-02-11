@@ -28,9 +28,9 @@ Discord username (if different from GitHub):
 <!-- DO NOT DELETE THIS -->
 ## How to download the PR for Testing
 
-Every new commit to this PR will cause a new A330-900neo artifact to be created, built, and uploaded.
+Every new commit to this PR will cause a new SSJ-100 artifact to be created, built, and uploaded.
 
 1. Make sure you are signed in to GitHub
 1. Click on the **Checks** tab on the PR
 1. On the left side, click on the bottom **PR** tab
-1. Click on the **HEADWIND-A339** download link at the bottom of the page
+1. Click on the **HEADWIND-SU95X** download link at the bottom of the page
