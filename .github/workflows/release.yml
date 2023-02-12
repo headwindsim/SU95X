@@ -35,14 +35,19 @@ jobs:
       - name: Build SU95X Package
         run: |
           ./scripts/dev-env/run.sh ./scripts/build.sh --no-tty -j 4
+      - name: Cleanup
+        run: |
+          rm -rf ./src
       - name: Build ZIP file
         run: |
           ./scripts/dev-env/run.sh node ./scripts/fragment.js
 
-          cp ./build-modules/modules.json ./headwindsim-aircraft-su100-95/install.json
+          cp ./build-modules/modules.json ./hdw-su95x/out/headwindsim-aircraft-su100-95/install.json
           ./scripts/dev-env/run.sh node ./scripts/install-source.js
           mkdir ./${{ env.BUILD_DIR_NAME }}
-          zip -r ./${{ env.BUILD_DIR_NAME }}/${{ env.RELEASE_ZIP_NAME }} ./headwindsim-aircraft-su100-95/
+          cd ./hdw-su95x/out/
+          zip -r ../../${{ env.BUILD_DIR_NAME }}/${{ env.RELEASE_ZIP_NAME }} ./headwindsim-aircraft-su100-95/
+          cd ../../
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
