@@ -1660,32 +1660,34 @@
                 </UseTemplate>
 
                 <!-- EXT LT LAND L -->
-				<UseTemplate Name="ASOBO_LIGHTING_Switch_Light_Landing_Template">
-					<ANIM_NAME>SWITCH_OVHD_EXTLT_LANDL</ANIM_NAME>
-					<NODE_ID>SWITCH_OVHD_EXTLT_LANDL</NODE_ID>
-					<ID>1</ID>
-					<ANIMTIP_0>TT:COCKPIT.TOOLTIPS.LANDING_LIGHT_LEFT_OFF</ANIMTIP_0>
-                    <ANIMTIP_1>TT:COCKPIT.TOOLTIPS.LANDING_LIGHT_LEFT_ON</ANIMTIP_1>
-					<SIMVAR_INDEX>2</SIMVAR_INDEX>
-					<INVERT_SWITCH_ON_CONDITION>False</INVERT_SWITCH_ON_CONDITION>
+				<UseTemplate Name="FBW_Anim_Interactions">
+                    <ANIM_TYPE>SWITCH</ANIM_TYPE>
+                    <ANIM_TEMPLATE>FBW_Switch_LeftClick_MouseWheel</ANIM_TEMPLATE>
+                    <NODE_ID>SWITCH_OVHD_EXTLT_LANDL</NODE_ID>
+                    <ANIM_NAME>SWITCH_OVHD_EXTLT_LANDL</ANIM_NAME>
+                    <Part_ID>LANDING_Light_L</Part_ID>
+                    <SIMVAR_NAME>LIGHT LANDING</SIMVAR_NAME>
+                    <TOGGLE_EVENT>LANDING_LIGHTS_SET</TOGGLE_EVENT>
+                    <SIMVAR_INDEX_1>2</SIMVAR_INDEX_1>
+                    <ANIMTIP_0>TT:COCKPIT.TOOLTIPS.LANDING_LIGHT_L_OFF</ANIMTIP_0>
+                    <ANIMTIP_1>TT:COCKPIT.TOOLTIPS.LANDING_LIGHT_L_ON</ANIMTIP_1>
                     <INVERT_ANIM>True</INVERT_ANIM>
-					<WWISE_EVENT_1>lswitch</WWISE_EVENT_1>
-                    <WWISE_EVENT_2>lswitch</WWISE_EVENT_2>
-				</UseTemplate>
+                </UseTemplate>
 
                 <!-- EXT LT LAND R -->
-				<UseTemplate Name="ASOBO_LIGHTING_Switch_Light_Landing_Template">
-					<ANIM_NAME>SWITCH_OVHD_EXTLT_LANDR</ANIM_NAME>
-					<NODE_ID>SWITCH_OVHD_EXTLT_LANDR</NODE_ID>
-					<ID>2</ID>
-					<ANIMTIP_0>TT:COCKPIT.TOOLTIPS.LANDING_LIGHT_RIGHT_OFF</ANIMTIP_0>
-                    <ANIMTIP_1>TT:COCKPIT.TOOLTIPS.LANDING_LIGHT_RIGHT_ON</ANIMTIP_1>
-					<SIMVAR_INDEX>3</SIMVAR_INDEX>
-					<INVERT_SWITCH_ON_CONDITION>False</INVERT_SWITCH_ON_CONDITION>
+				<UseTemplate Name="FBW_Anim_Interactions">
+                    <ANIM_TYPE>SWITCH</ANIM_TYPE>
+                    <ANIM_TEMPLATE>FBW_Switch_LeftClick_MouseWheel</ANIM_TEMPLATE>
+                    <NODE_ID>SWITCH_OVHD_EXTLT_LANDR</NODE_ID>
+                    <ANIM_NAME>SWITCH_OVHD_EXTLT_LANDR</ANIM_NAME>
+                    <Part_ID>LANDING_Light_R</Part_ID>
+                    <SIMVAR_NAME>LIGHT LANDING</SIMVAR_NAME>
+                    <TOGGLE_EVENT>LANDING_LIGHTS_SET</TOGGLE_EVENT>
+                    <SIMVAR_INDEX_1>3</SIMVAR_INDEX_1>
+                    <ANIMTIP_0>TT:COCKPIT.TOOLTIPS.LANDING_LIGHT_R_OFF</ANIMTIP_0>
+                    <ANIMTIP_1>TT:COCKPIT.TOOLTIPS.LANDING_LIGHT_R_ON</ANIMTIP_1>
                     <INVERT_ANIM>True</INVERT_ANIM>
-					<WWISE_EVENT_1>lswitch</WWISE_EVENT_1>
-                    <WWISE_EVENT_2>lswitch</WWISE_EVENT_2>
-				</UseTemplate>
+                </UseTemplate>
 
                 <!-- EXT LT WING -->
                 <UseTemplate Name="FBW_Anim_Interactions">
