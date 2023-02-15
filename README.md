@@ -57,19 +57,15 @@ Systems, cockpit, cockpit texture, sound : FlyByWire - https://github.com/flybyw
 
 ## Licences
 
-The original contents of this repository are DUAL LICENSED. Original textual-form source code in this file is licensed under the GNU General Public License version 3.
+The contents of distribution packages built from the sources in this repository are licensed as follows:
 
-Creative Commons License Artistic Assets (Models, Textures) are licenced under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+- in the case of original source code from the SSJ project and FBW, or compiled binaries generated from it, under GPLv3.
+- in the case of FBW texture, graphics or 3D assets, under CC BY-NC 4.0.
+- in the case of assets covered by the "Game Content Usage Rules", under the license granted by those rules.
+- in the case of original or modified exterior 3D model, graphics, sound or 3D assets created by Edgar Guinart Lopez, under proprietary freeware license
 
-You are free to:
-    Share — copy and redistribute the material in any medium or format
-    Adapt — remix, transform, and build upon the material
-
-The licensor cannot revoke these freedoms as long as you follow the license terms.
-asures that legally restrict others from doing anything the license permits.
-
-Microsoft Flight Simulator © Microsoft Corporation. The Project Mega Pack A330 was created under Microsoft's "Game Content Usage Rules" using assets from Microsoft Flight Simulator 2020, and it is not endorsed by or affiliated with Microsoft.
+Microsoft Flight Simulator © Microsoft Corporation. The Headwind SU95X was created under Microsoft's "Game Content Usage Rules" using assets from Microsoft Flight Simulator 2020, and it is not endorsed by or affiliated with Microsoft.
 
 Microsoft Flight Simulator © Microsoft Corporation. The FlyByWire Simulations A32NX was created under Microsoft's "Game Content Usage Rules" using assets from Microsoft Flight Simulator, and it is not endorsed by or affiliated with Microsoft.
 
-We are not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Airbus brand, or any of its subsidiaries or its affiliates.
+This project are not affiliated, associated, authorized, endorsed by, or in any way officially connected with the United Aircraft Corporation, Irkut, Sukhoi, or any of its subsidiaries or its affiliates.
