@@ -12,13 +12,13 @@ export default new TaskOfTasks('su95x', [
             'wasm-opt -O1 -o hdw-su95x/out/headwindsim-aircraft-su100-95/SimObjects/Airplanes/Headwind_SU95/panel/systems.wasm target/wasm32-wasi/release/a320_systems_wasm.wasm',
         ], ['src/systems', 'Cargo.lock', 'Cargo.toml', 'hdw-su95x/out/headwindsim-aircraft-su100-95/SimObjects/Airplanes/Headwind_SU95/panel/systems.wasm']),
         new ExecTask('systems-autopilot', [
-            'src/fbw/build.sh',
+            'src/fbw_su95x/build.sh',
             'wasm-opt -O1 -o hdw-su95x/out/headwindsim-aircraft-su100-95/SimObjects/Airplanes/Headwind_SU95/panel/fbw.wasm hdw-su95x/out/headwindsim-aircraft-su100-95/SimObjects/Airplanes/Headwind_SU95/panel/fbw.wasm'
-        ], ['src/fbw', 'hdw-su95x/out/headwindsim-aircraft-su100-95/SimObjects/Airplanes/Headwind_SU95/panel/fbw.wasm']),
+        ], ['src/fbw_su95x', 'src/fbw_common', 'hdw-su95x/out/headwindsim-aircraft-su100-95/SimObjects/Airplanes/Headwind_SU95/panel/fbw.wasm']),
         new ExecTask('systems-fadec', [
             'src/fadec/build.sh',
             'wasm-opt -O1 -o hdw-su95x/out/headwindsim-aircraft-su100-95/SimObjects/Airplanes/Headwind_SU95/panel/fadec.wasm hdw-su95x/out/headwindsim-aircraft-su100-95/SimObjects/Airplanes/Headwind_SU95/panel/fadec.wasm'
-        ], ['src/fadec', 'hdw-su95x/out/headwindsim-aircraft-su100-95/SimObjects/Airplanes/Headwind_SU95/panel/fadec.wasm']),
+        ], ['src/fadec', 'src/fbw_common', 'hdw-su95x/out/headwindsim-aircraft-su100-95/SimObjects/Airplanes/Headwind_SU95/panel/fadec.wasm']),
         new ExecTask('flypad-backend', [
             'src/flypad-backend/build.sh',
             'wasm-opt -O1 -o hdw-su95x/out/headwindsim-aircraft-su100-95/SimObjects/Airplanes/Headwind_SU95/panel/flypad-backend.wasm hdw-su95x/out/headwindsim-aircraft-su100-95/SimObjects/Airplanes/Headwind_SU95/panel/flypad-backend.wasm'
