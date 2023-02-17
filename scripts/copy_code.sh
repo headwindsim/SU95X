@@ -44,6 +44,7 @@ cp -rva ./fbw-a32nx/src/tcas/ ./src
 cp -rva ./fbw-a32nx/src/tools/ ./src
 
 cp -rva ./src/fbw_a320 ./src/fbw_su95x
+cp -rva ./src/fadec/a320_fadec ./src/fadec/su95_fadec
 
 cp -rva ./hdw-su95x/src/atsu/ ./src
 cp -rva ./hdw-su95x/src/behavior/ ./src
