@@ -2895,7 +2895,7 @@ class FMCMainDisplay extends BaseAirliners {
             this.setScratchpadMessage(NXSystemMessages.formatError);
             return false;
         }
-        if (v < 90 || v > 350) {
+        if (v < 90 || v > 308) {
             this.setScratchpadMessage(NXSystemMessages.entryOutOfRange);
             return false;
         }
@@ -2919,7 +2919,7 @@ class FMCMainDisplay extends BaseAirliners {
             this.setScratchpadMessage(NXSystemMessages.formatError);
             return false;
         }
-        if (v < 90 || v > 350) {
+        if (v < 90 || v > 308) {
             this.setScratchpadMessage(NXSystemMessages.entryOutOfRange);
             return false;
         }
@@ -2943,7 +2943,7 @@ class FMCMainDisplay extends BaseAirliners {
             this.setScratchpadMessage(NXSystemMessages.formatError);
             return false;
         }
-        if (v < 90 || v > 350) {
+        if (v < 90 || v > 308) {
             this.setScratchpadMessage(NXSystemMessages.entryOutOfRange);
             return false;
         }
@@ -3816,7 +3816,7 @@ class FMCMainDisplay extends BaseAirliners {
                 return false;
             }
             const value = parseInt(s);
-            if (isFinite(value) && value >= 90 && value <= 350) {
+            if (isFinite(value) && value >= 90 && value <= 308) {
                 this.vApp = value;
                 return true;
             }
