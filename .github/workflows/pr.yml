@@ -19,7 +19,9 @@ jobs:
       - name: install
         run: sudo ./scripts/dev-env/run.sh ./scripts/setup.sh
       - name: copy sources
-        run: sudo ./scripts/dev-env/run.sh ./scripts/copy_git.sh
+        run: |
+          sudo ./scripts/dev-env/run.sh chmod 777 ./scripts/copy_git.sh
+          sudo ./scripts/dev-env/run.sh ./scripts/copy_git.sh
       - name: npm run lint
         run: ./scripts/dev-env/run.sh npm run lint
       - name: lint-rust.sh
@@ -49,7 +51,9 @@ jobs:
       - name: npm install
         run: ./scripts/dev-env/run.sh ./scripts/setup.sh
       - name: copy sources
-        run: sudo ./scripts/dev-env/run.sh ./scripts/copy_git.sh
+        run: |
+          sudo ./scripts/dev-env/run.sh chmod 777 ./scripts/copy_git.sh
+          sudo ./scripts/dev-env/run.sh ./scripts/copy_git.sh
       - name: npm test
         run: npm test
   build:
@@ -68,6 +72,7 @@ jobs:
           ./scripts/dev-env/run.sh ./scripts/setup.sh
       - name: Copy Sources
         run: |
+          ./scripts/dev-env/run.sh chmod 777 ./scripts/copy_git.sh
           ./scripts/dev-env/run.sh ./scripts/copy_git.sh
       - name: Build SU95X Package
         run: |
