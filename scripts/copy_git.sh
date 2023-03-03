@@ -36,7 +36,8 @@ mv ./hdw-su95x/out/headwindsim-aircraft-su100-95/html_ui/Pages/VLivery/Liveries/
 mv ./hdw-su95x/out/headwindsim-aircraft-su100-95/html_ui/Pages/VLivery/Liveries/Printer ./hdw-su95x/out/headwindsim-aircraft-su100-95/html_ui/Pages/VLivery/Liveries/SU95X_Printer
 
 # delete unused file to save space
-rm -rvf ./fbw-a32nx/flybywire-aircraft-a320-neo/SimObjects/AirPlanes/FlyByWire_A320_NEO/TEXTURE
+rm -rvf ./fbw-a32nx/flybywire-aircraft-a320-neo
+rm -rvf ./fbw-a32nx/src
 rm -rvf ./src/base
 
 # copy base of SU95X to out
