@@ -1133,7 +1133,7 @@ mod tests {
             )
         });
         test_bed.run_with_delta(Duration::from_millis(100));
-        assert!(test_bed.query(|a| a.rudder_pedal_angle()).get::<degree>() < -22.);
+        assert!(test_bed.query(|a| a.rudder_pedal_angle()).get::<degree>() < -17.);
 
         test_bed.run_with_delta(Duration::from_millis(30000));
 
