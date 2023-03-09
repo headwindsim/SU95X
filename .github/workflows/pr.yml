@@ -36,7 +36,7 @@ jobs:
         with:
           submodules: recursive
       - name: copy sources
-        run: sudo ./scripts/dev-env/run.sh ./scripts/copy_git.sh
+        run: sudo ./scripts/dev-env/run.sh ./scripts/copy.sh
       - name: test-rust.sh
         run: |
           ./scripts/dev-env/run.sh scripts/test-rust.sh
