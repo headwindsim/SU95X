@@ -45,6 +45,7 @@ class EngineControl {
   double ambientPressure;
   double simOnGround;
   double devState;
+  double isReady;
 
   int engine;
   int egtImbalance;
@@ -766,7 +767,8 @@ class EngineControl {
     double engine1State = simVars->getEngine1State();
     double engine2State = simVars->getEngine2State();
 
-    // Check Development State for UI
+    // Check Ready & Development State for UI
+    isReady = simVars->getIsReady();
     devState = simVars->getDeveloperState();
 
     deltaTime = deltaTime / 3600;
@@ -812,48 +814,53 @@ class EngineControl {
     }
 
     // Checking for in-game UI Fuel tampering
-    if ((refuelStartedByUser == 0 && deltaFuelRate > FUEL_THRESHOLD) ||
-        (refuelStartedByUser == 1 && deltaFuelRate > FUEL_THRESHOLD && refuelRate < 2)) {
+    if ((isReady == 1 && refuelStartedByUser == 0 && deltaFuelRate > FUEL_THRESHOLD) ||
+        (isReady == 1 && refuelStartedByUser == 1 && deltaFuelRate > FUEL_THRESHOLD && refuelRate < 2)) {
       uiFuelTamper = true;
     }
 
-    if (simPaused || uiFuelTamper) {                 // Detects whether the Sim is paused or the Fuel UI is being tampered with
+    if (simPaused || uiFuelTamper && devState == 0) {  // Detects whether the Sim is paused or the Fuel UI is being tampered with
       simVars->setFuelLeftPre(fuelLeftPre);          // in LBS
       simVars->setFuelRightPre(fuelRightPre);        // in LBS
       simVars->setFuelAuxLeftPre(fuelAuxLeftPre);    // in LBS
       simVars->setFuelAuxRightPre(fuelAuxRightPre);  // in LBS
       simVars->setFuelCenterPre(fuelCenterPre);      // in LBS
-      if (devState == 0) {
-        fuelLeft = (fuelLeftPre / fuelWeightGallon);          // USG
-        fuelRight = (fuelRightPre / fuelWeightGallon);        // USG
-        fuelCenter = (fuelCenterPre / fuelWeightGallon);      // USG
-        fuelLeftAux = (fuelAuxLeftPre / fuelWeightGallon);    // USG
-        fuelRightAux = (fuelAuxRightPre / fuelWeightGallon);  // USG
 
-        SimConnect_SetDataOnSimObject(hSimConnect, DataTypesID::FuelCenterMain, SIMCONNECT_OBJECT_ID_USER, 0, 0, sizeof(double),
-                                      &fuelCenter);
-        SimConnect_SetDataOnSimObject(hSimConnect, DataTypesID::FuelLeftMain, SIMCONNECT_OBJECT_ID_USER, 0, 0, sizeof(double), &fuelLeft);
-        SimConnect_SetDataOnSimObject(hSimConnect, DataTypesID::FuelRightMain, SIMCONNECT_OBJECT_ID_USER, 0, 0, sizeof(double), &fuelRight);
-        SimConnect_SetDataOnSimObject(hSimConnect, DataTypesID::FuelLeftAux, SIMCONNECT_OBJECT_ID_USER, 0, 0, sizeof(double), &fuelLeftAux);
-        SimConnect_SetDataOnSimObject(hSimConnect, DataTypesID::FuelRightAux, SIMCONNECT_OBJECT_ID_USER, 0, 0, sizeof(double),
-                                      &fuelRightAux);
-      }
+      fuelLeft = (fuelLeftPre / fuelWeightGallon);          // USG
+      fuelRight = (fuelRightPre / fuelWeightGallon);        // USG
+      fuelCenter = (fuelCenterPre / fuelWeightGallon);      // USG
+      fuelLeftAux = (fuelAuxLeftPre / fuelWeightGallon);    // USG
+      fuelRightAux = (fuelAuxRightPre / fuelWeightGallon);  // USG
+
+      SimConnect_SetDataOnSimObject(hSimConnect, DataTypesID::FuelCenterMain, SIMCONNECT_OBJECT_ID_USER, 0, 0, sizeof(double), &fuelCenter);
+      SimConnect_SetDataOnSimObject(hSimConnect, DataTypesID::FuelLeftMain, SIMCONNECT_OBJECT_ID_USER, 0, 0, sizeof(double), &fuelLeft);
+      SimConnect_SetDataOnSimObject(hSimConnect, DataTypesID::FuelRightMain, SIMCONNECT_OBJECT_ID_USER, 0, 0, sizeof(double), &fuelRight);
+      SimConnect_SetDataOnSimObject(hSimConnect, DataTypesID::FuelLeftAux, SIMCONNECT_OBJECT_ID_USER, 0, 0, sizeof(double), &fuelLeftAux);
+      SimConnect_SetDataOnSimObject(hSimConnect, DataTypesID::FuelRightAux, SIMCONNECT_OBJECT_ID_USER, 0, 0, sizeof(double), &fuelRightAux);
     } else if (!uiFuelTamper && refuelStartedByUser == 1) {  // Detects refueling from the EFB
-      simVars->setFuelLeftPre(leftQuantity);                 // in LBS
-      simVars->setFuelRightPre(rightQuantity);               // in LBS
-      simVars->setFuelAuxLeftPre(leftAuxQuantity);           // in LBS
-      simVars->setFuelAuxRightPre(rightAuxQuantity);         // in LBS
-      simVars->setFuelCenterPre(centerQuantity);             // in LBS
+      simVars->setFuelLeftPre(leftQuantity);          // in LBS
+      simVars->setFuelRightPre(rightQuantity);        // in LBS
+      simVars->setFuelAuxLeftPre(leftAuxQuantity);    // in LBS
+      simVars->setFuelAuxRightPre(rightAuxQuantity);  // in LBS
+      simVars->setFuelCenterPre(centerQuantity);      // in LBS
     } else {
+      if (uiFuelTamper == 1) {
+        fuelLeftPre = leftQuantity;          // LBS
+        fuelRightPre = rightQuantity;        // LBS
+        fuelAuxLeftPre = leftAuxQuantity;    // LBS
+        fuelAuxRightPre = rightAuxQuantity;  // LBS
+        fuelCenterPre = centerQuantity;      // LBS
+      }
       //--------------------------------------------
       // Left Engine and Wing routine
       //--------------------------------------------
       if (fuelLeftPre > 0) {
         // Cycle Fuel Burn for Engine 1
-        m = (engine1FF - engine1PreFF) / deltaTime;
-        b = engine1PreFF;
-        fuelBurn1 = (m * pow(deltaTime, 2) / 2) + (b * deltaTime);  // KG
-
+        if (devState != 2) {
+          m = (engine1FF - engine1PreFF) / deltaTime;
+          b = engine1PreFF;
+          fuelBurn1 = (m * pow(deltaTime, 2) / 2) + (b * deltaTime);  // KG
+        }
         // Fuel Used Accumulators - Engine 1
         fuelUsedLeft += fuelBurn1;
 
@@ -874,10 +881,11 @@ class EngineControl {
       //--------------------------------------------
       if (fuelRightPre > 0) {
         // Cycle Fuel Burn for Engine 2
-        m = (engine2FF - engine2PreFF) / deltaTime;
-        b = engine2PreFF;
-        fuelBurn2 = (m * pow(deltaTime, 2) / 2) + (b * deltaTime);  // KG
-
+        if (devState != 2) {
+          m = (engine2FF - engine2PreFF) / deltaTime;
+          b = engine2PreFF;
+          fuelBurn2 = (m * pow(deltaTime, 2) / 2) + (b * deltaTime);  // KG
+        }
         // Fuel Used Accumulators - Engine 2
         fuelUsedRight += fuelBurn2;
 
@@ -923,7 +931,6 @@ class EngineControl {
       } else {
         fuelCenter = centerQuantity;
       }
-
 
       // Setting new pre-cycle conditions
       simVars->setEngine1PreFF(engine1FF);
@@ -1176,7 +1183,6 @@ class EngineControl {
   /// Update cycle at deltaTime
   /// </summary>
   void update(double deltaTime, double simulationTime) {
-    double animationDeltaTime;
     double prevAnimationDeltaTime;
     double simN1highest = 0;
 
