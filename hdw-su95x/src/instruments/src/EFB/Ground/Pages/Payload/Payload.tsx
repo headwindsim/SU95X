@@ -16,7 +16,7 @@ import { useBitFlags } from '@instruments/common/bitFlags';
 import { round } from 'lodash';
 import { CargoWidget } from './Seating/CargoWidget';
 import { ChartWidget } from './Chart/ChartWidget';
-import { PaxStationInfo, CargoStationInfo } from './Seating/Constants';
+import { CargoStationInfo, PaxStationInfo } from './Seating/Constants';
 import { t } from '../../../translation';
 import { TooltipWrapper } from '../../../UtilComponents/TooltipWrapper';
 import { SimpleInput } from '../../../UtilComponents/Form/SimpleInput/SimpleInput';
@@ -360,6 +360,27 @@ export const Payload = () => {
         setBoardingStarted(false);
     };
 
+    const calculateBoardingTime = useMemo(() => {
+        // factors taken from flybywire-aircraft-a320-neo/html_ui/Pages/A32NX_Core/A32NX_Boarding.js line 175+
+        let boardingRateMultiplier = 0;
+        if (boardingRate === 'REAL') {
+            boardingRateMultiplier = 5;
+        } else if (boardingRate === 'FAST') {
+            boardingRateMultiplier = 1;
+        }
+
+        // value taken from flybywire-aircraft-a320-neo/html_ui/Pages/A32NX_Core/A32NX_Boarding.js line 210
+        const cargoWeightPerWeightStep = 60;
+
+        const differentialPax = Math.abs(totalPaxDesired - totalPax);
+        const differentialCargo = Math.abs(totalCargoDesired - totalCargo);
+
+        const estimatedPaxBoardingSeconds = differentialPax * boardingRateMultiplier;
+        const estimatedCargoLoadingSeconds = (differentialCargo / cargoWeightPerWeightStep) * boardingRateMultiplier;
+
+        return Math.max(estimatedPaxBoardingSeconds, estimatedCargoLoadingSeconds);
+    }, [totalPaxDesired, totalPax, totalCargoDesired, totalCargo, boardingRate]);
+
     const boardingStatusClass = useMemo(() => {
         if (!boardingStarted) {
             return 'text-theme-highlight';
@@ -502,9 +523,9 @@ export const Payload = () => {
     }, [boardingStarted]);
 
     useEffect(() => {
-        const centerTankMoment = -6;
+        const centerTankMoment = -4.5;
         const innerTankMoment = -8;
-        const outerTankMoment = -13;
+        const outerTankMoment = -17.6;
         // Adjust ZFW CG Values based on payload
         const newZfw = emptyWeight + totalPax * paxWeight + totalCargo;
         const newZfwDesired = emptyWeight + totalPaxDesired * paxWeight + totalCargoDesired;
@@ -578,6 +599,13 @@ export const Payload = () => {
         paxWeight, paxBagWeight,
         emptyWeight,
     ]);
+
+    const remainingTimeString = () => {
+        const minutes = Math.round(calculateBoardingTime / 60);
+        const seconds = calculateBoardingTime % 60;
+        const padding = seconds < 10 ? '0' : '';
+        return `${minutes}:${padding}${seconds.toFixed(0)} ${t('Ground.Payload.EstimatedDurationUnit')}`;
+    };
 
     return (
         <div>
@@ -807,8 +835,13 @@ export const Payload = () => {
                         <div className="flex flex-row mt-4">
                             <Card className="w-full h-full" childrenContainerClassName="flex flex-col w-full h-full">
                                 <div className="flex flex-row justify-between items-center">
-                                    <div className="flex font-medium">
+                                <div className="flex font-medium">
                                         {t('Ground.Payload.BoardingTime')}
+                                        <span className="flex relative flex-row items-center ml-2 text-sm font-light">
+                                            (
+                                            {remainingTimeString()}
+                                            )
+                                        </span>
                                     </div>
 
                                     <SelectGroup>
