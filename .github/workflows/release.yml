@@ -31,7 +31,8 @@ jobs:
           ./scripts/dev-env/run.sh ./scripts/setup.sh
       - name: Copy Sources
         run: |
-          ./scripts/dev-env/run.sh ./scripts/copy.sh
+          ./scripts/dev-env/run.sh chmod 777 ./scripts/copy_git.sh
+          ./scripts/dev-env/run.sh ./scripts/copy_git.sh
       - name: Build SU95X Package
         run: |
           ./scripts/dev-env/run.sh ./scripts/build.sh --no-tty -j 4

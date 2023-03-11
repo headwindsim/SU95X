@@ -1,6 +1,6 @@
 {
   "name": "su95x",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "edition": "development",
   "scripts": {
     "lint": "eslint --cache **/*.{js,mjs,jsx,ts,tsx}",

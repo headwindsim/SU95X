@@ -6,8 +6,12 @@ set -ex
 rm -rvf ./src
 rm -rvf ./hdw-su95x/out
 
-# copy from fbw source and a339 into one src
+# copy from fbw source and su95x into one src
 cp -rva ./fbw-a32nx/src/. ./src
+cp -rva ./src/fbw_a320 ./src/fbw_su95x
+rm -rvf ./src/fbw_a320
+cp -rva ./src/fadec/a320_fadec ./src/fadec/su95_fadec
+rm -rvf ./src/fadec/a320_fadec
 
 cp -rva ./hdw-su95x/src/. ./src
 
@@ -35,6 +39,6 @@ mv ./hdw-su95x/out/headwindsim-aircraft-su100-95/html_ui/Pages/VLivery/Liveries/
 cp -rva ./hdw-su95x/src/base/headwindsim-aircraft-su100-95/. ./hdw-su95x/out/headwindsim-aircraft-su100-95
 cp -rva ./hdw-su95x/src/base/headwindsim-aircraft-su100-95-lock-highlight/. ./hdw-su95x/out/headwindsim-aircraft-su100-95-lock-highlight
 
-chmod +x ./src/fbw/build.sh
+chmod +x ./src/fbw_su95x/build.sh
 chmod +x ./src/fadec/build.sh
 chmod +x ./src/flypad-backend/build.sh
