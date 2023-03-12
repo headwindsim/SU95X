@@ -20,7 +20,10 @@ jobs:
         run: sudo ./scripts/dev-env/run.sh ./scripts/setup.sh
       - name: copy sources
         run: |
-          ./scripts/copy_git.sh
+          ./scripts/copy.sh
+      - name: Cleanup redundant files
+        run: |
+          rm -rf ./fbw-a32nx
       - name: npm run lint
         run: ./scripts/dev-env/run.sh npm run lint
       - name: lint-rust.sh
@@ -36,7 +39,10 @@ jobs:
           submodules: recursive
       - name: copy sources
         run: |
-          ./scripts/copy_git.sh
+          ./scripts/copy.sh
+      - name: Cleanup redundant files
+        run: |
+          rm -rf ./fbw-a32nx
       - name: test-rust.sh
         run: |
           ./scripts/dev-env/run.sh scripts/test-rust.sh
@@ -52,7 +58,10 @@ jobs:
         run: ./scripts/dev-env/run.sh ./scripts/setup.sh
       - name: copy sources
         run: |
-          ./scripts/copy_git.sh
+          ./scripts/copy.sh
+      - name: Cleanup redundant files
+        run: |
+          rm -rf ./fbw-a32nx
       - name: npm test
         run: npm test
   build:
@@ -71,10 +80,18 @@ jobs:
           ./scripts/dev-env/run.sh ./scripts/setup.sh
       - name: Copy Sources
         run: |
-          ./scripts/copy_git.sh
+          ./scripts/copy.sh
+      - name: Cleanup redundant files
+        run: |
+          rm -rf ./fbw-a32nx
+          rm -rf ./hbw-su95x/src
+          rm -rf ./src/base
       - name: Build SU95X Package
         run: |
           ./scripts/dev-env/run.sh ./scripts/build.sh --no-tty -j 4
+      - name: Cleanup
+        run: |
+          rm -rf ./src
       - name: Generate install.json
         run: |
           ./scripts/dev-env/run.sh node ./scripts/fragment.js
