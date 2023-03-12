@@ -20,7 +20,11 @@ jobs:
         run: sudo ./scripts/dev-env/run.sh ./scripts/setup.sh
       - name: copy sources
         run: |
+<<<<<<< experimental
           ./scripts/copy_git.sh
+=======
+          sudo ./scripts/dev-env/run.sh ./scripts/copy_git.sh
+>>>>>>> Remove permission command to workflow
       - name: npm run lint
         run: ./scripts/dev-env/run.sh npm run lint
       - name: lint-rust.sh
@@ -36,7 +40,11 @@ jobs:
           submodules: recursive
       - name: copy sources
         run: |
+<<<<<<< experimental
           ./scripts/copy_git.sh
+=======
+          ./scripts/dev-env/run.sh ./scripts/copy_git.sh
+>>>>>>> Remove permission command to workflow
       - name: test-rust.sh
         run: |
           ./scripts/dev-env/run.sh scripts/test-rust.sh
@@ -52,7 +60,11 @@ jobs:
         run: ./scripts/dev-env/run.sh ./scripts/setup.sh
       - name: copy sources
         run: |
+<<<<<<< experimental
           ./scripts/copy_git.sh
+=======
+          sudo ./scripts/dev-env/run.sh ./scripts/copy_git.sh
+>>>>>>> Remove permission command to workflow
       - name: npm test
         run: npm test
   build:
@@ -71,6 +83,7 @@ jobs:
           ./scripts/dev-env/run.sh ./scripts/setup.sh
       - name: Copy Sources
         run: |
+<<<<<<< experimental
           ./scripts/copy_git.sh
       - name: Cleanup redundant files
         run: |
@@ -78,6 +91,9 @@ jobs:
           rm -rf ./src/base
           rm -rf ./src/fbw_a320
           rm -rf ./src/fadec/a320_fadec
+=======
+          ./scripts/dev-env/run.sh ./scripts/copy_git.sh
+>>>>>>> Remove permission command to workflow
       - name: Build SU95X Package
         run: |
           ./scripts/dev-env/run.sh ./scripts/build.sh --no-tty -j 4

@@ -34,6 +34,7 @@ jobs:
           ./scripts/dev-env/run.sh ./scripts/setup.sh
       - name: Copy Sources
         run: |
+<<<<<<< experimental
           ./scripts/copy_git.sh
       - name: Cleanup redundant files
         run: |
@@ -41,6 +42,9 @@ jobs:
           rm -rf ./src/base
           rm -rf ./src/fbw_a320
           rm -rf ./src/fadec/a320_fadec
+=======
+          ./scripts/dev-env/run.sh ./scripts/copy_git.sh
+>>>>>>> Remove permission command to workflow
       - name: Build SU95X Package
         run: |
           ./scripts/dev-env/run.sh ./scripts/build.sh --no-tty -j 4
