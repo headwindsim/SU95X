@@ -31,12 +31,13 @@ jobs:
           ./scripts/dev-env/run.sh ./scripts/setup.sh
       - name: Copy Sources
         run: |
-          ./scripts/copy.sh
+          ./scripts/copy_git.sh
       - name: Cleanup redundant files
         run: |
-          rm -rf ./fbw-a32nx
           rm -rf ./hbw-su95x/src
           rm -rf ./src/base
+          rm -rf ./src/fbw_a320
+          rm -rf ./src/fadec/a320_fadec
       - name: Build SU95X Package
         run: |
           ./scripts/dev-env/run.sh ./scripts/build.sh --no-tty -j 4
