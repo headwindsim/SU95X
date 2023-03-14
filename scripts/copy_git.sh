@@ -46,6 +46,9 @@ cp -rva ./fbw-a32nx/flybywire-aircraft-a320-neo/html_ui/Pages/VCockpit/Instrumen
 cp -rva ./fbw-a32nx/flybywire-aircraft-a320-neo/html_ui/Pages/VLivery/Liveries/A32NX_Registration ./hdw-su95x/out/headwindsim-aircraft-su100-95/html_ui/Pages/VLivery/Liveries/SU95X_Registration
 cp -rva ./fbw-a32nx/flybywire-aircraft-a320-neo/html_ui/Pages/VLivery/Liveries/Printer ./hdw-su95x/out/headwindsim-aircraft-su100-95/html_ui/Pages/VLivery/Liveries/SU95X_Printer
 
+# delete unused file to save space
+rm -rvf ./fbw-a32nx
+
 # copy base of SU95X to out
 cp -rva ./hdw-su95x/src/base/headwindsim-aircraft-su100-95/. ./hdw-su95x/out/headwindsim-aircraft-su100-95
 cp -rva ./hdw-su95x/src/base/headwindsim-aircraft-su100-95-lock-highlight/. ./hdw-su95x/out/headwindsim-aircraft-su100-95-lock-highlight
