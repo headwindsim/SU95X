@@ -90,22 +90,50 @@
             </Component>
         </Component>
         <Component ID="GEARS">
-            <UseTemplate Name="ASOBO_GEAR_Center_Template">
+            <UseTemplate Name="ASOBO_GT_Anim">
                 <ANIM_NAME>c_gear</ANIM_NAME>
+                <ANIM_CODE>
+                    (L:A32NX_GEAR_CENTER_POSITION, number) 1.0 * 0.0 + (A:GEAR ANIMATION POSITION:0, percent) 50 - 0 max 2.0 * +
+                </ANIM_CODE>
+                <ANIM_LENGTH>200</ANIM_LENGTH>
             </UseTemplate>
-			<!-- GEAR C DECALALS -->
-			<UseTemplate Name="ASOBO_GEAR_Center_Template">
-				<ANIM_NAME>C_WHEEL_BASE-DECAL-Anim</ANIM_NAME>
-			</UseTemplate>
-            <UseTemplate Name="ASOBO_GEAR_Left_Template">
+            <UseTemplate Name="ASOBO_GT_Anim">
+                <ANIM_NAME>c_gear_door1</ANIM_NAME>
+                <ANIM_CODE>(L:A32NX_GEAR_DOOR_CENTER_POSITION) 0.1 *</ANIM_CODE>
+                <ANIM_LENGTH>100</ANIM_LENGTH>
+            </UseTemplate>
+            <UseTemplate Name="ASOBO_GT_Anim">
+                <ANIM_NAME>c_gear_door2</ANIM_NAME>
+                <ANIM_CODE>(L:A32NX_GEAR_CENTER_SMALL_POSITION) 1.00 *</ANIM_CODE>
+                <ANIM_LENGTH>100</ANIM_LENGTH>
+            </UseTemplate>
+            <UseTemplate Name="ASOBO_GT_Anim">
                 <ANIM_NAME>l_gear</ANIM_NAME>
+                <ANIM_CODE>
+                    (L:A32NX_GEAR_LEFT_POSITION, number) 1.0 * 0.0 + (A:GEAR ANIMATION POSITION:1, percent) 50 - 0 max 2.0 * +
+                </ANIM_CODE>
+                <ANIM_LENGTH>200</ANIM_LENGTH>
             </UseTemplate>
-            <UseTemplate Name="ASOBO_GEAR_Right_Template">
+            <UseTemplate Name="ASOBO_GT_Anim">
+                <ANIM_NAME>l_gear_door</ANIM_NAME>
+                <ANIM_CODE>(L:A32NX_GEAR_DOOR_LEFT_POSITION) 0.15 *</ANIM_CODE>
+                <ANIM_LENGTH>100</ANIM_LENGTH>
+            </UseTemplate>
+            <UseTemplate Name="ASOBO_GT_Anim">
                 <ANIM_NAME>r_gear</ANIM_NAME>
+                <ANIM_CODE>
+                    (L:A32NX_GEAR_RIGHT_POSITION, number) 1.0 * 0.0 + (A:GEAR ANIMATION POSITION:2, percent) 50 - 0 max 2.0 * +
+                </ANIM_CODE>
+                <ANIM_LENGTH>200</ANIM_LENGTH>
                 <!-- ANIM EVENTS -->
                 <ANIM_EVENT_EFFECT_NAME>CAM_LANDINGGEARS</ANIM_EVENT_EFFECT_NAME>
                 <NORMALIZED_TIME>0.5</NORMALIZED_TIME>
                 <DIRECTION>Both</DIRECTION>
+            </UseTemplate>
+            <UseTemplate Name="ASOBO_GT_Anim">
+                <ANIM_NAME>r_gear_door</ANIM_NAME>
+                <ANIM_CODE>(L:A32NX_GEAR_DOOR_RIGHT_POSITION) 0.15 *</ANIM_CODE>
+                <ANIM_LENGTH>100</ANIM_LENGTH>
             </UseTemplate>
             <UseTemplate Name="ASOBO_GEAR_Center_Tire_Template">
                 <ANIM_NAME>c_tire_anim</ANIM_NAME>
@@ -122,19 +150,12 @@
                 <NODE_ID_STILL>WHEEL_RIGHT</NODE_ID_STILL>
                 <NODE_ID_BLURRED>WHEEL_RIGHT_BLURRED</NODE_ID_BLURRED>
             </UseTemplate>
-            <!--
             <UseTemplate Name="ASOBO_GT_Anim_Code">
                 <NODE_ID>c_wheel</NODE_ID>
                 <ANIM_NAME>c_wheel</ANIM_NAME>
-                <ANIM_CODE>(L:A32NX_NOSE_WHEEL_POSITION)</ANIM_CODE>
-                <ANIM_LENGTH>1</ANIM_LENGTH>
+                <ANIM_CODE>(L:A32NX_NOSE_WHEEL_POSITION) 0.10 *</ANIM_CODE>
+                <ANIM_LENGTH>100</ANIM_LENGTH>
             </UseTemplate>
-            -->
-            <UseTemplate Name="ASOBO_GEAR_Steering_Template">
-				<NODE_ID>c_wheel</NODE_ID>
-                <ANIM_NAME>c_wheel</ANIM_NAME>
-			</UseTemplate>
-
         </Component>
         <Component ID="ENGINE">
             <UseTemplate Name="A32NX_ENGINE_Turbine_Template">
@@ -449,7 +470,7 @@
                 <FREQUENCY>10</FREQUENCY>
                 <UPDATE_CODE>
                     (A:SURFACE RELATIVE GROUND SPEED, feet per second) 0.1 &gt; ! (&gt;L:A32NX_IS_STATIONARY, bool)
-                    (A:SIM ON GROUND, bool) (L:A32NX_ENGINE_N1:1, Number) 3.5 &lt; and (L:A32NX_ENGINE_N1:2, Number) 3.5 &lt; and (L:A32NX_HYD_NW_STRG_DISC_ECAM_MEMO, bool) 0 == and (A:LIGHT BEACON ON, bool) 0 == and (&gt;L:A32NX_GND_EQP_IS_VISIBLE, bool)
+                    (A:SIM ON GROUND, bool) (L:A32NX_ENGINE_N1:1, Number) 3.5 &lt; and (L:A32NX_ENGINE_N1:2, Number) 3.5 &lt; and (L:A32NX_HYD_NW_STRG_DISC_ECAM_MEMO, bool) 0 == and (A:LIGHT BEACON, bool) 0 == and (&gt;L:A32NX_GND_EQP_IS_VISIBLE, bool)
                 </UPDATE_CODE>
             </UseTemplate>
 
