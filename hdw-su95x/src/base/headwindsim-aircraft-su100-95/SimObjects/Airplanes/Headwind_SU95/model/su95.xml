@@ -99,7 +99,7 @@
             </UseTemplate>
             <UseTemplate Name="ASOBO_GT_Anim">
                 <ANIM_NAME>c_gear_door1</ANIM_NAME>
-                <ANIM_CODE>(L:A32NX_GEAR_DOOR_CENTER_POSITION) 0.20 *</ANIM_CODE>
+                <ANIM_CODE>(L:A32NX_GEAR_DOOR_CENTER_POSITION) 0.1 *</ANIM_CODE>
                 <ANIM_LENGTH>100</ANIM_LENGTH>
             </UseTemplate>
             <UseTemplate Name="ASOBO_GT_Anim">
@@ -116,7 +116,7 @@
             </UseTemplate>
             <UseTemplate Name="ASOBO_GT_Anim">
                 <ANIM_NAME>l_gear_door</ANIM_NAME>
-                <ANIM_CODE>(L:A32NX_GEAR_DOOR_LEFT_POSITION) 0.20 *</ANIM_CODE>
+                <ANIM_CODE>(L:A32NX_GEAR_DOOR_LEFT_POSITION) 0.15 *</ANIM_CODE>
                 <ANIM_LENGTH>100</ANIM_LENGTH>
             </UseTemplate>
             <UseTemplate Name="ASOBO_GT_Anim">
@@ -132,7 +132,7 @@
             </UseTemplate>
             <UseTemplate Name="ASOBO_GT_Anim">
                 <ANIM_NAME>r_gear_door</ANIM_NAME>
-                <ANIM_CODE>(L:A32NX_GEAR_DOOR_RIGHT_POSITION) 0.20 *</ANIM_CODE>
+                <ANIM_CODE>(L:A32NX_GEAR_DOOR_RIGHT_POSITION) 0.15 *</ANIM_CODE>
                 <ANIM_LENGTH>100</ANIM_LENGTH>
             </UseTemplate>
             <UseTemplate Name="ASOBO_GEAR_Center_Tire_Template">
