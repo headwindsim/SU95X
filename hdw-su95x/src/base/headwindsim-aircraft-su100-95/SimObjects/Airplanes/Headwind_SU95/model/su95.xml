@@ -153,7 +153,7 @@
             <UseTemplate Name="ASOBO_GT_Anim_Code">
                 <NODE_ID>c_wheel</NODE_ID>
                 <ANIM_NAME>c_wheel</ANIM_NAME>
-                <ANIM_CODE>(L:A32NX_NOSE_WHEEL_POSITION) 0.10 *</ANIM_CODE>
+                <ANIM_CODE>(L:A32NX_NOSE_WHEEL_POSITION) 100 *</ANIM_CODE>
                 <ANIM_LENGTH>100</ANIM_LENGTH>
             </UseTemplate>
         </Component>
