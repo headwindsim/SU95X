@@ -34,7 +34,7 @@ jobs:
           ./scripts/dev-env/run.sh ./scripts/setup.sh
       - name: Copy Sources
         run: |
-          ./scripts/copy_git.sh
+          ./scripts/dev-env/run.sh ./scripts/copy_git.sh
       - name: Cleanup redundant files
         run: |
           rm -rf ./hbw-su95x/src
