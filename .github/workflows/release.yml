@@ -2,8 +2,8 @@ name: release
 on:
   push:
     tags:
-      - "v*"
-      - "!v*-rc*"
+      - 'v*'
+      - '!v*-rc*'
 
 jobs:
   build:
@@ -31,7 +31,7 @@ jobs:
           ./scripts/dev-env/run.sh ./scripts/setup.sh
       - name: Copy Sources
         run: |
-          ./scripts/dev-env/run.sh ./scripts/copy_git.sh
+          ./scripts/copy_git.sh
       - name: Cleanup redundant files
         run: |
           rm -rf ./hbw-su95x/src
