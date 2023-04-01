@@ -1,13 +1,11 @@
 [workspace]
 
 members = [
-    "src/systems/a320_systems",
-    "src/systems/a320_systems_wasm",
-    "src/systems/a380_systems",
-    "src/systems/a380_systems_wasm",
-    "src/systems/systems",
-    "src/systems/systems_wasm",
-    "src/systems/a320_hydraulic_simulation_graphs",
+    "build-su95x/src/wasm/systems/a320_systems",
+    "build-su95x/src/wasm/systems/a320_systems_wasm",
+    "build-su95x/src/wasm/systems/a320_hydraulic_simulation_graphs",
+    "fbw-a32nx/fbw-common/src/wasm/systems/systems",
+    "fbw-a32nx/fbw-common/src/wasm/systems/systems_wasm",
 ]
 
 [profile.release]
