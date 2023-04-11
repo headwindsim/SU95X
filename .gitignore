@@ -48,3 +48,4 @@ msfs-avionics-mirror/src/sdk/build/**
 .idea
 hdw-su95x/src_old
 *.bak
+/build-su95x/
