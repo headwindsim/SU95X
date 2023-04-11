@@ -8,6 +8,6 @@ export function getTemplatePlugin({ name, config, imports = [] }) {
         elementName: `a32nx-${name.toLowerCase()}`,
         config,
         imports,
-        outputDir: join(Directories.root, 'hdw-su95x/out/headwindsim-aircraft-su100-95/html_ui/Pages/VCockpit/Instruments/SU95X'),
+        outputDir: join(Directories.root, 'build-su95x/out/headwindsim-aircraft-su100-95/html_ui/Pages/VCockpit/Instruments/SU95X'),
     });
 }

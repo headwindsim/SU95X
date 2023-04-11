@@ -43,11 +43,6 @@ const GIT_COMMIT_SHA = process.env.GITHUB_SHA
     ? process.env.GITHUB_SHA.substring(0, 9)
     : executeGitCommand('git rev-parse --short HEAD');
 
-const MS_FILETIME_EPOCH = 116444736000000000n;
-
-const SU95X_SRC = path.resolve(__dirname, '..', 'hdw-su95x/src');
-const SU95X_OUT = path.resolve(__dirname, '..', 'hdw-su95x/out/headwindsim-aircraft-su100-95');
-
 const edition = require('../package.json').edition;
 
 let titlePostfix;
@@ -64,7 +59,10 @@ if (edition === 'stable') {
 }
 const titleSuffix = ` (${titlePostfix})`;
 
-const title = `SU100-95 (${titlePostfix})`;
+const MS_FILETIME_EPOCH = 116444736000000000n;
+
+const SU95X_SRC = path.resolve(__dirname, '..', 'hdw-su95x/src');
+const SU95X_OUT = path.resolve(__dirname, '..', 'build-su95x/out/headwindsim-aircraft-su100-95');
 
 function createPackageFiles(baseDir, manifestBaseFilename) {
     const contentEntries = [];

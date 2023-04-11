@@ -17,6 +17,6 @@ export function getInstrumentsIgniterTasks() {
         return baseInstruments.map(({ name }) => new ExecTask(
             name,
             `node src/instruments/buildSrc/igniter/worker.mjs ${name}`,
-            [join('src/instruments/src', name), join('hdw-su95x/out/headwindsim-aircraft-su100-95/html_ui/Pages/VCockpit/Instruments/SU95X', name)],
+            [join('src/instruments/src', name), join('build-su95x/out/headwindsim-aircraft-su100-95/html_ui/Pages/VCockpit/Instruments/SU95X', name)],
         ));
     }

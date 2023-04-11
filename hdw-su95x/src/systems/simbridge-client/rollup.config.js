@@ -68,7 +68,7 @@ module.exports = {
         }),
     ],
     output: {
-        file: join(root, 'hdw-su95x/out/headwindsim-aircraft-su100-95/html_ui/SU95X_JS/simbridge-client/simbridge-client.js'),
+        file: join(root, 'build-su95x/out/headwindsim-aircraft-su100-95/html_ui/SU95X_JS/simbridge-client/simbridge-client.js'),
         format: 'umd',
         name: 'SimBridgeClient',
     },

@@ -6,12 +6,11 @@
   },
   "ignorePatterns": [
     "/fbw-a32nx/**",
-    "/hdw-su95x/out/headwindsim-aircraft-su100-95/html_ui/SU95X_JS/fmgc/**",
-    "/hdw-su95x/out//headwindsim-aircraft-su100-95/html_ui/SU95X_JS/atsu/**",
-    "/hdw-su95x/out//headwindsim-aircraft-su100-95/html_ui/SU95X_JS/sentry-client/**",
-    "/hdw-su95x/out//headwindsim-aircraft-su100-95/html_ui/Pages/VCockpit/Instruments/SU95X/**",
-    "typings/**",
-    "/msfs-avionics-mirror/**"
+    "/build-su95x/out/headwindsim-aircraft-su100-95/html_ui/SU95X_JS/fmgc/**",
+    "/build-su95x/out/headwindsim-aircraft-su100-95/html_ui/SU95X_JS/atsu/**",
+    "/build-su95x/out/headwindsim-aircraft-su100-95/html_ui/SU95X_JS/sentry-client/**",
+    "/build-su95x/out/headwindsim-aircraft-su100-95/html_ui/Pages/VCockpit/Instruments/SU95X/**",
+    "/hdw-su95x/src/base/flybywire-aircraft-a320-neo/html_ui/Pages/VCockpit/Instruments/A32NX/**",
   ],
   // DO NOT CHANGE THIS FILE (unless you are an admin) (if admin, make sure you change the same file in the latest asobo branch as well)
   "rules": {

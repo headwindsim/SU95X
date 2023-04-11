@@ -64,7 +64,7 @@ module.exports = {
         }),
     ],
     output: {
-        file: join(root, 'hdw-su95x/out/headwindsim-aircraft-su100-95/html_ui/SU95X_JS/atsu/atsu.js'),
+        file: join(root, 'build-su95x/out/headwindsim-aircraft-su100-95/html_ui/SU95X_JS/atsu/atsu.js'),
         format: 'umd',
         name: 'Atsu',
     },

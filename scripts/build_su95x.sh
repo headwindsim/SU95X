@@ -12,12 +12,12 @@ if [ "${GITHUB_ACTIONS}" == "true" ]; then
 fi
 
 # run build
-npx igniter "$@"
+time npx igniter -r su95x "$@"
 
 if [ "${GITHUB_ACTIONS}" == "true" ]; then
-  rm -rf /external/src
   rm -rf /external/fbw-a32nx
   rm -rf /external/hdw-su95x/src
+  rm -rf /external/build-su95x/src
 fi
 
 # restore ownership (when run as github action)
