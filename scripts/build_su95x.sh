@@ -15,7 +15,7 @@ fi
 time npx igniter -r su95x "$@"
 
 if [ "${GITHUB_ACTIONS}" == "true" ]; then
-  rm -rf /external/fbw-a32nx
+  rm -rf /external/flybywire
   rm -rf /external/hdw-su95x/src
   rm -rf /external/build-su95x/src
 fi

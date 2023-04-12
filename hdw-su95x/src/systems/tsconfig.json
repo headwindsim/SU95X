@@ -4,7 +4,7 @@
     "baseUrl": ".",
     "resolveJsonModule" : true,
     "typeRoots": [
-      "../../../fbw-a32nx/fbw-common/src/typings",
+      "../../../flybywire/fbw-common/src/typings",
       "../../../node_modules/@types"
     ],
     "moduleResolution": "node",
@@ -19,7 +19,7 @@
       "@simbridge/*": ["./simbridge-client/src/*"],
       "@shared/*": ["./shared/src/*"],
       "@tcas/*": ["./tcas/src/*"],
-      "@typings/*": ["../../../fbw-a32nx/fbw-common/src/typings/*"],
+      "@typings/*": ["../../../flybywire/fbw-common/src/typings/*"],
     }
   },
 }

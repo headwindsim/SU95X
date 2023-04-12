@@ -77,7 +77,7 @@ export default new TaskOfTasks("all", [
                 "npm run build-su95x:systems",
                 [
                     "build-su95x/src/wasm/systems",
-                    "fbw-a32nx/fbw-common/src/wasm/systems",
+                    "flybywire/fbw-common/src/wasm/systems",
                     "Cargo.lock",
                     "Cargo.toml",
                     "build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/AirPlanes/Headwind_SU95/panel/systems.wasm"
@@ -85,23 +85,23 @@ export default new TaskOfTasks("all", [
             new ExecTask("systems-fadec",
                 "npm run build-su95x:fadec",
                 [
-                    "build-su95x/src/wasm/fadec_a320",
-                    "fbw-a32nx/fbw-common/src/wasm/fbw_common",
-                    "fbw-a32nx/fbw-common/src/wasm/fadec_common",
+                    "build-su95x/src/wasm/fadec_su95x",
+                    "flybywire/fbw-common/src/wasm/fbw_common",
+                    "flybywire/fbw-common/src/wasm/fadec_common",
                     "build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/AirPlanes/Headwind_SU95/panel/fadec.wasm"
                 ]),
             new ExecTask("systems-fbw",
                 "npm run build-su95x:fbw",
                 [
-                    "build-su95x/src/wasm/fbw_a320",
-                    "fbw-a32nx/fbw-common/src/wasm/fbw_common",
+                    "build-su95x/src/wasm/fbw_su95x",
+                    "flybywire/fbw-common/src/wasm/fbw_common",
                     "build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/AirPlanes/Headwind_SU95/panel/fbw.wasm"
                 ]),
             new ExecTask("flypad-backend",
                 "npm run build-su95x:flypad-backend",
                 [
                     "build-su95x/src/wasm/flypad-backend",
-                    "fbw-a32nx/fbw-common/src/wasm/fbw_common",
+                    "flybywire/fbw-common/src/wasm/fbw_common",
                     "build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/AirPlanes/Headwind_SU95/panel/flypad-backend.wasm"
                 ])
         ], true),

@@ -4,8 +4,8 @@ members = [
     "build-su95x/src/wasm/systems/a320_systems",
     "build-su95x/src/wasm/systems/a320_systems_wasm",
     "build-su95x/src/wasm/systems/a320_hydraulic_simulation_graphs",
-    "fbw-a32nx/fbw-common/src/wasm/systems/systems",
-    "fbw-a32nx/fbw-common/src/wasm/systems/systems_wasm",
+    "flybywire/fbw-common/src/wasm/systems/systems",
+    "flybywire/fbw-common/src/wasm/systems/systems_wasm",
 ]
 
 [profile.release]
