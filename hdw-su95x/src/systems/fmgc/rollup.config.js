@@ -35,7 +35,7 @@ const copy = require('rollup-plugin-copy');
 const extensions = ['.js', '.ts'];
 
 const src = join(__dirname, '..');
-const root = join(__dirname, '..', '..');
+const root = join(__dirname, '..', '..', '..', '..');
 
 process.chdir(src);
 
@@ -46,7 +46,7 @@ module.exports = {
             targets: [
                 {
                     src: 'fmgc/src/utils/LzUtf8.js',
-                    dest: '../build-su95x/out/headwindsim-aircraft-su100-95/html_ui/SU95X_JS/fmgc/',
+                    dest: '../../../build-su95x/out/headwindsim-aircraft-su100-95/html_ui/SU95X_JS/fmgc/',
                 },
             ],
         }),
