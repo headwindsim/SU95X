@@ -36,11 +36,11 @@ For Git Bash/Linux:
 
 For powershell:
 ```shell
-.\scripts\dev-env\run.cmd ./scripts/build.sh
+.\scripts\dev-env\run.cmd ./scripts/build_su95x.sh
 ```
 For Git Bash/Linux:
 ```shell
-./scripts/dev-env/run.sh ./scripts/build.sh
+./scripts/dev-env/run.sh ./scripts/build_su95x.sh
 ```
 
 #### 4. The package is now ready to use. Copy the folder "headwind-aircraft-a330-900" to your CommunityPackage folder in MSFS.
@@ -48,6 +48,7 @@ For Git Bash/Linux:
 #### (Optional) For faster development create sympolic link from the plane output to the MSFS community folder.
 ```shell
 mklink /J "C:\path\to\community\folder\headwindsim-aircraft-su100-95" "C:\path\to\cloned\repo\hdw-su95x\out\headwindsim-aircraft-su100-95"
+mklink /J "C:\path\to\community\folder\headwindsim-aircraft-su100-95-lock-highlight" "C:\path\to\cloned\repo\hdw-su95x\out\headwindsim-aircraft-su100-95-lock-highlight"
 ```
 
 ## Open source
