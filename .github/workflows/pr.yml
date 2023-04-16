@@ -36,7 +36,7 @@ jobs:
           submodules: recursive
       - name: copy sources
         run: |
-          ./scripts/copy_git.sh
+          ./scripts/copy.sh
       - name: test-rust.sh
         run: |
           ./scripts/dev-env/run.sh scripts/test-rust.sh
@@ -74,7 +74,7 @@ jobs:
           ./scripts/copy.sh
       - name: Build SU95X Package
         run: |
-          ./scripts/dev-env/run.sh ./scripts/build.sh --no-tty -j 4
+          ./scripts/dev-env/run.sh ./scripts/build_su95x.sh --no-tty -j 4
       - name: Generate install.json
         run: |
           ./scripts/dev-env/run.sh node ./scripts/fragment.js
