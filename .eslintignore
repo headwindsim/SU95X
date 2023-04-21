@@ -3,7 +3,7 @@ src/*
 build*.js
 buildSrc/*
 igniter.config.mjs
-hdw-su95x/src/base/headwindsim-aircraft-a330-900/html_ui/Pages/su95x_Core/math.js
+hdw-su95x/src/base/headwindsim-aircraft-su100-95/html_ui/Pages/su95x_Core/math.js
 hdw-su95x/src/systems/fmgc/src/flightplanning/DirectTo.ts
 hdw-su95x/src/systems/fmgc/src/flightplanning/FixNamingScheme.ts
 hdw-su95x/src/systems/fmgc/src/flightplanning/FlightPlanAsoboSync.ts
@@ -22,6 +22,6 @@ hdw-su95x/src/systems/fmgc/src/utils/LzUtf8.js
 target/*
 CMakeFiles/*
 cmake*
-hdw-su95x/out/*
+build-su95x/out/*
 # TODO: these need to be more granular
 hdw-su95x/src/base/*
