@@ -34,27 +34,18 @@ jobs:
           ./scripts/dev-env/run.sh ./scripts/setup.sh
       - name: Copy Sources
         run: |
-          ./scripts/copy_git.sh
-      - name: Cleanup redundant files
-        run: |
-          rm -rf ./hbw-su95x/src
-          rm -rf ./src/base
-          rm -rf ./src/fbw_a320
-          rm -rf ./src/fadec/a320_fadec
+          ./scripts/copy.sh
       - name: Build SU95X Package
         run: |
-          ./scripts/dev-env/run.sh ./scripts/build.sh --no-tty -j 4
-      - name: Cleanup
-        run: |
-          rm -rf ./src
+          ./scripts/dev-env/run.sh ./scripts/build_su95x.sh --no-tty -j 4
       - name: Build ZIP files
         run: |
           ./scripts/dev-env/run.sh node ./scripts/fragment.js
 
-          cp ./build-modules/modules.json ./hdw-su95x/out/headwindsim-aircraft-su100-95/install.json
+          cp ./build-su95x/out/build-modules/modules.json ./build-su95x/out/headwindsim-aircraft-su100-95/install.json
           ./scripts/dev-env/run.sh node ./scripts/install-source.js
           mkdir ./${{ env.BUILD_DIR_NAME }}
-          cd ./hdw-su95x/out/
+          cd ./build-su95x/out/
           zip -r ../../${{ env.BUILD_DIR_NAME }}/${{ env.EXP_ZIP_NAME }} ./headwindsim-aircraft-su100-95/
           cd ../../
       - name: Delete old release assets
@@ -79,7 +70,7 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         with:
           release_id: ${{ env.EXP_PRE_RELEASE_ID }}
-          assets_path: ./build-modules/
+          assets_path: ./build-su95x/out/build-modules/
       - name: Update vexp release body
         run: |
           curl --request PATCH \

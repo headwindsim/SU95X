@@ -33,27 +33,10 @@
 !/jest/**
 .DS_Store
 node_modules
-/src-a339/sound/.cache
-/src-a339/instruments/aceBundles
-/src-a339/instruments/src/EFB/dist
-/src-a339/instruments/buildSrc/custom/*
-/src-a339/autothrottle/target
-/src-a339/project/_PackageInt
-/src-a339/project/Packages
-/src-a339/project/PackageSources/**
-!/src-a339/project/PackageSources/**/*.png
 *.wasm
 /target
-/src-a339/instruments/src/EFB/web/
-/src-a339/systems/target/
-/src-a339/systems/a320_hydraulic_simulation_graphs/*.png
-/src-a339/systems/a320_pneumatic_simulation_graph_data/*.txt
 !igniter.config.mjs
 .igniter
-/src-a339/fdr2csv/*.exe
-/src-a339/fbw_a330/obj/
-/src-a339/fdr2csv/build/
-/src-a339/fadec/obj/
 .env
 src/instruments/buildSrc/custom/*
 /headwindsim-aircraft-su100-95/MCDU SERVER/
@@ -63,3 +46,6 @@ msfs-avionics-mirror/src/sdk/build/**
 *.tgz
 /src
 .idea
+hdw-su95x/src_old
+*.bak
+/build-su95x/

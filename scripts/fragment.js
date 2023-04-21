@@ -4,9 +4,9 @@ const fs = require('fs');
 const execute = async () => {
     try {
         const result = await fragmenter.pack({
-            packOptions: { splitFileSize: 536_870_912, keepCompleteModulesAfterSplit: true },
-            baseDir: './hdw-su95x/out/headwindsim-aircraft-su100-95',
-            outDir: './build-modules',
+            packOptions: { splitFileSize: 102_760_448, keepCompleteModulesAfterSplit: false },
+            baseDir: './build-su95x/out/headwindsim-aircraft-su100-95',
+            outDir: './build-su95x/out/build-modules',
             modules: [{
                 name: 'effects',
                 sourceDir: './effects'
@@ -36,7 +36,7 @@ const execute = async () => {
                 sourceDir: './SimObjects/Airplanes/Headwind_SU95-RedWings'
             }, {
                 name: 'Texture-Stable',
-                sourceDir: './SimObjects/Airplanes/Headwind_SU95/texture.A32NX_stable'
+                sourceDir: './SimObjects/Airplanes/Headwind_SU95/texture.A32NX_Stable'
             }, {
                 name: 'Sound',
                 sourceDir: './SimObjects/Airplanes/Headwind_SU95/sound'
@@ -52,7 +52,7 @@ const execute = async () => {
             }]
         });
         console.log(result);
-        console.log(fs.readFileSync('./build-modules/modules.json').toString());
+        console.log(fs.readFileSync('./build-su95x/out/build-modules/modules.json').toString());
     } catch (e) {
         console.error(e);
         process.exit(1);
