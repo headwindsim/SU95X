@@ -36,7 +36,7 @@ const execute = async () => {
                 sourceDir: './SimObjects/Airplanes/Headwind_SU95-RedWings'
             }, {
                 name: 'Texture-Stable',
-                sourceDir: './SimObjects/Airplanes/Headwind_SU95/texture.A32NX_stable'
+                sourceDir: './SimObjects/Airplanes/Headwind_SU95/texture.A32NX_Stable'
             }, {
                 name: 'Sound',
                 sourceDir: './SimObjects/Airplanes/Headwind_SU95/sound'
