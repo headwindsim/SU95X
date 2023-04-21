@@ -20,6 +20,7 @@ cp -rva ./flybywire/fbw-a32nx/src/wasm/fadec_a320/. ./build-su95x/src/wasm/fadec
 cp -rva ./flybywire/fbw-a32nx/src/wasm/fbw_a320/. ./build-su95x/src/wasm/fbw_su95x
 cp -rva ./flybywire/fbw-a32nx/src/wasm/flypad-backend/. ./build-su95x/src/wasm/flypad-backend
 cp -rva ./flybywire/fbw-a32nx/src/wasm/systems/. ./build-su95x/src/wasm/systems
+cp -va ./flybywire/fbw-a32nx/src/.eslintrc.js ./build-su95x/src/.eslintrc.js
 
 # cp -rva ./hdw-su95x/.env ./build-su95x/.env
 # cp -rva ./hdw-su95x/mach.config.js ./build-su95x/mach.config.js
