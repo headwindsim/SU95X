@@ -17,7 +17,7 @@ export default new TaskOfTasks("all", [
                 "npm run build-su95x:model",
                 [
                     "build-su95x/src/model",
-                    "build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/AirPlanes/Headwind_SU95/model"
+                    "build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/Airplanes/Headwind_SU95/model"
                 ]),
             new ExecTask("behavior",
                 "npm run build-su95x:behavior",
@@ -80,7 +80,7 @@ export default new TaskOfTasks("all", [
                     "flybywire/fbw-common/src/wasm/systems",
                     "Cargo.lock",
                     "Cargo.toml",
-                    "build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/AirPlanes/Headwind_SU95/panel/systems.wasm"
+                    "build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/Airplanes/Headwind_SU95/panel/systems.wasm"
                 ]),
             new ExecTask("systems-fadec",
                 "npm run build-su95x:fadec",
@@ -88,21 +88,21 @@ export default new TaskOfTasks("all", [
                     "build-su95x/src/wasm/fadec_su95x",
                     "flybywire/fbw-common/src/wasm/fbw_common",
                     "flybywire/fbw-common/src/wasm/fadec_common",
-                    "build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/AirPlanes/Headwind_SU95/panel/fadec.wasm"
+                    "build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/Airplanes/Headwind_SU95/panel/fadec.wasm"
                 ]),
             new ExecTask("systems-fbw",
                 "npm run build-su95x:fbw",
                 [
                     "build-su95x/src/wasm/fbw_su95x",
                     "flybywire/fbw-common/src/wasm/fbw_common",
-                    "build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/AirPlanes/Headwind_SU95/panel/fbw.wasm"
+                    "build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/Airplanes/Headwind_SU95/panel/fbw.wasm"
                 ]),
             new ExecTask("flypad-backend",
                 "npm run build-su95x:flypad-backend",
                 [
                     "build-su95x/src/wasm/flypad-backend",
                     "flybywire/fbw-common/src/wasm/fbw_common",
-                    "build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/AirPlanes/Headwind_SU95/panel/flypad-backend.wasm"
+                    "build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/Airplanes/Headwind_SU95/panel/flypad-backend.wasm"
                 ])
         ], true),
 
