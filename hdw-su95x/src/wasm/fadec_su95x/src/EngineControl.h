@@ -663,7 +663,7 @@ class EngineControl {
   /// </summary>
   void checkPayload() {
     double fuelWeightGallon = simVars->getFuelWeightGallon();
-    double aircraftEmptyWeight = simVars->getEmptyWeight();                                   // in LBS
+    double aircraftEmptyWeight = simVars->getEmptyWeight();  // in LBS
     double conversionFactor = simVars->getConversionFactor();
     double perPaxWeightLbs = simVars->getPerPaxWeight() / conversionFactor;                   // in LBS
     double aircraftTotalWeight = simVars->getTotalWeight();                                   // in LBS
@@ -671,17 +671,15 @@ class EngineControl {
     double payloadTotalWeight = aircraftTotalWeight - aircraftEmptyWeight - fuelTotalWeight;  // in LBS
 
     double paxRows1to4Actual = simVars->getPaxRows1to4Actual() * perPaxWeightLbs;                 // in LBS
-    double paxRows5to8Actual = simVars->getPaxRows5to8Actual() * perPaxWeightLbs;               // in LBS
-    double paxRows9to12Actual = simVars->getPaxRows9to12Actual() * perPaxWeightLbs;             // in LBS
+    double paxRows5to8Actual = simVars->getPaxRows5to8Actual() * perPaxWeightLbs;                 // in LBS
+    double paxRows9to12Actual = simVars->getPaxRows9to12Actual() * perPaxWeightLbs;               // in LBS
     double paxRows13to16Actual = simVars->getPaxRows13to16Actual() * perPaxWeightLbs;             // in LBS
     double paxRows17to20Actual = simVars->getPaxRows17to20Actual() * perPaxWeightLbs;             // in LBS
-
     double paxRows1to4Desired = simVars->getPaxRows1to4Desired() * perPaxWeightLbs;               // in LBS
-    double paxRows5to8Desired = simVars->getPaxRows5to8Desired() * perPaxWeightLbs;             // in LBS
-    double paxRows9to12Desired = simVars->getPaxRows9to12Desired() * perPaxWeightLbs;           // in LBS
+    double paxRows5to8Desired = simVars->getPaxRows5to8Desired() * perPaxWeightLbs;               // in LBS
+    double paxRows9to12Desired = simVars->getPaxRows9to12Desired() * perPaxWeightLbs;             // in LBS
     double paxRows13to16Desired = simVars->getPaxRows13to16Desired() * perPaxWeightLbs;           // in LBS
     double paxRows17to20Desired = simVars->getPaxRows17to20Desired() * perPaxWeightLbs;           // in LBS
-
     double cargoFwdContainerActual = simVars->getCargoFwdContainerActual() / conversionFactor;    // in LBS
     double cargoAftContainerActual = simVars->getCargoAftContainerActual() / conversionFactor;    // in LBS
     double cargoAftBaggageActual = simVars->getCargoAftBaggageActual() / conversionFactor;        // in LBS
@@ -786,7 +784,7 @@ class EngineControl {
       }
     } else if (pumpStateLeft == 1 && timerLeft.elapsed() >= 2100) {
       simVars->setPumpStateLeft(0);
-      fuelLeftPre = 0;
+      //fuelLeftPre = 0;
       timerLeft.reset();
     } else if (pumpStateLeft == 2 && timerLeft.elapsed() >= 2700) {
       simVars->setPumpStateLeft(0);
@@ -806,7 +804,7 @@ class EngineControl {
       }
     } else if (pumpStateRight == 1 && timerRight.elapsed() >= 2100) {
       simVars->setPumpStateRight(0);
-      fuelRightPre = 0;
+      //fuelRightPre = 0;
       timerRight.reset();
     } else if (pumpStateRight == 2 && timerRight.elapsed() >= 2700) {
       simVars->setPumpStateRight(0);
@@ -908,9 +906,6 @@ class EngineControl {
         xfrCenter = fuelCenterPre - centerQuantity;
       }
 
-      //--------------------------------------------
-      // Main Fuel Logic
-      //--------------------------------------------
       fuelLeft = (fuelLeftPre - (fuelBurn1 * KGS_TO_LBS)) + xfrAuxLeft + (xfrCenter / 2);     // LBS
       fuelRight = (fuelRightPre - (fuelBurn2 * KGS_TO_LBS)) + xfrAuxRight + (xfrCenter / 2);  // LBS
 
