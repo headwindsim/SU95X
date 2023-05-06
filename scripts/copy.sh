@@ -55,6 +55,9 @@ cp -rva ./flybywire/fbw-a32nx/src/base/flybywire-aircraft-a320-neo/html_ui/Pages
 cp -rva ./flybywire/fbw-a32nx/src/base/flybywire-aircraft-a320-neo/html_ui/Pages/VLivery/Liveries/A32NX_Registration/. ./build-su95x/out/headwindsim-aircraft-su100-95/html_ui/Pages/VLivery/Liveries/SU95X_Registration
 cp -rva ./flybywire/fbw-a32nx/src/base/flybywire-aircraft-a320-neo/html_ui/Pages/VLivery/Liveries/Printer/. ./build-su95x/out/headwindsim-aircraft-su100-95/html_ui/Pages/VLivery/Liveries/SU95X_Printer
 
+mkdir -p ./build-su95x/out/headwindsim-aircraft-su100-95/ModelBehaviorDefs/SU95X
+cp -rva ./flybywire/fbw-a32nx/src/base/flybywire-aircraft-a320-neo/ModelBehaviorDefs/A32NX/. ./build-su95x/out/headwindsim-aircraft-su100-95/ModelBehaviorDefs/SU95X
+
 # copy base of su95x to out
 cp -rva ./hdw-su95x/src/base/headwindsim-aircraft-su100-95/. ./build-su95x/out/headwindsim-aircraft-su100-95
 cp -rva ./hdw-su95x/src/base/headwindsim-aircraft-su100-95-lock-highlight/. ./build-su95x/out/headwindsim-aircraft-su100-95-lock-highlight
