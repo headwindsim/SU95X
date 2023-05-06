@@ -2,6 +2,9 @@
 
 set -ex
 
+# Disable safe directory warning
+git config --global --add safe.directory "*"
+
 # initialize submodule (a32nx)
 git submodule update --init --recursive
 
