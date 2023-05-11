@@ -63,14 +63,7 @@ export default new TaskOfTasks("all", [
                     "build-su95x/out/headwindsim-aircraft-su100-95/html_ui/SU95X_JS/tcas"
                 ]),
 
-            new TaskOfTasks("instruments",
-                [
-                    ...getInstrumentsIgniterTasks(),
-                    new ExecTask("PFD", "npm run build-su95x:pfd", ["build-su95x/src/systems/instruments/src/PFD", "build-su95x/out/headwindsim-aircraft-su100-95/html_ui/Pages/VCockpit/Instruments/SU95X/PFD"]),
-                    new ExecTask("Clock", "npm run build-su95x:clock", ["build-su95x/src/systems/instruments/src/Clock", "build-su95x/out/headwindsim-aircraft-su100-95/html_ui/Pages/VCockpit/Instruments/SU95X/Clock"]),
-                    new ExecTask("EWD", "npm run build-su95x:ewd", ["build-su95x/src/systems/instruments/src/EWD", "build-su95x/out/headwindsim-aircraft-su100-95/html_ui/Pages/VCockpit/Instruments/SU95X/EWD"]),
-                ],
-                true)
+                new TaskOfTasks("instruments", getInstrumentsIgniterTasks(), true),
         ], true),
 
         // Group all WASM build tasks together but separate from the rest of the tasks as build run more stable like this.

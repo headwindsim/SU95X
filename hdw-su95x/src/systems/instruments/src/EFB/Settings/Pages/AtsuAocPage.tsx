@@ -207,33 +207,36 @@ export const AtsuAocPage = () => {
                 <SelectGroup>
                     {atisSourceButtons.map((button) => (
                         <SelectItem
-                            onSelect={() => handleWeatherSource(button.setting, 'ATIS')}
-                            selected={atisSource === button.setting}
-                        >
-                            {button.name}
-                        </SelectItem>
-                    ))}
-                </SelectGroup>
-            </SettingItem>
+                        key={button.setting}
+                        onSelect={() => handleWeatherSource(button.setting, 'ATIS')}
+                        selected={atisSource === button.setting}
+                    >
+                        {button.name}
+                    </SelectItem>
+                ))}
+            </SelectGroup>
+        </SettingItem>
 
-            <SettingItem name={t('Settings.AtsuAoc.MetarSource')}>
-                <SelectGroup>
-                    {metarSourceButtons.map((button) => (
-                        <SelectItem
-                            onSelect={() => handleWeatherSource(button.setting, 'METAR')}
-                            selected={metarSource === button.setting}
-                        >
-                            {button.name}
-                        </SelectItem>
-                    ))}
-                </SelectGroup>
-            </SettingItem>
+        <SettingItem name={t('Settings.AtsuAoc.MetarSource')}>
+            <SelectGroup>
+                {metarSourceButtons.map((button) => (
+                    <SelectItem
+                        key={button.setting}
+                        onSelect={() => handleWeatherSource(button.setting, 'METAR')}
+                        selected={metarSource === button.setting}
+                    >
+                        {button.name}
+                    </SelectItem>
+                ))}
+            </SelectGroup>
+        </SettingItem>
 
-            <SettingItem name={t('Settings.AtsuAoc.TafSource')}>
-                <SelectGroup>
-                    {tafSourceButtons.map((button) => (
-                        <SelectItem
-                            onSelect={() => handleWeatherSource(button.setting, 'TAF')}
+        <SettingItem name={t('Settings.AtsuAoc.TafSource')}>
+            <SelectGroup>
+                {tafSourceButtons.map((button) => (
+                    <SelectItem
+                        key={button.setting}
+                        onSelect={() => handleWeatherSource(button.setting, 'TAF')}
                             selected={tafSource === button.setting}
                         >
                             {button.name}

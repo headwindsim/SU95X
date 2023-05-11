@@ -20,7 +20,7 @@ export const AircraftOptionsPinProgramsPage = () => {
     const [isisMetricAltitude, setIsisMetricAltitude] = usePersistentNumberProperty('ISIS_METRIC_ALTITUDE', 0);
     const [vhfSpacing, setVhfSpacing] = usePersistentProperty('RMP_VHF_SPACING_25KHZ', '0');
     const [latLonExtended, setLatLonExtended] = usePersistentProperty('LATLON_EXT_FMT', '0');
-    const [satcomEnabled, setsatcomEnabled] = usePersistentNumberProperty('MODEL_SATCOM_ENABLED', 0);
+    //const [satcomEnabled, setsatcomEnabled] = usePersistentNumberProperty('MODEL_SATCOM_ENABLED', 0);
 
     const handleSetThrustReductionAlt = (value: string) => {
         setThrustReductionHeightSetting(value);
@@ -114,7 +114,8 @@ export const AircraftOptionsPinProgramsPage = () => {
                 <SelectGroup>
                     {isisBaroButtons.map((button) => (
                         <SelectItem
-                            onSelect={() => setIsisBaro(button.setting)}
+                        key={button.name}
+                        onSelect={() => setIsisBaro(button.setting)}
                             selected={isisBaro === button.setting}
                         >
                             {button.name}
@@ -131,7 +132,8 @@ export const AircraftOptionsPinProgramsPage = () => {
                 <SelectGroup>
                     {paxSignsButtons.map((button) => (
                         <SelectItem
-                            onSelect={() => setPaxSigns(button.setting)}
+                        key={button.name}
+                        onSelect={() => setPaxSigns(button.setting)}
                             selected={paxSigns === button.setting}
                         >
                             {button.name}
@@ -144,7 +146,8 @@ export const AircraftOptionsPinProgramsPage = () => {
                 <SelectGroup>
                     {vhfSpacingButtons.map((button) => (
                         <SelectItem
-                            onSelect={() => setVhfSpacing(button.setting)}
+                        key={button.name}
+                        onSelect={() => setVhfSpacing(button.setting)}
                             selected={vhfSpacing === button.setting}
                         >
                             {button.name}
@@ -157,7 +160,8 @@ export const AircraftOptionsPinProgramsPage = () => {
                 <SelectGroup>
                     {latLonExtendedButtons.map((button) => (
                         <SelectItem
-                            onSelect={() => setLatLonExtended(button.setting)}
+                        key={button.name}
+                        onSelect={() => setLatLonExtended(button.setting)}
                             selected={latLonExtended === button.setting}
                         >
                             {button.name}
@@ -170,7 +174,8 @@ export const AircraftOptionsPinProgramsPage = () => {
                 <SelectGroup>
                     {weightUnitButtons.map((button) => (
                         <SelectItem
-                            onSelect={() => setUsingMetric(button.setting)}
+                        key={button.name}
+                        onSelect={() => setUsingMetric(button.setting)}
                             selected={usingMetric === button.setting}
                         >
                             {button.name}

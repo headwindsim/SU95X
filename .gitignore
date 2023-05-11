@@ -49,3 +49,5 @@ msfs-avionics-mirror/src/sdk/build/**
 hdw-su95x/src_old
 *.bak
 /build-su95x/
+!/hdw-su95x/mach.config.js
+!/hdw-su95x/.env

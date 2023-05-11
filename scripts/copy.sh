@@ -22,8 +22,8 @@ cp -rva ./flybywire/fbw-a32nx/src/wasm/flypad-backend/. ./build-su95x/src/wasm/f
 cp -rva ./flybywire/fbw-a32nx/src/wasm/systems/. ./build-su95x/src/wasm/systems
 cp -va ./flybywire/fbw-a32nx/src/.eslintrc.js ./build-su95x/src/.eslintrc.js
 
-# cp -rva ./hdw-su95x/.env ./build-su95x/.env
-# cp -rva ./hdw-su95x/mach.config.js ./build-su95x/mach.config.js
+cp -rva ./hdw-su95x/.env ./build-su95x/.env
+cp -rva ./hdw-su95x/mach.config.js ./build-su95x/mach.config.js
 
 cp -rva ./hdw-su95x/src/behavior/. ./build-su95x/src/behavior
 cp -rva ./hdw-su95x/src/model/. ./build-su95x/src/model
