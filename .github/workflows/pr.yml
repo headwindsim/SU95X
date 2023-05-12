@@ -68,14 +68,14 @@ jobs:
           submodules: recursive
       - name: Create .env file
         run: |
-          echo A32NX_PRODUCTION_BUILD=1 >> fbw-a32nx/.env
-          echo CLIENT_ID=\"${{ secrets.NAVIGRAPH_CLIENT_ID }}\" >> fbw-a32nx/.env
-          echo CLIENT_SECRET=\"${{ secrets.NAVIGRAPH_CLIENT_SECRET }}\" >> fbw-a32nx/.env
-          echo CHARTFOX_SECRET=\"${{ secrets.CHARTFOX_SECRET }}\" >> fbw-a32nx/.env
-          echo SENTRY_DSN=\"${{ secrets.SENTRY_DSN }}\" >> fbw-a32nx/.env
+          echo A32NX_PRODUCTION_BUILD=1 >> hdw-su95x/.env
+          echo CLIENT_ID=\"${{ secrets.NAVIGRAPH_CLIENT_ID }}\" >> hdw-su95x/.env
+          echo CLIENT_SECRET=\"${{ secrets.NAVIGRAPH_CLIENT_SECRET }}\" >> hdw-su95x/.env
+          echo CHARTFOX_SECRET=\"${{ secrets.CHARTFOX_SECRET }}\" >> hdw-su95x/.env
+          echo SENTRY_DSN=\"${{ secrets.SENTRY_DSN }}\" >> hdw-su95x/.env
           echo LOCALAZY_READ_KEY=${{ secrets.LOCALAZY_READ_KEY }} >> .env
           echo VITE_BUILD=false >> .env
-          cat fbw-a32nx/.env
+          cat hdw-su95x/.env
       - name: Setup Package
         run: |
           ./scripts/dev-env/run.sh ./scripts/setup.sh
