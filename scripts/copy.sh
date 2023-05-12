@@ -33,20 +33,20 @@ cp -rva ./hdw-su95x/src/wasm/. ./build-su95x/src/wasm
 mkdir -p ./build-su95x/out/headwindsim-aircraft-su100-95
 mkdir -p ./build-su95x/out/headwindsim-aircraft-su100-95-lock-highlight
 
-mkdir -p ./build-su95x/out/headwindsim-aircraft-su100-95/html_ui/SU95X_CSS
-mkdir -p ./build-su95x/out/headwindsim-aircraft-su100-95/html_ui/SU95X_Fonts
-mkdir -p ./build-su95x/out/headwindsim-aircraft-su100-95/html_ui/SU95X_Images
-mkdir -p ./build-su95x/out/headwindsim-aircraft-su100-95/html_ui/SU95X_JS
+mkdir -p ./build-su95x/out/headwindsim-aircraft-su100-95/html_ui/CSS
+mkdir -p ./build-su95x/out/headwindsim-aircraft-su100-95/html_ui/Fonts
+mkdir -p ./build-su95x/out/headwindsim-aircraft-su100-95/html_ui/Images
+mkdir -p ./build-su95x/out/headwindsim-aircraft-su100-95/html_ui/JS
 mkdir -p ./build-su95x/out/headwindsim-aircraft-su100-95/html_ui/Pages/VCockpit/Instruments/Airliners
 mkdir -p ./build-su95x/out/headwindsim-aircraft-su100-95/html_ui/Pages/VCockpit/Instruments/SU95X_FlightElements
 mkdir -p ./build-su95x/out/headwindsim-aircraft-su100-95/html_ui/Pages/VCockpit/Instruments/NavSystems
 mkdir -p ./build-su95x/out/headwindsim-aircraft-su100-95/html_ui/Pages/VLivery/Liveries/SU95X_Printer
 mkdir -p ./build-su95x/out/headwindsim-aircraft-su100-95/html_ui/Pages/VLivery/Liveries/SU95X_Registration
 
-cp -rva ./flybywire/fbw-a32nx/src/base/flybywire-aircraft-a320-neo/html_ui/CSS/. ./build-su95x/out/headwindsim-aircraft-su100-95/html_ui/SU95X_CSS
-cp -rva ./flybywire/fbw-a32nx/src/base/flybywire-aircraft-a320-neo/html_ui/Fonts/. ./build-su95x/out/headwindsim-aircraft-su100-95/html_ui/SU95X_Fonts
-cp -rva ./flybywire/fbw-a32nx/src/base/flybywire-aircraft-a320-neo/html_ui/Images/. ./build-su95x/out/headwindsim-aircraft-su100-95/html_ui/SU95X_Images
-cp -rva ./flybywire/fbw-a32nx/src/base/flybywire-aircraft-a320-neo/html_ui/JS/. ./build-su95x/out/headwindsim-aircraft-su100-95/html_ui/SU95X_JS
+cp -rva ./flybywire/fbw-a32nx/src/base/flybywire-aircraft-a320-neo/html_ui/CSS/. ./build-su95x/out/headwindsim-aircraft-su100-95/html_ui/CSS/SU95X
+cp -rva ./flybywire/fbw-a32nx/src/base/flybywire-aircraft-a320-neo/html_ui/Fonts/. ./build-su95x/out/headwindsim-aircraft-su100-95/html_ui/Fonts/SU95X
+cp -rva ./flybywire/fbw-a32nx/src/base/flybywire-aircraft-a320-neo/html_ui/Images/. ./build-su95x/out/headwindsim-aircraft-su100-95/html_ui/Images/SU95X
+cp -rva ./flybywire/fbw-a32nx/src/base/flybywire-aircraft-a320-neo/html_ui/JS/. ./build-su95x/out/headwindsim-aircraft-su100-95/html_ui/JS/SU95X
 cp -rva ./flybywire/fbw-a32nx/src/base/flybywire-aircraft-a320-neo/html_ui/Pages/A32NX_Core ./build-su95x/out/headwindsim-aircraft-su100-95/html_ui/Pages/SU95X_Core
 cp -rva ./flybywire/fbw-a32nx/src/base/flybywire-aircraft-a320-neo/html_ui/Pages/A32NX_Utils ./build-su95x/out/headwindsim-aircraft-su100-95/html_ui/Pages/SU95X_Utils
 cp -rva ./flybywire/fbw-a32nx/src/base/flybywire-aircraft-a320-neo/html_ui/Pages/VCockpit/Instruments/Airliners/FlyByWire_A320_Neo ./build-su95x/out/headwindsim-aircraft-su100-95/html_ui/Pages/VCockpit/Instruments/Airliners/Headwind_SU95X

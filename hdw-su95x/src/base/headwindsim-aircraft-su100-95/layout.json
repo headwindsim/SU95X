@@ -3656,52 +3656,52 @@
       "date": 133157483988507860
     },
     {
-      "path": "html_ui/JS_SU95/A32NX_Avionics.js",
+      "path": "html_ui/JS/SU95/A32NX_Avionics.js",
       "size": 2776,
       "date": 133157483988657860
     },
     {
-      "path": "html_ui/JS_SU95/A32NX_ObjectDumper.js",
+      "path": "html_ui/JS/SU95/A32NX_ObjectDumper.js",
       "size": 4927,
       "date": 133157483988717860
     },
     {
-      "path": "html_ui/JS_SU95/A32NX_Util.js",
+      "path": "html_ui/JS/SU95/A32NX_Util.js",
       "size": 13711,
       "date": 133161870761598510
     },
     {
-      "path": "html_ui/JS_SU95/atsu/atsu.js",
+      "path": "html_ui/JS/SU95/atsu/atsu.js",
       "size": 400452,
       "date": 133157503614409820
     },
     {
-      "path": "html_ui/JS_SU95/fmgc/LzUtf8.js",
+      "path": "html_ui/JS/SU95/fmgc/LzUtf8.js",
       "size": 44131,
       "date": 133170528400927180
     },
     {
-      "path": "html_ui/JS_SU95/fmgc/fmgc.js",
+      "path": "html_ui/JS/SU95/fmgc/fmgc.js",
       "size": 1534255,
       "date": 133170528403992200
     },
     {
-      "path": "html_ui/JS_SU95/fmgc.js",
+      "path": "html_ui/JS/SU95/fmgc.js",
       "size": 1534255,
       "date": 133164399120019890
     },
     {
-      "path": "html_ui/JS_SU95/generated/failures.js",
+      "path": "html_ui/JS/SU95/generated/failures.js",
       "size": 10571,
       "date": 133164398871350610
     },
     {
-      "path": "html_ui/JS_SU95/sentry-client/sentry-client.js",
+      "path": "html_ui/JS/SU95/sentry-client/sentry-client.js",
       "size": 363952,
       "date": 133157503749600590
     },
     {
-      "path": "html_ui/JS_SU95/simbridge-client/simbridge-client.js",
+      "path": "html_ui/JS/SU95/simbridge-client/simbridge-client.js",
       "size": 12898,
       "date": 133164398867290820
     },

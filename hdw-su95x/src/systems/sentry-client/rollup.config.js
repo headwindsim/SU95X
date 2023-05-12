@@ -68,7 +68,7 @@ module.exports = {
         }),
     ],
     output: {
-        file: join(root, 'build-su95x/out/headwindsim-aircraft-su100-95/html_ui/SU95X_JS/sentry-client/sentry-client.js'),
+        file: join(root, 'build-su95x/out/headwindsim-aircraft-su100-95/html_ui/JS/SU95X/sentry-client/sentry-client.js'),
         format: 'umd',
         name: 'SentryClient',
     },

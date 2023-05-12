@@ -1,8 +1,8 @@
-﻿@import url("/SU95X_CSS/A32NX_Display_Common.css");
+﻿@import url("/CSS/SU95X/A32NX_Display_Common.css");
 
 @font-face {
   font-family: "ECAMFontRegular";
-  src: url("/SU95X_Fonts/ECAMFontRegular.ttf") format("truetype");
+  src: url("/Fonts/SU95X/ECAMFontRegular.ttf") format("truetype");
   fill: var(--displayMagenta);
   font-weight: normal;
   font-style: normal;

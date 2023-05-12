@@ -60,7 +60,7 @@ module.exports = {
         }),
     ],
     output: {
-        file: join(root, 'build-su95x/out/headwindsim-aircraft-su100-95/html_ui/SU95X_JS/tcas/tcas.js'),
+        file: join(root, 'build-su95x/out/headwindsim-aircraft-su100-95/html_ui/JS/SU95X/tcas/tcas.js'),
         format: 'umd',
         name: 'Tcas',
     },

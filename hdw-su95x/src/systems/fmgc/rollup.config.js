@@ -46,7 +46,7 @@ module.exports = {
             targets: [
                 {
                     src: 'fmgc/src/utils/LzUtf8.js',
-                    dest: '../../../build-su95x/out/headwindsim-aircraft-su100-95/html_ui/SU95X_JS/fmgc/',
+                    dest: '../../../build-su95x/out/headwindsim-aircraft-su100-95/html_ui/JS/SU95X/fmgc/',
                 },
             ],
         }),
@@ -70,7 +70,7 @@ module.exports = {
         }),
     ],
     output: {
-        file: join(root, 'build-su95x/out/headwindsim-aircraft-su100-95/html_ui/SU95X_JS/fmgc/fmgc.js'),
+        file: join(root, 'build-su95x/out/headwindsim-aircraft-su100-95/html_ui/JS/SU95X/fmgc/fmgc.js'),
         format: 'umd',
         name: 'Fmgc',
     },

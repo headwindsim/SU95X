@@ -32,7 +32,7 @@ export default getInputs()
                         '/JS/dataStorage.js',
                         '/Pages/VCockpit/Instruments/SU95X_FlightElements/A32NX_Waypoint.js',
                         '/Pages/SU95X_Core/math.js',
-                        '/SU95X_JS/A32NX_Util.js',
+                        '/JS/SU95X/A32NX_Util.js',
                         ...additionalImports,
                     ],
                     config,

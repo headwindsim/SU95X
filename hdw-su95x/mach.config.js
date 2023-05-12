@@ -24,7 +24,7 @@ module.exports = {
         msfsAvionicsInstrument('EWD'),
         msfsAvionicsInstrument('Clock'),
 
-        reactInstrument('ND', ['/SU95X_JS/A32NX_Util.js']),
+        reactInstrument('ND', ['/JS/SU95X/A32NX_Util.js']),
         reactInstrument('SD'),
         reactInstrument('DCDU'),
         reactInstrument('RTPI'),
