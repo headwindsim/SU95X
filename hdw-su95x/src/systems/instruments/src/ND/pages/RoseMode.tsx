@@ -135,51 +135,51 @@ const Overlay: FC<OverlayProps> = ({ heading, rangeSetting, tcasMode }) => (
             </g>
             {/* R = 125, middle range ring */}
             { (tcasMode === 0 || rangeSetting > 10)
-                    && (
-                        <path
-                            d="M 509 384 A 125 125 0 0 1 259 384 M 259 384 A 125 125 180 0 1 509 384"
-                            strokeDasharray="15 10"
-                            strokeDashoffset="-4.2"
-                        />
-                    )}
+                && (
+                    <path
+                        d="M 509 384 A 125 125 0 0 1 259 384 M 259 384 A 125 125 180 0 1 509 384"
+                        strokeDasharray="15 10"
+                        strokeDashoffset="-4.2"
+                    />
+                )}
 
             {/* middle range ring replaced with tcas range ticks */}
             { (tcasMode > 0 && rangeSetting === 10)
-                    && (
-                        <g>
-                            <line x1={384} x2={384} y1={264} y2={254} className="rounded White" transform="rotate(0 384 384)" />
-                            <line x1={384} x2={384} y1={264} y2={254} className="rounded White" transform="rotate(30 384 384)" />
-                            <line x1={384} x2={384} y1={264} y2={254} className="rounded White" transform="rotate(60 384 384)" />
-                            <line x1={384} x2={384} y1={264} y2={254} className="rounded White" transform="rotate(90 384 384)" />
-                            <line x1={384} x2={384} y1={264} y2={254} className="rounded White" transform="rotate(120 384 384)" />
-                            <line x1={384} x2={384} y1={264} y2={254} className="rounded White" transform="rotate(150 384 384)" />
-                            <line x1={384} x2={384} y1={264} y2={254} className="rounded White" transform="rotate(180 384 384)" />
-                            <line x1={384} x2={384} y1={264} y2={254} className="rounded White" transform="rotate(210 384 384)" />
-                            <line x1={384} x2={384} y1={264} y2={254} className="rounded White" transform="rotate(240 384 384)" />
-                            <line x1={384} x2={384} y1={264} y2={254} className="rounded White" transform="rotate(270 384 384)" />
-                            <line x1={384} x2={384} y1={264} y2={254} className="rounded White" transform="rotate(300 384 384)" />
-                            <line x1={384} x2={384} y1={264} y2={254} className="rounded White" transform="rotate(330 384 384)" />
-                        </g>
-                    )}
+                && (
+                    <g>
+                        <line x1={384} x2={384} y1={264} y2={254} className="rounded White" transform="rotate(0 384 384)" />
+                        <line x1={384} x2={384} y1={264} y2={254} className="rounded White" transform="rotate(30 384 384)" />
+                        <line x1={384} x2={384} y1={264} y2={254} className="rounded White" transform="rotate(60 384 384)" />
+                        <line x1={384} x2={384} y1={264} y2={254} className="rounded White" transform="rotate(90 384 384)" />
+                        <line x1={384} x2={384} y1={264} y2={254} className="rounded White" transform="rotate(120 384 384)" />
+                        <line x1={384} x2={384} y1={264} y2={254} className="rounded White" transform="rotate(150 384 384)" />
+                        <line x1={384} x2={384} y1={264} y2={254} className="rounded White" transform="rotate(180 384 384)" />
+                        <line x1={384} x2={384} y1={264} y2={254} className="rounded White" transform="rotate(210 384 384)" />
+                        <line x1={384} x2={384} y1={264} y2={254} className="rounded White" transform="rotate(240 384 384)" />
+                        <line x1={384} x2={384} y1={264} y2={254} className="rounded White" transform="rotate(270 384 384)" />
+                        <line x1={384} x2={384} y1={264} y2={254} className="rounded White" transform="rotate(300 384 384)" />
+                        <line x1={384} x2={384} y1={264} y2={254} className="rounded White" transform="rotate(330 384 384)" />
+                    </g>
+                )}
 
             {/* R = 62, tcas range ticks */}
             { (tcasMode > 0 && rangeSetting === 20)
-                    && (
-                        <g>
-                            <line x1={384} x2={384} y1={327} y2={317} className="rounded White" transform="rotate(0 384 384)" />
-                            <line x1={384} x2={384} y1={327} y2={317} className="rounded White" transform="rotate(30 384 384)" />
-                            <line x1={384} x2={384} y1={327} y2={317} className="rounded White" transform="rotate(60 384 384)" />
-                            <line x1={384} x2={384} y1={327} y2={317} className="rounded White" transform="rotate(90 384 384)" />
-                            <line x1={384} x2={384} y1={327} y2={317} className="rounded White" transform="rotate(120 384 384)" />
-                            <line x1={384} x2={384} y1={327} y2={317} className="rounded White" transform="rotate(150 384 384)" />
-                            <line x1={384} x2={384} y1={327} y2={317} className="rounded White" transform="rotate(180 384 384)" />
-                            <line x1={384} x2={384} y1={327} y2={317} className="rounded White" transform="rotate(210 384 384)" />
-                            <line x1={384} x2={384} y1={327} y2={317} className="rounded White" transform="rotate(240 384 384)" />
-                            <line x1={384} x2={384} y1={327} y2={317} className="rounded White" transform="rotate(270 384 384)" />
-                            <line x1={384} x2={384} y1={327} y2={317} className="rounded White" transform="rotate(300 384 384)" />
-                            <line x1={384} x2={384} y1={327} y2={317} className="rounded White" transform="rotate(330 384 384)" />
-                        </g>
-                    )}
+                && (
+                    <g>
+                        <line x1={384} x2={384} y1={327} y2={317} className="rounded White" transform="rotate(0 384 384)" />
+                        <line x1={384} x2={384} y1={327} y2={317} className="rounded White" transform="rotate(30 384 384)" />
+                        <line x1={384} x2={384} y1={327} y2={317} className="rounded White" transform="rotate(60 384 384)" />
+                        <line x1={384} x2={384} y1={327} y2={317} className="rounded White" transform="rotate(90 384 384)" />
+                        <line x1={384} x2={384} y1={327} y2={317} className="rounded White" transform="rotate(120 384 384)" />
+                        <line x1={384} x2={384} y1={327} y2={317} className="rounded White" transform="rotate(150 384 384)" />
+                        <line x1={384} x2={384} y1={327} y2={317} className="rounded White" transform="rotate(180 384 384)" />
+                        <line x1={384} x2={384} y1={327} y2={317} className="rounded White" transform="rotate(210 384 384)" />
+                        <line x1={384} x2={384} y1={327} y2={317} className="rounded White" transform="rotate(240 384 384)" />
+                        <line x1={384} x2={384} y1={327} y2={317} className="rounded White" transform="rotate(270 384 384)" />
+                        <line x1={384} x2={384} y1={327} y2={317} className="rounded White" transform="rotate(300 384 384)" />
+                        <line x1={384} x2={384} y1={327} y2={317} className="rounded White" transform="rotate(330 384 384)" />
+                    </g>
+                )}
 
             <text x={212} y={556} className="Cyan" fontSize={22}>{rangeSetting / 2}</text>
             <text x={310} y={474} className="Cyan" fontSize={22}>{rangeSetting / 4}</text>
