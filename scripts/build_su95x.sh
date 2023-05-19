@@ -12,15 +12,22 @@ if [ "${GITHUB_ACTIONS}" == "true" ]; then
 fi
 
 # Loop through the arguments
+args=()
 for arg in "$@"; do
-  if [ "$arg" == "--no-cache" ]; then
-    echo "Removing out directory /external/build-su95x/out"
+  # If the argument is "-clean", perform some action
+  if [ "$arg" = "-clean" ]; then
+    echo "Removing out directories..."
     rm -rf /external/build-su95x/out
+    rm -rf /external/build-su95x/bundles
+  else
+    # Otherwise, add the arg it to the new array
+    args+=("$arg")
   fi
 done
 
+
 # run build
-time npx igniter -r su95x "$@"
+time npx igniter -r su95x "${args[@]}"
 
 if [ "${GITHUB_ACTIONS}" == "true" ]; then
   rm -rf /external/flybywire

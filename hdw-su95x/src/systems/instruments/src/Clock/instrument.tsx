@@ -26,7 +26,7 @@ class A32NX_Clock extends BaseInstrument {
     }
 
     get templateID(): string {
-        return 'A32NX_Clock';
+        return 'SU95X_Clock';
     }
 
     public onInteractionEvent(args: string[]): void {

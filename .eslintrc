@@ -6,9 +6,9 @@
   },
   "ignorePatterns": [
     "/flybywire/**",
-    "/build-su95x/out/headwindsim-aircraft-su100-95/html_ui/SU95X_JS/fmgc/**",
-    "/build-su95x/out/headwindsim-aircraft-su100-95/html_ui/SU95X_JS/atsu/**",
-    "/build-su95x/out/headwindsim-aircraft-su100-95/html_ui/SU95X_JS/sentry-client/**",
+    "/build-su95x/out/headwindsim-aircraft-su100-95/html_ui/JS/SU95X/fmgc/**",
+    "/build-su95x/out/headwindsim-aircraft-su100-95/html_ui/JS/SU95X/atsu/**",
+    "/build-su95x/out/headwindsim-aircraft-su100-95/html_ui/JS/SU95X/sentry-client/**",
     "/build-su95x/out/headwindsim-aircraft-su100-95/html_ui/Pages/VCockpit/Instruments/SU95X/**",
     "/hdw-su95x/src/base/headwindsim-aircraft-su100-95/html_ui/Pages/VCockpit/Instruments/SU95X/**",
   ],

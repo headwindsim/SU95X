@@ -291,7 +291,10 @@ const TrafficIndicatorDebug: FC<TrafficPropDebug> = memo(({ x, y, relativeAlt, v
         <>
             <Layer x={x} y={y}>
                 {intrusionLevel === TaRaIntrusion.TRAFFIC && <image opacity={hidden ? 0.125 : 1.0} x={0} y={0} width={45} height={32} xlinkHref="/Images/SU95X/ND/TRAFFIC_NORMAL.svg" />}
-                {intrusionLevel === TaRaIntrusion.PROXIMITY && <image opacity={hidden ? 0.125 : 1.0} x={0} y={0} width={45} height={32} xlinkHref="/Images/SU95X/ND/TRAFFIC_PROXIMITY.svg" />}
+                {
+                    intrusionLevel === TaRaIntrusion.PROXIMITY
+                    && <image opacity={hidden ? 0.125 : 1.0} x={0} y={0} width={45} height={32} xlinkHref="/Images/SU95X/ND/TRAFFIC_PROXIMITY.svg" />
+                }
                 {intrusionLevel === TaRaIntrusion.TA && <image opacity={hidden ? 0.125 : 1.0} x={0} y={0} width={45} height={32} xlinkHref="/Images/SU95X/ND/TRAFFIC_TA.svg" />}
                 {intrusionLevel === TaRaIntrusion.RA && <image opacity={hidden ? 0.125 : 1.0} x={0} y={0} width={45} height={32} xlinkHref="/Images/SU95X/ND/TRAFFIC_RA.svg" />}
                 <g>

@@ -30,37 +30,37 @@ export default new TaskOfTasks("all", [
                 "npm run build-su95x:atsu",
                 [
                     "build-su95x/src/systems/atsu",
-                    "build-su95x/out/headwindsim-aircraft-su100-95/html_ui/SU95X_JS/atsu"
+                    "build-su95x/out/headwindsim-aircraft-su100-95/html_ui/JS/SU95X/atsu"
                 ]),
             new ExecTask("failures",
                 "npm run build-su95x:failures",
                 [
                     "build-su95x/src/systems/failures",
-                    "build-su95x/out/headwindsim-aircraft-su100-95/html_ui/SU95X_JS/failures/failures.js"
+                    "build-su95x/out/headwindsim-aircraft-su100-95/html_ui/JS/SU95X/failures/failures.js"
                 ]),
             new ExecTask("fmgc",
                 "npm run build-su95x:fmgc",
                 [
                     "build-su95x/src/systems/fmgc",
-                    "build-su95x/out/headwindsim-aircraft-su100-95/html_ui/SU95X_JS/fmgc"
+                    "build-su95x/out/headwindsim-aircraft-su100-95/html_ui/JS/SU95X/fmgc"
                 ]),
             new ExecTask("sentry-client",
                 "npm run build-su95x:sentry-client",
                 [
                     "build-su95x/src/systems/sentry-client",
-                    "build-su95x/out/headwindsim-aircraft-su100-95/html_ui/SU95X_JS/sentry-client"
+                    "build-su95x/out/headwindsim-aircraft-su100-95/html_ui/JS/SU95X/sentry-client"
                 ]),
             new ExecTask("simbridge-client",
                 "npm run build-su95x:simbridge-client",
                 [
                     "build-su95x/src/systems/simbridge-client",
-                    "build-su95x/out/headwindsim-aircraft-su100-95/html_ui/SU95X_JS/simbridge-client"
+                    "build-su95x/out/headwindsim-aircraft-su100-95/html_ui/JS/SU95X/simbridge-client"
                 ]),
             new ExecTask("tcas",
                 "npm run build-su95x:tcas",
                 [
                     "build-su95x/src/systems/tcas",
-                    "build-su95x/out/headwindsim-aircraft-su100-95/html_ui/SU95X_JS/tcas"
+                    "build-su95x/out/headwindsim-aircraft-su100-95/html_ui/JS/SU95X/tcas"
                 ]),
 
                 new TaskOfTasks("instruments", getInstrumentsIgniterTasks(), true),
