@@ -247,67 +247,67 @@ export const ServicesPage = () => {
         setter: ActionCreatorWithOptionalPayload<ServiceButtonState, string>,
     ) => {
         switch (buttonState) {
-            case ServiceButtonState.INACTIVE:
-                dispatch(setter(ServiceButtonState.CALLED));
-                break;
-            case ServiceButtonState.CALLED:
-            case ServiceButtonState.ACTIVE:
-                dispatch(setter(ServiceButtonState.RELEASED));
-                break;
-            case ServiceButtonState.RELEASED:
-                dispatch(setter(ServiceButtonState.CALLED));
-                break;
-            default:
-                break;
+        case ServiceButtonState.INACTIVE:
+            dispatch(setter(ServiceButtonState.CALLED));
+            break;
+        case ServiceButtonState.CALLED:
+        case ServiceButtonState.ACTIVE:
+            dispatch(setter(ServiceButtonState.RELEASED));
+            break;
+        case ServiceButtonState.RELEASED:
+            dispatch(setter(ServiceButtonState.CALLED));
+            break;
+        default:
+            break;
         }
     };
 
     // Centralized handler for managing clicks to any button
     const handleButtonClick = (id: ServiceButton) => {
         switch (id) {
-            case ServiceButton.CabinDoor:
-                handleDoors(cabinDoorButtonState, setCabinDoorButtonState);
-                toggleCabinDoor();
-                break;
-            case ServiceButton.CargoDoor:
-                handleDoors(cargoDoorButtonState, setCargoDoorButtonState);
-                toggleCargoDoor();
-                break;
-            case ServiceButton.AftDoor:
-                handleDoors(aftDoorButtonState, setAftDoorButtonState);
-                toggleAftDoor();
-                break;
-            case ServiceButton.FuelTruck:
-                handleSimpleService(ServiceButton.FuelTruck, fuelTruckButtonState, setFuelTruckButtonState);
-                toggleFuelTruck();
-                break;
-            case ServiceButton.Gpu:
-                handleSimpleService(ServiceButton.Gpu, gpuButtonState, setGpuButtonState);
-                toggleGpu();
-                break;
-            case ServiceButton.JetBridge:
-                handleComplexService(ServiceButton.JetBridge,
-                    jetWayButtonStateRef, setJetWayButtonState,
-                    cabinDoorButtonState, setCabinDoorButtonState,
-                    cabinDoorOpen);
-                toggleJetBridgeAndStairs();
-                break;
-            case ServiceButton.BaggageTruck:
-                handleComplexService(ServiceButton.BaggageTruck,
-                    baggageButtonStateRef, setBaggageButtonState,
-                    cargoDoorButtonState, setCargoDoorButtonState,
-                    cargoDoorOpen);
-                toggleBaggageTruck();
-                break;
-            case ServiceButton.CateringTruck:
-                handleComplexService(ServiceButton.CateringTruck,
-                    cateringButtonStateRef, setCateringButtonState,
-                    aftDoorButtonState, setAftDoorButtonState,
-                    aftDoorOpen);
-                toggleCateringTruck();
-                break;
-            default:
-                break;
+        case ServiceButton.CabinDoor:
+            handleDoors(cabinDoorButtonState, setCabinDoorButtonState);
+            toggleCabinDoor();
+            break;
+        case ServiceButton.CargoDoor:
+            handleDoors(cargoDoorButtonState, setCargoDoorButtonState);
+            toggleCargoDoor();
+            break;
+        case ServiceButton.AftDoor:
+            handleDoors(aftDoorButtonState, setAftDoorButtonState);
+            toggleAftDoor();
+            break;
+        case ServiceButton.FuelTruck:
+            handleSimpleService(ServiceButton.FuelTruck, fuelTruckButtonState, setFuelTruckButtonState);
+            toggleFuelTruck();
+            break;
+        case ServiceButton.Gpu:
+            handleSimpleService(ServiceButton.Gpu, gpuButtonState, setGpuButtonState);
+            toggleGpu();
+            break;
+        case ServiceButton.JetBridge:
+            handleComplexService(ServiceButton.JetBridge,
+                jetWayButtonStateRef, setJetWayButtonState,
+                cabinDoorButtonState, setCabinDoorButtonState,
+                cabinDoorOpen);
+            toggleJetBridgeAndStairs();
+            break;
+        case ServiceButton.BaggageTruck:
+            handleComplexService(ServiceButton.BaggageTruck,
+                baggageButtonStateRef, setBaggageButtonState,
+                cargoDoorButtonState, setCargoDoorButtonState,
+                cargoDoorOpen);
+            toggleBaggageTruck();
+            break;
+        case ServiceButton.CateringTruck:
+            handleComplexService(ServiceButton.CateringTruck,
+                cateringButtonStateRef, setCateringButtonState,
+                aftDoorButtonState, setAftDoorButtonState,
+                aftDoorOpen);
+            toggleCateringTruck();
+            break;
+        default:
+            break;
         }
     };
 
@@ -325,19 +325,19 @@ export const ServicesPage = () => {
             return;
         }
         switch (doorState) {
-            case 0: // closed
-                if (state !== ServiceButtonState.CALLED) {
-                    dispatch(setter(ServiceButtonState.INACTIVE));
-                }
-                break;
-            case 1: // open
-                dispatch(setter(ServiceButtonState.ACTIVE));
-                break;
-            default: // in between
-                if (state === ServiceButtonState.ACTIVE) {
-                    dispatch(setter(ServiceButtonState.RELEASED));
-                }
-                break;
+        case 0: // closed
+            if (state !== ServiceButtonState.CALLED) {
+                dispatch(setter(ServiceButtonState.INACTIVE));
+            }
+            break;
+        case 1: // open
+            dispatch(setter(ServiceButtonState.ACTIVE));
+            break;
+        default: // in between
+            if (state === ServiceButtonState.ACTIVE) {
+                dispatch(setter(ServiceButtonState.RELEASED));
+            }
+            break;
         }
     };
 
@@ -350,22 +350,22 @@ export const ServicesPage = () => {
         doorState: number,
     ) => {
         switch (serviceButtonStateRef.current) {
-            case ServiceButtonState.HIDDEN:
-            case ServiceButtonState.DISABLED:
-            case ServiceButtonState.INACTIVE:
-                break;
-            case ServiceButtonState.CALLED:
-                if (doorState === 1) dispatch(setterServiceButtonState(ServiceButtonState.ACTIVE));
-                if (doorState === 0) dispatch(setterServiceButtonState(ServiceButtonState.INACTIVE));
-                break;
-            case ServiceButtonState.ACTIVE:
-                if (doorState < 1 && doorState > 0) dispatch(setterServiceButtonState(ServiceButtonState.RELEASED));
-                if (doorState === 0) dispatch(setterServiceButtonState(ServiceButtonState.INACTIVE));
-                break;
-            case ServiceButtonState.RELEASED:
-                if (doorState === 0) dispatch(setterServiceButtonState(ServiceButtonState.INACTIVE));
-                break;
-            default:
+        case ServiceButtonState.HIDDEN:
+        case ServiceButtonState.DISABLED:
+        case ServiceButtonState.INACTIVE:
+            break;
+        case ServiceButtonState.CALLED:
+            if (doorState === 1) dispatch(setterServiceButtonState(ServiceButtonState.ACTIVE));
+            if (doorState === 0) dispatch(setterServiceButtonState(ServiceButtonState.INACTIVE));
+            break;
+        case ServiceButtonState.ACTIVE:
+            if (doorState < 1 && doorState > 0) dispatch(setterServiceButtonState(ServiceButtonState.RELEASED));
+            if (doorState === 0) dispatch(setterServiceButtonState(ServiceButtonState.INACTIVE));
+            break;
+        case ServiceButtonState.RELEASED:
+            if (doorState === 0) dispatch(setterServiceButtonState(ServiceButtonState.INACTIVE));
+            break;
+        default:
         }
         // enable door button in case door has been closed by other means (e.g. pushback)
         if (doorState < 1
@@ -474,6 +474,8 @@ export const ServicesPage = () => {
         }
     }, [groundServicesAvailable]);
 
+    const serviceIndicationCss = 'text-2xl font-bold text-utility-amber w-min';
+
     return (
         <div className="relative h-content-section-reduced">
             <GroundServiceOutline className="inset-x-0 mx-auto w-full h-full text-theme-text" />
@@ -509,8 +511,9 @@ export const ServicesPage = () => {
 
             </ServiceButtonWrapper>
 
-            {/* GPU */}
             <ServiceButtonWrapper xl={850} y={64} className="">
+
+                {/* GPU */}
                 <GroundServiceButton
                     name={t('Ground.Services.ExternalPower')}
                     state={gpuButtonState}
@@ -590,7 +593,7 @@ export const ServicesPage = () => {
             {/* Visual indications for tug and doors */}
             {!!pushBackAttached && (
                 <div
-                    className="text-2xl font-bold text-utility-amber"
+                    className={serviceIndicationCss}
                     style={{ position: 'absolute', left: 540, right: 0, top: 0 }}
                 >
                     TUG
@@ -598,7 +601,7 @@ export const ServicesPage = () => {
             )}
             {!!cabinDoorOpen && (
                 <div
-                    className="text-xl font-bold text-utility-amber"
+                    className={serviceIndicationCss}
                     style={{ position: 'absolute', left: 515, right: 0, top: 103 }}
                 >
                     CABIN
@@ -606,25 +609,23 @@ export const ServicesPage = () => {
             )}
             {!!aftDoorOpen && (
                 <div
-                    className="text-xl font-bold text-utility-amber"
+                    className={serviceIndicationCss}
                     style={{ position: 'absolute', left: 705, right: 0, top: 585 }}
                 >
                     CABIN
                 </div>
             )}
             {!!cargoDoorOpen && (
-                <div>
-                    <div
-                        className="text-xl font-bold text-utility-amber"
+                <div
+                    className={serviceIndicationCss}
                         style={{ position: 'absolute', left: 705, right: 0, top: 155 }}
-                    >
-                        FWD CARGO
-                    </div>
+                >
+                    CARGO
                 </div>
             )}
             {!!gpuActive && (
                 <div
-                    className="text-xl font-bold text-utility-amber"
+                    className={serviceIndicationCss}
                     style={{ position: 'absolute', left: 705, right: 0, top: 70 }}
                 >
                     GPU

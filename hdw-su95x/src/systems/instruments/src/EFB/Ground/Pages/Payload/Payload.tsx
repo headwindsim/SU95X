@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 import React, { FC, useCallback, useEffect, useMemo, useState } from 'react';
 import {
+    Shuffle,
     ArrowLeftRight,
     BoxArrowRight,
     BriefcaseFill,
@@ -11,8 +12,8 @@ import {
 import { useSimVar } from '@instruments/common/simVars';
 import { Units } from '@shared/units';
 import { usePersistentNumberProperty, usePersistentProperty } from '@instruments/common/persistence';
-import { BitFlags } from '@shared/bitFlags';
-import { useBitFlags } from '@instruments/common/bitFlags';
+import { SeatFlags } from '@shared/bitFlags';
+import { useSeatFlags } from '@instruments/common/bitFlags';
 import { round } from 'lodash';
 import { CargoWidget } from './Seating/CargoWidget';
 import { ChartWidget } from './Chart/ChartWidget';
@@ -116,11 +117,13 @@ export const Payload = () => {
 
     // Units
     // Weight/CG
+    // TODO FIXME: Move all ZFW and GW calculations to rust - Will be refactored in phase 2
     const [zfw, setZfw] = useState(0);
     const [zfwCg, setZfwCg] = useState(0);
     const [zfwDesired, setZfwDesired] = useState(0);
     const [zfwDesiredCg, setZfwDesiredCg] = useState(0);
-    const [totalWeight, setTotalWeight] = useState(emptyWeight);
+    const [gw, setGw] = useState(emptyWeight);
+    const [gwDesired, setGwDesired] = useState(emptyWeight);
     const [cg, setCg] = useState(25);
     const [totalDesiredWeight, setTotalDesiredWeight] = useState(0);
     const [desiredCg, setDesiredCg] = useState(0);
@@ -142,6 +145,8 @@ export const Payload = () => {
     const simbriefBag = parseInt(useAppSelector((state) => state.simbrief.data.weights.bagCount));
     const simbriefFreight = parseInt(useAppSelector((state) => state.simbrief.data.weights.freight));
 
+    const [displayZfw, setDisplayZfw] = useState(true);
+
     // GSX
     const [gsxPayloadSyncEnabled] = usePersistentNumberProperty('GSX_PAYLOAD_SYNC', 0);
     const [_, setGsxNumPassengers] = useSimVar('L:FSDT_GSX_NUMPASSENGERS', 'Number');
@@ -158,17 +163,15 @@ export const Payload = () => {
 
     const setSimBriefValues = () => {
         if (simbriefUnits === 'kgs') {
-            const perBagWeight = Units.kilogramToUser(simbriefBagWeight);
-            setPaxBagWeight(perBagWeight);
-            setPaxWeight(Units.kilogramToUser(simbriefPaxWeight));
+            setPaxBagWeight(simbriefBagWeight);
+            setPaxWeight(simbriefPaxWeight);
             setTargetPax(simbriefPax > maxPax ? maxPax : simbriefPax);
-            setTargetCargo(simbriefBag, Units.kilogramToUser(simbriefFreight), perBagWeight);
+            setTargetCargo(simbriefBag, simbriefFreight, simbriefBagWeight);
         } else {
-            const perBagWeight = Units.poundToUser(simbriefBagWeight);
-            setPaxBagWeight(perBagWeight);
-            setPaxWeight(Units.poundToUser(simbriefPaxWeight));
+            setPaxBagWeight(Units.poundToKilogram(simbriefBagWeight));
+            setPaxWeight(Units.poundToKilogram(simbriefPaxWeight));
             setTargetPax(simbriefPax);
-            setTargetCargo(simbriefBag, Units.poundToUser(simbriefFreight), perBagWeight);
+            setTargetCargo(simbriefBag, Units.poundToKilogram(simbriefFreight), Units.poundToKilogram(simbriefBagWeight));
         }
     };
 

@@ -1,3 +1,6 @@
+// Copyright (c) 2022 FlyByWire Simulations
+// SPDX-License-Identifier: GPL-3.0
+
 'use strict';
 
 const { join } = require('path');
@@ -10,7 +13,9 @@ const replace = require('@rollup/plugin-replace');
 const extensions = ['.js', '.ts'];
 
 const src = join(__dirname, '..');
-const root = join(__dirname, '..', '..', '..', '..');
+console.log('Src: ', src);
+const root = join(process.cwd());
+console.log('Root: ', root);
 
 process.chdir(src);
 
@@ -20,6 +25,7 @@ module.exports = {
         nodeResolve({ extensions }),
         commonjs(),
         babel({
+            babelHelpers: 'bundled',
             presets: ['@babel/preset-typescript', ['@babel/preset-env', { targets: { browsers: ['safari 11'] } }]],
             plugins: [
                 '@babel/plugin-proposal-class-properties',

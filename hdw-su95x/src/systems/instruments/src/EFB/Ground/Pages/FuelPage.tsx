@@ -101,12 +101,7 @@ export const FuelPage = () => {
     const { planRamp } = useAppSelector((state) => state.simbrief.data.fuels);
     const simbriefDataLoaded = isSimbriefDataLoaded();
 
-    const isAirplaneCnD = () => {
-        if (simGroundSpeed > 0.1 || eng1Running || eng2Running || !isOnGround || (!busDC2 && !busDCHot1)) {
-            return false;
-        }
-        return true;
-    };
+    const isAirplaneCnD = () => !(simGroundSpeed > 0.1 || eng1Running || eng2Running || !isOnGround || (!busDC2 && !busDCHot1));
 
     const airplaneCanRefuel = () => {
         if (refuelRate !== '2') {
@@ -121,11 +116,7 @@ export const FuelPage = () => {
             }
 
             // In-flight refueling with GSX Sync enabled
-            if (!isAirplaneCnD() && refuelRate === '2') {
-                return true;
-            }
-
-            return false;
+            return !isAirplaneCnD() && refuelRate === '2';
         }
         return true;
     };
@@ -277,18 +268,20 @@ export const FuelPage = () => {
 
         if (usingMetric) {
             if (units === 'kgs') {
-                fuelToLoad = planRamp;
+                fuelToLoad = roundUpNearest100(planRamp);
             } else {
-                fuelToLoad = Units.poundToKilogram(planRamp);
+                fuelToLoad = roundUpNearest100(Units.poundToKilogram(planRamp));
             }
         } else if (units === 'kgs') {
-            fuelToLoad = Units.kilogramToPound(planRamp);
+            fuelToLoad = roundUpNearest100(Units.kilogramToPound(planRamp));
         } else {
-            fuelToLoad = planRamp;
+            fuelToLoad = roundUpNearest100(planRamp);
         }
 
         updateDesiredFuel(fuelToLoad.toString());
     };
+
+    const roundUpNearest100 = (plannedFuel: number) => Math.ceil(plannedFuel / 100) * 100;
 
     return (
         <div className="flex relative flex-col justify-between mt-6 h-content-section-reduced">
@@ -409,7 +402,7 @@ export const FuelPage = () => {
                     />
                 </div>
 
-                <div className="flex overflow-hidden absolute bottom-0 left-0 flex-row rounded-2xl border border-theme-accent ">
+                <div className="flex overflow-hidden absolute bottom-0 left-0 z-10 flex-row max-w-3xl rounded-2xl border border-theme-accentborder-2">
                     <div className="py-3 px-5 space-y-4">
                         <div className="flex flex-row justify-between items-center">
                             <div className="flex flex-row items-center space-x-3">
@@ -462,7 +455,7 @@ export const FuelPage = () => {
                     </div>
                 </div>
 
-                <div className="flex overflow-x-hidden absolute right-6 bottom-0 z-30 flex-col justify-center items-center py-3 px-6 space-y-2 rounded-2xl border border-theme-accent">
+                <div className="flex overflow-x-hidden absolute right-6 bottom-0 flex-col justify-center items-center py-3 px-6 space-y-2 rounded-2xl border border-theme-accent">
                     <h2 className="flex font-medium">{t('Ground.Fuel.RefuelTime')}</h2>
 
                     <SelectGroup>
