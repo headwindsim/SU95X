@@ -8,8 +8,11 @@ export default new TaskOfTasks("all", [
         // Currently, these can be run in parallel but in the future, we may need to run them in sequence if there are any dependencies.
         new TaskOfTasks("preparation", [
             //new ExecTask("copy-base-files", "npm run build-su95x:copy-base-files"),
-            new ExecTask("efb-translation", "npm run build-su95x:efb-translation")
-        ], true),
+            new TaskOfTasks("localization", [
+                new ExecTask("efb-translation", "npm run build-su95x:efb-translation"),
+                new ExecTask("locPak-translation", "npm run build-su95x:locPak-translation")
+            ], true),
+        ], false),
 
         // Group all typescript and react build tasks together.
         new TaskOfTasks("build", [
@@ -26,13 +29,34 @@ export default new TaskOfTasks("all", [
                     "build-su95x/out/headwindsim-aircraft-su100-95/ModelBehaviorDefs/SU95X/generated"
                 ]),
 
-            new ExecTask("atsu",
-                "npm run build-su95x:atsu",
-                [
-                    "build-su95x/src/systems/atsu",
-                    "build-su95x/out/headwindsim-aircraft-su100-95/html_ui/JS/SU95X/atsu"
+                new TaskOfTasks('atsu', [
+                    new ExecTask(
+                        'common',
+                        'npm run build-su95x:atsu-common',
+                        [
+                            'build-su95x/src/systems/atsu/common',
+                            'build-su95x/out/headwindsim-aircraft-su100-95/html_ui/JS/SU95X/atsu/common.js'
+                        ]
+                    ),
+                    new ExecTask(
+                        'fmsclient',
+                        'npm run build-su95x:atsu-fms-client',
+                        [
+                            'build-su95x/src/systems/atsu/common',
+                            'build-su95x/src/systems/atsu/fmsclient',
+                            'build-su95x/out/headwindsim-aircraft-su100-95/html_ui/JS/SU95X/atsu/fmsclient.js'
+                        ]
+                    ),
                 ]),
-            new ExecTask("failures",
+                new ExecTask(
+                    'extras-host',
+                    'npm run build-su95x:extras-host',
+                    [
+                        'build-su95x/src/systems/extras-host',
+                        'build-su95x/out/headwindsim-aircraft-su100-95/html_ui/Pages/VCockpit/Instruments/SU95X/ExtrasHost'
+                    ]
+                ),
+                new ExecTask("failures",
                 "npm run build-su95x:failures",
                 [
                     "build-su95x/src/systems/failures",
@@ -56,7 +80,16 @@ export default new TaskOfTasks("all", [
                     "build-su95x/src/systems/simbridge-client",
                     "build-su95x/out/headwindsim-aircraft-su100-95/html_ui/JS/SU95X/simbridge-client"
                 ]),
-            new ExecTask("tcas",
+                new ExecTask(
+                    'systems-host',
+                    'npm run build-su95x:systems-host',
+                    [
+                        'build-su95x/src/systems/systems-host',
+                        'flybywire/fbw-common/src/systems/datalink',
+                        'build-su95x/out/headwindsim-aircraft-su100-95/html_ui/Pages/VCockpit/Instruments/SU95X/SystemsHost'
+                    ]
+                ),
+                new ExecTask("tcas",
                 "npm run build-su95x:tcas",
                 [
                     "build-su95x/src/systems/tcas",
@@ -91,6 +124,14 @@ export default new TaskOfTasks("all", [
                     "build-su95x/src/wasm/fbw_su95x",
                     "flybywire/fbw-common/src/wasm/fbw_common",
                     "build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/Airplanes/Headwind_SU95/panel/fbw.wasm"
+                ]),
+                new ExecTask("systems-terronnd", [
+                    "flybywire/fbw-common/src/wasm/terronnd/build.sh",
+                    "wasm-opt -O1 -o build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/AirPlanes/Headwind_SU95/panel/terronnd.wasm flybywire/fbw-common/src/wasm/terronnd/out/terronnd.wasm"
+                ], [
+                    "flybywire/fbw-common/src/wasm/terronnd",
+                    "build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/AirPlanes/Headwind_SU95/panel/terronnd.wasm",
+                    "flybywire/fbw-common/src/wasm/terronnd/out/terronnd.wasm",
                 ]),
             new ExecTask("flypad-backend",
                 "npm run build-su95x:flypad-backend",
