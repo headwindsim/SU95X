@@ -114,8 +114,8 @@ export const AircraftOptionsPinProgramsPage = () => {
                 <SelectGroup>
                     {isisBaroButtons.map((button) => (
                         <SelectItem
-                        key={button.name}
-                        onSelect={() => setIsisBaro(button.setting)}
+                            key={button.name}
+                            onSelect={() => setIsisBaro(button.setting)}
                             selected={isisBaro === button.setting}
                         >
                             {button.name}
@@ -132,8 +132,8 @@ export const AircraftOptionsPinProgramsPage = () => {
                 <SelectGroup>
                     {paxSignsButtons.map((button) => (
                         <SelectItem
-                        key={button.name}
-                        onSelect={() => setPaxSigns(button.setting)}
+                            key={button.name}
+                            onSelect={() => setPaxSigns(button.setting)}
                             selected={paxSigns === button.setting}
                         >
                             {button.name}
@@ -146,8 +146,8 @@ export const AircraftOptionsPinProgramsPage = () => {
                 <SelectGroup>
                     {vhfSpacingButtons.map((button) => (
                         <SelectItem
-                        key={button.name}
-                        onSelect={() => setVhfSpacing(button.setting)}
+                            key={button.name}
+                            onSelect={() => setVhfSpacing(button.setting)}
                             selected={vhfSpacing === button.setting}
                         >
                             {button.name}
@@ -160,8 +160,8 @@ export const AircraftOptionsPinProgramsPage = () => {
                 <SelectGroup>
                     {latLonExtendedButtons.map((button) => (
                         <SelectItem
-                        key={button.name}
-                        onSelect={() => setLatLonExtended(button.setting)}
+                            key={button.name}
+                            onSelect={() => setLatLonExtended(button.setting)}
                             selected={latLonExtended === button.setting}
                         >
                             {button.name}
@@ -174,8 +174,8 @@ export const AircraftOptionsPinProgramsPage = () => {
                 <SelectGroup>
                     {weightUnitButtons.map((button) => (
                         <SelectItem
-                        key={button.name}
-                        onSelect={() => setUsingMetric(button.setting)}
+                            key={button.name}
+                            onSelect={() => setUsingMetric(button.setting)}
                             selected={usingMetric === button.setting}
                         >
                             {button.name}

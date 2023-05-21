@@ -158,8 +158,8 @@ export const FlightWidget = () => {
                                     <div className="relative w-full bg-theme-highlight" style={{ width: `${flightPlanProgress}%` }}>
                                         {!!flightPlanProgress && (
                                             <IconPlane
-                                            className="absolute right-0 text-theme-highlight transform translate-x-1/2 -translate-y-1/2 fill-current"
-                                            size={50}
+                                                className="absolute right-0 text-theme-highlight transform translate-x-1/2 -translate-y-1/2 fill-current"
+                                                size={50}
                                                 strokeLinejoin="miter"
                                             />
                                         )}
