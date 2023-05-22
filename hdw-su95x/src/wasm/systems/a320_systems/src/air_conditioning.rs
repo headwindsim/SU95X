@@ -198,10 +198,10 @@ impl A320Cabin {
 
     fn update_number_of_passengers(&mut self, number_of_passengers: &impl NumberOfPassengers) {
         self.number_of_passengers[1] = (number_of_passengers.number_of_passengers(A320Pax::A)
-            + number_of_passengers.number_of_passengers(A320Pax::B))
+            + number_of_passengers.number_of_passengers(A320Pax::B) + number_of_passengers.number_of_passengers(A320Pax::C))
             as u8;
-        self.number_of_passengers[2] = (number_of_passengers.number_of_passengers(A320Pax::C)
-            + number_of_passengers.number_of_passengers(A320Pax::D))
+        self.number_of_passengers[2] = (number_of_passengers.number_of_passengers(A320Pax::D)
+            + number_of_passengers.number_of_passengers(A320Pax::E))
             as u8;
     }
 }
