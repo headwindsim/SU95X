@@ -21,7 +21,7 @@ import { store } from './Store/store';
 import { Error } from './Assets/Error';
 
 const EFBLoad = () => {
-    const [, setSessionId] = usePersistentProperty('A32NX_SENTRY_SESSION_ID');
+    const [, setSessionId] = usePersistentProperty('SENTRY_SESSION_ID');
 
     useEffect(
         () => () => setSessionId(''), [],
