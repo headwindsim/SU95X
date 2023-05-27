@@ -46,31 +46,31 @@ class A32NX_PayloadConstructor {
 
         this.cargoStations = {
             fwdBag: {
-                name: 'FWD BAGGAGE',
+                name: 'FWD BAGGAGE/CONTAINER',
                 weight: Math.round(NXUnits.kgToUser(1947)),
                 load: 0,
                 stationIndex: 5 + 1,
                 position: 12.6,
                 visible: true,
-                simVar: 'A32NX_CARGO_FWD_BAGGAGE',
+                simVar: 'A32NX_CARGO_FWD_BAGGAGE_CONTAINER',
             },
             aftCont: {
-                name: 'AFT BAGGAGE 1',
+                name: 'AFT CONTAINER',
                 weight: Math.round(NXUnits.kgToUser(580)),
                 load: 0,
                 stationIndex: 6 + 1,
                 position: -16.2,
                 visible: true,
-                simVar: 'A32NX_CARGO_AFT_BAGGAGE_1',
+                simVar: 'A32NX_CARGO_AFT_CONTAINER',
             },
             aftBag: {
-                name: 'AFT BAGGAGE 2',
+                name: 'AFT BAGGAGE',
                 weight: Math.round(NXUnits.kgToUser(1213)),
                 load: 0,
                 stationIndex: 7 + 1,
                 position: -23.8,
                 visible: true,
-                simVar: 'A32NX_CARGO_AFT_BAGGAGE_2',
+                simVar: 'A32NX_CARGO_AFT_BAGGAGE',
             },
             aftBulk: {
                 name: 'AFT BULK/LOOSE',

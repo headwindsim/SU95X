@@ -1,6 +1,6 @@
 {
   "specs": {
-    "prefix": "SU95",
+    "prefix": "SU95X",
     "emptyPosition": -5.66,
     "macSize": 11.95,
     "leMacZ": -3.9,
@@ -8,11 +8,11 @@
       "maxGw": 49450,
       "maxZfw": 41000,
       "minZfw": 24249,
-      "maxGwCg": 34,
-      "maxZfwCg": 34
+      "maxGwCg": 35,
+      "maxZfwCg": 35
     },
     "pax": {
-      "defaultPaxWeight": 80,
+      "defaultPaxWeight": 85,
       "defaultBagWeight": 20,
       "minPaxWeight": 10,
       "maxPaxWeight": 250,
@@ -23,6 +23,7 @@
   "seatMap": [
     {
       "name": "ROWS [1-4]",
+      "capacity": 18,
       "rows": [
         {
           "seats": [
@@ -115,14 +116,14 @@
           "yOffset": 0
         }
       ],
-      "index": 0,
       "stationIndex": 1,
       "position": 15.8,
-      "fill": 0.18,
+      "fill": 0.184,
       "simVar": "A32NX_PAX_A"
     },
     {
       "name": "ROWS [5-8]",
+      "capacity": 20,
       "rows": [
         {
           "seats": [
@@ -221,14 +222,14 @@
           "yOffset": 0
         }
       ],
-      "index": 1,
       "stationIndex": 2,
       "position": 5.0,
-      "fill": 0.205,
+      "fill": 0.204,
       "simVar": "A32NX_PAX_B"
     },
     {
       "name": "ROWS [9-12]",
+      "capacity": 20,
       "rows": [
         {
           "seats": [
@@ -251,7 +252,7 @@
           ],
           "x": 0,
           "y": 0,
-          "xOffset": 0,
+          "xOffset": 60,
           "yOffset": 0
         },
         {
@@ -327,14 +328,14 @@
           "yOffset": 0
         }
       ],
-      "index": 2,
       "stationIndex": 3,
       "position": -6.4,
-      "fill": 0.205,
+      "fill": 0.204,
       "simVar": "A32NX_PAX_C"
     },
     {
       "name": "ROWS [13-16]",
+      "capacity": 20,
       "rows": [
         {
           "seats": [
@@ -433,14 +434,14 @@
           "yOffset": 0
         }
       ],
-      "fill": 0.205,
-      "index": 3,
+      "fill": 0.204,
       "stationIndex": 4,
       "position": -16.6,
       "simVar": "A32NX_PAX_D"
     },
     {
       "name": "ROWS [17-20]",
+      "capacity": 20,
       "rows": [
         {
           "seats": [
@@ -539,8 +540,7 @@
           "yOffset": 0
         }
       ],
-      "fill": 0.205,
-      "index": 3,
+      "fill": 0.204,
       "stationIndex": 5,
       "position": -27.5,
       "simVar": "A32NX_PAX_E"
@@ -548,28 +548,28 @@
   ],
   "cargoMap": [
     {
-      "name": "FWD BAGGAGE",
+      "name": "FWD BAGGAGE/CONTAINER",
       "weight": 1947,
       "stationIndex": 6,
       "position": 12.6,
       "progressBarWidth": 160,
-      "simVar": "A32NX_CARGO_FWD_BAGGAGE"
+      "simVar": "A32NX_CARGO_FWD_BAGGAGE_CONTAINER"
     },
     {
-      "name": "AFT BAGGAGE 1",
+      "name": "AFT CONTAINER",
       "weight": 580,
       "stationIndex": 7,
       "position": -16.2,
       "progressBarWidth": 100,
-      "simVar": "A32NX_CARGO_AFT_BAGGAGE_1"
+      "simVar": "A32NX_CARGO_AFT_CONTAINER"
     },
     {
-      "name": "AFT BAGGAGE 2",
+      "name": "AFT BAGGAGE",
       "weight": 1213,
       "stationIndex": 8,
       "position": -23.8,
       "progressBarWidth": 100,
-      "simVar": "A32NX_CARGO_AFT_BAGGAGE_2"
+      "simVar": "A32NX_CARGO_AFT_BAGGAGE"
     },
     {
       "name": "AFT BULK/LOOSE",
@@ -649,7 +649,14 @@
         "highlight": 2,
         "lines": 25,
         "scale": 1,
-        "values": [12, 16, 20, 24, 28, 32]
+        "values": [
+          12,
+          16,
+          20,
+          24,
+          28,
+          32
+        ]
       },
       "labels": {
         "mtow": {
