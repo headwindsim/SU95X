@@ -508,9 +508,9 @@ export class PseudoFWC {
 
     // FIXME ECU should provide this in a discrete word, and calculate based on f(OAT)
     // this is absolute min at low temperatures
-    private readonly engine1CoreAtOrAboveMinIdle = MappedSubject.create(([n2]) => n2 >= (100 * 10630 / 16645), this.N2Eng1);
+    private readonly engine1CoreAtOrAboveMinIdle = MappedSubject.create(([n2]) => n2 >= (100 * 7604 / 16645), this.N2Eng1);
 
-    private readonly engine2CoreAtOrAboveMinIdle = MappedSubject.create(([n2]) => n2 >= (100 * 10630 / 16645), this.N2Eng2);
+    private readonly engine2CoreAtOrAboveMinIdle = MappedSubject.create(([n2]) => n2 >= (100 * 7604 / 16645), this.N2Eng2);
 
     private readonly engDualFault = Subject.create(false);
 
