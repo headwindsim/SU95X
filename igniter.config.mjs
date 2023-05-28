@@ -127,10 +127,10 @@ export default new TaskOfTasks("all", [
                 ]),
                 new ExecTask("systems-terronnd", [
                     "flybywire/fbw-common/src/wasm/terronnd/build.sh",
-                    "wasm-opt -O1 -o build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/AirPlanes/Headwind_SU95/panel/terronnd.wasm flybywire/fbw-common/src/wasm/terronnd/out/terronnd.wasm"
+                    "wasm-opt -O1 -o build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/Airplanes/Headwind_SU95/panel/terronnd.wasm flybywire/fbw-common/src/wasm/terronnd/out/terronnd.wasm"
                 ], [
                     "flybywire/fbw-common/src/wasm/terronnd",
-                    "build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/AirPlanes/Headwind_SU95/panel/terronnd.wasm",
+                    "build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/Airplanes/Headwind_SU95/panel/terronnd.wasm",
                     "flybywire/fbw-common/src/wasm/terronnd/out/terronnd.wasm",
                 ]),
             new ExecTask("flypad-backend",
