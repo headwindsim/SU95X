@@ -2501,7 +2501,7 @@ export class PseudoFWC {
                 && SimVar.GetSimVarValue('A:CABIN SEATBELTS ALERT SWITCH', 'bool') === 1 ? 3 : 2,
                 SimVar.GetSimVarValue('L:A32NX_CABIN_READY', 'bool') ? 5 : 4,
                 this.spoilersArmed.get() ? 7 : 6,
-                this.slatFlapSelectionS18F10 || this.slatFlapSelectionS22F15 || this.slatFlapSelectionS22F20 ? 9 : 8,
+                this.slatFlapSelectionS18F10 || this.slatFlapSelectionS22F15 ? 9 : 8,
                 this.toConfigNormal.get() ? 11 : 10,
             ],
             codesToReturn: ['000001001', '000001002', '000001003', '000001004', '000001005', '000001006', '000001007', '000001008', '000001009', '000001010', '000001011', '000001012'],
