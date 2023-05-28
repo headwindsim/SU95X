@@ -16,18 +16,18 @@
     ],
     "output": {
       "gltf": [
-        "../../../build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/Airplanes/Headwind_SU95/model/A320_NEO_INTERIOR_LOD00.gltf",
-        "../../../build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/Airplanes/Headwind_SU95/model/A320_NEO_INTERIOR_LOD01.gltf",
-        "../../../build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/Airplanes/Headwind_SU95/model/A320_NEO_INTERIOR_LOD02.gltf",
-        "../../../build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/Airplanes/Headwind_SU95/model/A320_NEO_INTERIOR_LOD03.gltf",
-        "../../../build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/Airplanes/Headwind_SU95/model/A320_NEO_INTERIOR_LOD04.gltf"
+        "../../../build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/AirPlanes/Headwind_SU95/model/A320_NEO_INTERIOR_LOD00.gltf",
+        "../../../build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/AirPlanes/Headwind_SU95/model/A320_NEO_INTERIOR_LOD01.gltf",
+        "../../../build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/AirPlanes/Headwind_SU95/model/A320_NEO_INTERIOR_LOD02.gltf",
+        "../../../build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/AirPlanes/Headwind_SU95/model/A320_NEO_INTERIOR_LOD03.gltf",
+        "../../../build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/AirPlanes/Headwind_SU95/model/A320_NEO_INTERIOR_LOD04.gltf"
       ],
       "bin": [
-        "../../../build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/Airplanes/Headwind_SU95/model/A320_NEO_INTERIOR_LOD00.bin",
-        "../../../build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/Airplanes/Headwind_SU95/model/A320_NEO_INTERIOR_LOD01.bin",
-        "../../../build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/Airplanes/Headwind_SU95/model/A320_NEO_INTERIOR_LOD02.bin",
-        "../../../build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/Airplanes/Headwind_SU95/model/A320_NEO_INTERIOR_LOD03.bin",
-        "../../../build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/Airplanes/Headwind_SU95/model/A320_NEO_INTERIOR_LOD04.bin"
+        "../../../build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/AirPlanes/Headwind_SU95/model/A320_NEO_INTERIOR_LOD00.bin",
+        "../../../build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/AirPlanes/Headwind_SU95/model/A320_NEO_INTERIOR_LOD01.bin",
+        "../../../build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/AirPlanes/Headwind_SU95/model/A320_NEO_INTERIOR_LOD02.bin",
+        "../../../build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/AirPlanes/Headwind_SU95/model/A320_NEO_INTERIOR_LOD03.bin",
+        "../../../build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/AirPlanes/Headwind_SU95/model/A320_NEO_INTERIOR_LOD04.bin"
       ]
     },
     "additions": [
@@ -1963,10 +1963,10 @@
     ],
     "output": {
       "gltf": [
-        "../../../build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/Airplanes/Headwind_SU95/model/su95.gltf"
+        "../../../build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/AirPlanes/Headwind_SU95/model/su95.gltf"
       ],
       "bin": [
-        "../../../build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/Airplanes/Headwind_SU95/model/su95.bin"
+        "../../../build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/AirPlanes/Headwind_SU95/model/su95.bin"
       ]
     },
     "additions": [],

@@ -5,8 +5,8 @@
 !/.husky/**
 !/msfs-avionics-mirror/**
 !/hdw-su95x/src/**
-/hdw-su95x/src/base/headwindsim-aircraft-su100-95/SimObjects/Airplanes/Headwind_SU95/model/*.bin
-/hdw-su95x/src/base/headwindsim-aircraft-su100-95/SimObjects/Airplanes/Headwind_SU95/model/*.gltf
+/hdw-su95x/src/base/headwindsim-aircraft-su100-95/SimObjects/AirPlanes/Headwind_SU95/model/*.bin
+/hdw-su95x/src/base/headwindsim-aircraft-su100-95/SimObjects/AirPlanes/Headwind_SU95/model/*.gltf
 !/docs/**
 !/scripts/**
 !/typings/**

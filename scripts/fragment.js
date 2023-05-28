@@ -18,37 +18,37 @@ const execute = async () => {
                 sourceDir: './ModelBehaviorDefs'
             }, {
                 name: 'Textures',
-                sourceDir: './SimObjects/Airplanes/Headwind_SU95/texture'
+                sourceDir: './SimObjects/AirPlanes/Headwind_SU95/texture'
             }, {
                 name: 'Texture-Armavia',
-                sourceDir: './SimObjects/Airplanes/Headwind_SU95-Armavia'
+                sourceDir: './SimObjects/AirPlanes/Headwind_SU95-Armavia'
             }, {
                 name: 'Texture-RA89036',
-                sourceDir: './SimObjects/Airplanes/Headwind_SU95-RA89036'
+                sourceDir: './SimObjects/AirPlanes/Headwind_SU95-RA89036'
             }, {
                 name: 'Texture-RA89105',
-                sourceDir: './SimObjects/Airplanes/Headwind_SU95-RA89105'
+                sourceDir: './SimObjects/AirPlanes/Headwind_SU95-RA89105'
             }, {
                 name: 'Texture-RA97002',
-                sourceDir: './SimObjects/Airplanes/Headwind_SU95-RA97002'
+                sourceDir: './SimObjects/AirPlanes/Headwind_SU95-RA97002'
             }, {
                 name: 'Texture-RedWings',
-                sourceDir: './SimObjects/Airplanes/Headwind_SU95-RedWings'
+                sourceDir: './SimObjects/AirPlanes/Headwind_SU95-RedWings'
             }, {
                 name: 'Texture-Stable',
-                sourceDir: './SimObjects/Airplanes/Headwind_SU95/texture.A32NX_Stable'
+                sourceDir: './SimObjects/AirPlanes/Headwind_SU95/texture.A32NX_Stable'
             }, {
                 name: 'Sound',
-                sourceDir: './SimObjects/Airplanes/Headwind_SU95/sound'
+                sourceDir: './SimObjects/AirPlanes/Headwind_SU95/sound'
             }, {
                 name: 'Sound-AI',
-                sourceDir: './SimObjects/Airplanes/Headwind_SU95/soundai'
+                sourceDir: './SimObjects/AirPlanes/Headwind_SU95/soundai'
             }, {
                 name: 'Model',
-                sourceDir: './SimObjects/Airplanes/Headwind_SU95/model'
+                sourceDir: './SimObjects/AirPlanes/Headwind_SU95/model'
             }, {
                 name: 'Panels',
-                sourceDir: './SimObjects/Airplanes/Headwind_SU95/panel'
+                sourceDir: './SimObjects/AirPlanes/Headwind_SU95/panel'
             }]
         });
         console.log(result);
