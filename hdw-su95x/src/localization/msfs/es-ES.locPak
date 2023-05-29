@@ -2,10 +2,10 @@
   "LocalisationPackage": {
     "Language": "es-ES",
     "Strings": {
-      "AIRCRAFT.DESCRIPTION": "El A330-900 es un avión bimotor de largo alcance fabricado por el fabricante aeronáutico europeo Airbus. Se trata de una versión modernizada y mejorada del A330-300 con motores perfeccionados, mejoras aerodinámicas y un mayor alcance de hasta 13.334 kilómetros. El avión tiene capacidad para 440 pasajeros en una configuración típica de dos clases y dispone de tecnología punta, como controles fly-by-wire y pantallas táctiles en la cabina.",
+      "AIRCRAFT.DESCRIPTION": "El Sukhoi Superjet 100 (ahora sólo "Superjet 100" ) es un avión regional diseñado por Sukhoi Civil Aircraft.</br></br>Sustituye al Tupolev Tu-134 y al Yakovlev Yak-42, además de competir con el Embraer E190 y el Bombardier CRJ1000.</br></br>Es el primer avión de pasajeros ruso diseñado tras la caída de la Unión Soviética. Utiliza el SaM 146 de PowerJet (empresa conjunta entre Safran y la rusa NPO Saturn) para propulsar el avión.</br></br>Aunque recibe algunos pedidos internacionales, el SSJ100 tiene problemas para ganar popularidad fuera de Rusia debido a los problemas de las piezas de repuesto.",
       "AIRCRAFT.UI_MANUFACTURER": "Headwind Simulations",
-      "AIRCRAFT.UI_MODEL": "A330-941",
-      "AIRCRAFT.UI_VARIATION": "Airbus",
+      "AIRCRAFT.UI_MODEL": "SSJ100",
+      "AIRCRAFT.UI_VARIATION": "Sukhoi",
       "COCKPIT.TOOLTIPS.APU_AVAILABLE": "APU disponible",
       "COCKPIT.TOOLTIPS.AUTOPILOT_PANEL_HDG_TUNING_LEFT": "Ajustar el rumbo seleccionado a la izquierda (%((A:AUTOPILOT HEADING LOCK DIR:1,degrees))%!d!°)",
       "COCKPIT.TOOLTIPS.AUTOPILOT_PANEL_HDG_TUNING_RIGHT": "Ajustar el rumbo seleccionado a la derecha (%((A:AUTOPILOT HEADING LOCK DIR:1,degrees))%!d!°)",

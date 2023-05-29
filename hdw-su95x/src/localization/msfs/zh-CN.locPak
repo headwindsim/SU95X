@@ -2,10 +2,10 @@
   "LocalisationPackage": {
     "Language": "zh-CN",
     "Strings": {
-      "AIRCRAFT.DESCRIPTION": "A330-900是欧洲飞机制造商空中客车公司生产的一种远程双引擎飞机。它是A330-300的现代化增强版，改进了发动机，改善了空气动力学，航程更长，可达13,334公里。该飞机在典型的两舱配置中最多可容纳440名乘客，并具有最先进的技术，如电传操纵和触摸屏驾驶舱显示器。",
+      "AIRCRAFT.DESCRIPTION": "苏霍伊超级喷气机100（现在只有 "超级喷气机100"）是苏霍伊民用飞机公司设计的支线飞机。</br></br>它取代了图波列夫图-134和雅科夫列夫雅克-42，同时也与巴西航空工业公司E190和庞巴迪CRJ1000竞争。它使用PowerJet（赛峰集团和俄罗斯NPO Saturn的合资公司）的SaM 146作为飞机的动力。</br></br>虽然它收到了一些国际订单，但由于备件问题，SSJ100在俄罗斯以外的地区难以获得青睐。",
       "AIRCRAFT.UI_MANUFACTURER": "Headwind Simulations",
-      "AIRCRAFT.UI_MODEL": "A330-941",
-      "AIRCRAFT.UI_VARIATION": "Airbus",
+      "AIRCRAFT.UI_MODEL": "SSJ100",
+      "AIRCRAFT.UI_VARIATION": "Sukhoi",
       "COCKPIT.TOOLTIPS.APU_AVAILABLE": "APU available",
       "COCKPIT.TOOLTIPS.AUTOPILOT_PANEL_HDG_TUNING_LEFT": "向左调整所选航向(%((A:AUTOPILOT HEADING LOCK DIR:1,degrees))%!d!°)",
       "COCKPIT.TOOLTIPS.AUTOPILOT_PANEL_HDG_TUNING_RIGHT": "向右调整所选航向(%((A:AUTOPILOT HEADING LOCK DIR:1,degrees))%!d!°)",

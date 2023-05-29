@@ -2,10 +2,10 @@
   "LocalisationPackage": {
     "Language": "fi-FI",
     "Strings": {
-      "AIRCRAFT.DESCRIPTION": "A330-900 on eurooppalaisen lentokonevalmistaja Airbusin valmistama kaksimoottorinen pitkän matkan lentokone. Se on modernisoitu ja parannettu versio A330-300-koneesta, jossa on parannetut moottorit, aerodynaamiset parannukset ja pidempi, jopa 13 334 kilometrin toimintasäde. Lentokoneeseen mahtuu 440 matkustajaa tyypillisessä kahden luokan kokoonpanossa, ja siinä on uusinta tekniikkaa, kuten fly-by-wire-ohjauslaitteet ja kosketusnäytölliset ohjaamonäytöt.",
+      "AIRCRAFT.DESCRIPTION": "Sukhoi Superjet 100 (nykyisin vain "Superjet 100" ) on Sukhoi Civil Aircraftin suunnittelema alueliikennesuihkukone.<\/br><\/br>Se korvaa Tupolev Tu-134:n ja Jakovlev Jak-42:n sekä kilpailee Embraer E190:n ja Bombardier CRJ1000:n kanssa.<\/br><\/br>Se on ensimmäinen venäläinen matkustajakone, joka suunniteltiin Neuvostoliiton hajoamisen jälkeen. Se käyttää voimanlähteenä PowerJet (Safranin ja venäläisen NPO Saturnin yhteisyritys) SaM 146:aa.<\/br><\/br>Se on saanut joitakin kansainvälisiä tilauksia, mutta SSJ100:lla on vaikeuksia saada suosiota Venäjän ulkopuolella varaosaongelmien vuoksi.",
       "AIRCRAFT.UI_MANUFACTURER": "Headwind Simulations",
-      "AIRCRAFT.UI_MODEL": "A330-941",
-      "AIRCRAFT.UI_VARIATION": "Airbus",
+      "AIRCRAFT.UI_MODEL": "SSJ100",
+      "AIRCRAFT.UI_VARIATION": "Sukhoi",
       "COCKPIT.TOOLTIPS.APU_AVAILABLE": "APU käytettävissä",
       "COCKPIT.TOOLTIPS.AUTOPILOT_PANEL_HDG_TUNING_LEFT": "Adjust selected heading to the left (%((A:AUTOPILOT HEADING LOCK DIR:1,degrees))%!d!°)",
       "COCKPIT.TOOLTIPS.AUTOPILOT_PANEL_HDG_TUNING_RIGHT": "Adjust selected heading to the right (%((A:AUTOPILOT HEADING LOCK DIR:1,degrees))%!d!°)",

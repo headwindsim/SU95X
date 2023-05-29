@@ -2,10 +2,10 @@
   "LocalisationPackage": {
     "Language": "nb-NO",
     "Strings": {
-      "AIRCRAFT.DESCRIPTION": "A330-900 er et tomotors langdistansefly produsert av den europeiske flyprodusenten Airbus. Det er en modernisert og forbedret versjon av A330-300 med forbedrede motorer, aerodynamiske forbedringer og en lengre rekkevidde på opptil 13 334 kilometer. Flyet har plass til opptil 440 passasjerer i en typisk to-klasses konfigurasjon og har toppmoderne teknologi som fly-by-wire-kontroller og berøringsskjerm i cockpiten.",
+      "AIRCRAFT.DESCRIPTION": "Sukhoi Superjet 100 (nå bare "Superjet 100") er et regionalfly designet av Sukhoi Civil Aircraft.<\/br><\/br> Det erstatter Tupolev Tu-134 og Yakovlev Yak-42, og konkurrerer med Embraer E190 og Bombardier CRJ1000.<\/br><\/br> Det er det første russiske passasjerflyet designet etter Sovjetunionens fall. Det bruker PowerJet (Joint Venture mellom Safran og det russiske selskapet NPO Saturn) SaM 146 til å drive flyet.<\/br><\/br>  Selv om flyet har mottatt noen internasjonale bestillinger, har SSJ100 problemer med å bli populært utenfor Russland på grunn av problemer med reservedeler.",
       "AIRCRAFT.UI_MANUFACTURER": "Headwind Simulations",
-      "AIRCRAFT.UI_MODEL": "A330-941",
-      "AIRCRAFT.UI_VARIATION": "Airbus",
+      "AIRCRAFT.UI_MODEL": "SSJ100",
+      "AIRCRAFT.UI_VARIATION": "Sukhoi",
       "COCKPIT.TOOLTIPS.APU_AVAILABLE": "APU er tilgjengelig",
       "COCKPIT.TOOLTIPS.AUTOPILOT_PANEL_HDG_TUNING_LEFT": "Juster valgt kurs til venstre (%((A:AUTOPILOT HEADING LOCK DIR:1,degrees))%!d!°)",
       "COCKPIT.TOOLTIPS.AUTOPILOT_PANEL_HDG_TUNING_RIGHT": "Juster valgt kurs til høyre (%((A:AUTOPILOT HEADING LOCK DIR:1,degrees))%!d!°)",

@@ -2,10 +2,10 @@
   "LocalisationPackage": {
     "Language": "ja-JP",
     "Strings": {
-      "AIRCRAFT.DESCRIPTION": "A330-900 は、ヨーロッパの航空機メーカー、エアバスが製造する双発長距離航空機タイプです。 これは、A330-300 の近代化およびさらに開発されたバージョンであり、エンジンが改良され、空力が改善され、航続距離が最大 13,334 km に伸びています。 この航空機は、典型的な 2 クラス構成で最大 440 人の乗客を収容でき、フライバイワイヤ コントロールやタッチスクリーン コックピット ディスプレイなどの最先端技術を備えています。",
+      "AIRCRAFT.DESCRIPTION": "Sukhoi Superjet 100（現在はSuperjet 100）は、Sukhoi Civil Aircraft社が設計したリージョナルジェット機です。<br><br>Tupolev Tu-134やYakovlev Yak-42の後継機であり、Embraer E190やBombardier CRJ1000の競合機でもあります。SSJ100は、サフラン社とロシアのNPOサターン社の合弁会社であるパワージェット社のSaM146を動力源としていますが、国際的な受注はあるものの、スペアパーツの問題からロシア国外ではなかなか普及しませんでした。",
       "AIRCRAFT.UI_MANUFACTURER": "Headwind Simulations",
-      "AIRCRAFT.UI_MODEL": "A330-941",
-      "AIRCRAFT.UI_VARIATION": "Airbus",
+      "AIRCRAFT.UI_MODEL": "SSJ100",
+      "AIRCRAFT.UI_VARIATION": "Sukhoi",
       "COCKPIT.TOOLTIPS.APU_AVAILABLE": "APU利用可能",
       "COCKPIT.TOOLTIPS.AUTOPILOT_PANEL_HDG_TUNING_LEFT": "指定ヘディングを左に調整する (%((A:AUTOPILOT HEADING LOCK DIR:1,degrees))%!d!°)",
       "COCKPIT.TOOLTIPS.AUTOPILOT_PANEL_HDG_TUNING_RIGHT": "指定ヘディングを右に調整する (%((A:AUTOPILOT HEADING LOCK DIR:1,degrees))%!d!°)",
