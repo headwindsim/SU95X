@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="Windows-1252"?>
+<!-- Copyright (c) 2022 FlyByWire Simulations -->
+<!-- SPDX-License-Identifier: GPL-3.0 -->
+
 <SimBase.Document Type="Checklist" version="1,0">
     <Checklist.Checklist>
         <IncludeCheckpointLibrary FileName="CheckpointsLibrary\\Asobo_DefaultCheckpointLibrary.xml"/>

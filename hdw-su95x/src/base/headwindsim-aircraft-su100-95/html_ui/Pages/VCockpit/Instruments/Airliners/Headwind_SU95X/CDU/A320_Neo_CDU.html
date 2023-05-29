@@ -1,8 +1,7 @@
 <link rel="stylesheet" href="A320_Neo_CDU.css"/>
 
 <script type="text/html" id="A320_Neo_CDU">
-    <glasscockpit-highlight id="highlight"></glasscockpit-highlight>
-    <div id="BacklightBleed"></div>
+    <div id="BackglowCDU"></div>
     <div id="Mainframe">
     </div>
 </script>
@@ -18,6 +17,7 @@
 <script type="text/html" import-script="/Pages/SU95X_Utils/NXUnits.js"></script>
 <script type="text/html" import-script="/Pages/SU95X_Utils/SimBriefApi.js"></script>
 <script type="text/html" import-script="/Pages/SU95X_Utils/arinc429.js"></script>
+<script type="text/html" import-script="/Pages/SU95X_Utils/bitFlags.js"></script>
 <script type="text/html" import-script="/Pages/SU95X_Core/Adirs.js"></script>
 <script type="text/html" import-script="/Pages/SU95X_Core/A32NX_PayloadManager.js"></script>
 
@@ -27,7 +27,8 @@
 <script type="text/html" import-script="/Pages/VCockpit/Instruments/Shared/FlightElements/Approach.js"></script>
 <script type="text/html" import-script="/Pages/VCockpit/Instruments/SU95X_FlightElements/A32NX_WaypointLoader.js"></script>
 <script type="text/html" import-script="/Pages/VCockpit/Instruments/Shared/FlightElements/GeoCalc.js"></script>
-<script type="text/html" import-script="/JS/SU95X/atsu/atsu.js"></script>
+<script type="text/html" import-script="/JS/SU95X/atsu/common.js"></script>
+<script type="text/html" import-script="/JS/SU95X/atsu/fmsclient.js"></script>
 <script type="text/html" import-script="/JS/SU95X/sentry-client/sentry-client.js"></script>
 <script type="text/html" import-script="/JS/SU95X/simbridge-client/simbridge-client.js"></script>
 <script type="text/html" import-script="/JS/SU95X/fmgc/LzUtf8.js"></script>
@@ -168,7 +169,6 @@
 <script type="text/html" import-script="/Pages/SU95X_Core/A32NX_APU.js"></script>
 <script type="text/html" import-script="/Pages/SU95X_Core/A32NX_BrakeTemp.js"></script>
 <script type="text/html" import-script="/Pages/SU95X_Core/A32NX_Refuel.js"></script>
-<script type="text/html" import-script="/Pages/SU95X_Core/A32NX_Boarding.js"></script>
 <script type="text/html" import-script="/Pages/SU95X_Core/A32NX_DMC.js"></script>
 <script type="text/html" import-script="/Pages/SU95X_Core/A32NX_LocalVarUpdater.js"></script>
 <script type="text/html" import-script="/Pages/SU95X_Core/A32NX_FADEC.js"></script>

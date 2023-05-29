@@ -143,38 +143,38 @@ export const FlyPadPage = () => {
                     <SelectGroup>
                         {timeDisplayButtons.map((button) => (
                             <SelectItem
-                            key={button.setting}
-                            onSelect={() => setTimeDisplayed(button.setting)}
-                            selected={timeDisplayed === button.setting}
-                        >
-                            {button.name}
-                        </SelectItem>
-                    ))}
-                </SelectGroup>
-            </SettingItem>
-            {timeDisplayed !== 'utc' && (
-                <SettingItem name={tt('Settings.flyPad.LocalTimeFormat', language)} groupType="sub" disabled={timeDisplayed === 'utc'}>
-                    <SelectGroup>
-                        {timeFormatButtons.map((button) => (
-                            <SelectItem
                                 key={button.setting}
-                                onSelect={() => setTimeFormat(button.setting)}
-                                selected={timeFormat === button.setting}
+                                onSelect={() => setTimeDisplayed(button.setting)}
+                                selected={timeDisplayed === button.setting}
                             >
                                 {button.name}
                             </SelectItem>
                         ))}
                     </SelectGroup>
                 </SettingItem>
-            )}
-        </SettingGroup>
+                {timeDisplayed !== 'utc' && (
+                    <SettingItem name={tt('Settings.flyPad.LocalTimeFormat', language)} groupType="sub" disabled={timeDisplayed === 'utc'}>
+                        <SelectGroup>
+                            {timeFormatButtons.map((button) => (
+                                <SelectItem
+                                    key={button.setting}
+                                    onSelect={() => setTimeFormat(button.setting)}
+                                    selected={timeFormat === button.setting}
+                                >
+                                    {button.name}
+                                </SelectItem>
+                            ))}
+                        </SelectGroup>
+                    </SettingItem>
+                )}
+            </SettingGroup>
 
-        <SettingItem name={tt('Settings.flyPad.Theme', language)}>
-            <SelectGroup>
-                {themeButtons.map((button) => (
-                    <SelectItem
-                        key={button.setting}
-                        onSelect={() => handleThemeSelect(button.setting)}
+            <SettingItem name={tt('Settings.flyPad.Theme', language)}>
+                <SelectGroup>
+                    {themeButtons.map((button) => (
+                        <SelectItem
+                            key={button.setting}
+                            onSelect={() => handleThemeSelect(button.setting)}
                             selected={theme === button.setting}
                         >
                             {button.name}

@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (c) 2022 FlyByWire Simulations -->
+<!-- SPDX-License-Identifier: GPL-3.0 -->
+
 <SimBase.Document Type="CheckpointLibrary" version="1,0">
    <Checklist.CheckpointLibrary>
       <Checkpoint Id="A320_PLACEHOLDER">
@@ -905,7 +908,7 @@
       </Checkpoint>
       <Checkpoint Id="A320_AfterEngineStartup_PITCH_TRIM">
          <CheckpointDesc SubjectTT="TT:Pitch Trim" ExpectationTT="TT:SET" />
-         <Instrument Id="LEVER_ELEVATORTRIM" />
+         <Instrument Id="LEVER_ELEVATORTRIM_NEO" />
       </Checkpoint>
       <Checkpoint Id="A320_AfterEngineStartup_ECAM_STATUS">
          <CheckpointDesc SubjectTT="TT:ECAM Status Page" ExpectationTT="TT:CHECK" />

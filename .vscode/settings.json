@@ -40,7 +40,7 @@
   "files.trimFinalNewlines": true,
   "[cpp]": {
     "editor.defaultFormatter": "ms-vscode.cpptools",
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     "editor.formatOnPaste": false
   },
   "cmake.configureOnOpen": false,
@@ -143,7 +143,8 @@
     "queue": "cpp",
     "__functional_03": "cpp",
     "memory_resource": "cpp",
-    "numbers": "cpp"
+    "numbers": "cpp",
+    "xmemory0": "cpp"
   },
   "typescript.preferences.quoteStyle": "single",
   "typescript.preferences.importModuleSpecifier": "non-relative"

@@ -36,6 +36,20 @@
         "bin": "./sound_nodes/sound_nodes.bin"
       },
       {
+        "gltf": "./fire-button/fire-button.gltf",
+        "bin": "./fire-button/fire-button.bin"
+      },
+      {
+        "gltf": "./trim-decals/trim-decals.gltf",
+        "bin": "./trim-decals/trim-decals.bin",
+        "maxLod": 0
+      },
+      {
+        "gltf": "./wipers/flight-deck-wipers.gltf",
+        "bin": "./wipers/flight-deck-wipers.bin",
+        "maxLod": 0
+      },
+      {
         "gltf": "./onbat/onbat.gltf",
         "bin": "./onbat/onbat.bin"
       },

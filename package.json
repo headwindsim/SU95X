@@ -3,45 +3,42 @@
   "version": "0.4.0",
   "edition": "development",
   "scripts": {
-    "====== SU95X =================": "==========================================",
+    "====== SU95 =================": "==========================================",
 
     "build-su95x:copy-base-package": "mkdir -p build-su95x/out/headwindsim-aircraft-su100-95 && (rsync -a build-su95x/src/base/headwindsim-aircraft-su100-95 build-su95x/out/ || cp -a -u build-su95x/src/base/headwindsim-aircraft-su100-95 build-su95x/out/)",
     "build-su95x:copy-base-lock-highlight-package": "mkdir -p build-su95x/out/headwindsim-aircraft-su100-95-lock-highlight && (rsync -a build-su95x/src/base/headwindsim-aircraft-su100-95-lock-highlight build-su95x/out/ || cp -a -u build-su95x/src/base/headwindsim-aircraft-su100-95-lock-highlight build-su95x/out/)",
     "build-su95x:copy-base-files": "npm run build-su95x:copy-base-package && npm run build-su95x:copy-base-lock-highlight-package",
-    "build-su95x:efb-translation": "cd build-su95x/src/systems/instruments/src/EFB/Localization && node build-translation.js",
+    "build-su95x:efb-translation": "cd build-su95x/src/localization && node build-flypad-translation.js",
+    "build-su95x:locPak-translation": "cd build-su95x/src/localization && node build-locPak-translation.js",
 
     "build-su95x:model": "node build-su95x/src/model/build.js",
     "build-su95x:behavior": "node build-su95x/src/behavior/build.js",
 
-    "build-su95x:atsu": "rollup -c build-su95x/src/systems/atsu/rollup.config.js",
+    "build-su95x:atsu-common": "node build-su95x/src/systems/atsu/common/build.js",
+    "build-su95x:atsu-fms-client": "node build-su95x/src/systems/atsu/fmsclient/build.js",
+    "build-su95x:extras-host": "cd build-su95x/src/systems/extras-host && rollup -c",
     "build-su95x:failures": "rollup -c build-su95x/src/systems/failures/rollup.config.js",
     "build-su95x:fmgc": "rollup -c build-su95x/src/systems/fmgc/rollup.config.js",
+    "build-su95x:instruments": "mach build --config build-su95x/mach.config.js --work-in-config-dir",
     "build-su95x:sentry-client": "rollup -c build-su95x/src/systems/sentry-client/rollup.config.js",
     "build-su95x:simbridge-client": "rollup -c build-su95x/src/systems/simbridge-client/rollup.config.js",
+    "build-su95x:systems-host": "cd build-su95x/src/systems/systems-host && rollup -c",
     "build-su95x:tcas": "rollup -c build-su95x/src/systems/tcas/rollup.config.js",
 
-    "build-su95x:instruments": "mach build --config build-su95x/mach.config.js --work-in-config-dir",
-
-    "build-su95x:systems": "cargo build -p a320_systems_wasm --target wasm32-wasi --release && wasm-opt -O1 -o /external/build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/Airplanes/Headwind_SU95/panel/systems.wasm /external/target/wasm32-wasi/release/a320_systems_wasm.wasm",
     "build-su95x:fadec": "cd build-su95x/src/wasm/fadec_su95x && ./build.sh && wasm-opt -O1 -o /external/build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/Airplanes/Headwind_SU95/panel/fadec.wasm /external/build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/Airplanes/Headwind_SU95/panel/fadec.wasm",
     "build-su95x:fbw": "cd build-su95x/src/wasm/fbw_su95x && ./build.sh && wasm-opt -O1 -o /external/build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/Airplanes/Headwind_SU95/panel/fbw.wasm /external/build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/Airplanes/Headwind_SU95/panel/fbw.wasm",
     "build-su95x:flypad-backend": "cd build-su95x/src/wasm/flypad-backend && ./build.sh && wasm-opt -O1 -o /external/build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/Airplanes/Headwind_SU95/panel/flypad-backend.wasm /external/build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/Airplanes/Headwind_SU95/panel/flypad-backend.wasm",
+    "build-su95x:systems": "cargo build -p a320_systems_wasm --target wasm32-wasi --release && wasm-opt -O1 -o /external/build-su95x/out/headwindsim-aircraft-su100-95/SimObjects/Airplanes/Headwind_SU95/panel/systems.wasm /external/target/wasm32-wasi/release/a320_systems_wasm.wasm",
 
     "build-su95x:metadata": "node scripts/metadata.js build-su95x/out/headwindsim-aircraft-su100-95 su95x",
     "build-su95x:manifest": "node scripts/build_su95x.js",
 
-    "serve:efb": "cd build-su95x/src/systems/instruments/src/EFB/ && vite --port 9696",
-    "build:ace": "node --max-old-space-size=8192 node_modules/rollup/dist/bin/rollup -c .\\build-su95x\\src\\systems\\instruments\\buildSrc\\aceBuild.mjs",
-    "watch:ace": "node --max-old-space-size=8192 node_modules/rollup/dist/bin/rollup -wc .\\build-su95x\\src\\systems\\instruments\\buildSrc\\aceBuild.mjs",
-    "build:instruments": "rollup --max-old-space-size=8192 -c build-su95x/src/systems/instruments/buildSrc/simulatorBuild.mjs",
-    "watch:instruments": "rollup --max-old-space-size=8192 -wc build-su95x/src/systems/instruments/buildSrc/simulatorBuild.mjs",
+    "build-su95x:ace": "node --max-old-space-size=8192 node_modules/rollup/dist/bin/rollup -c .\\build-su95x\\src\\systems\\instruments\\buildSrc\\aceBuild.mjs",
+    "watch-su95x:ace": "node --max-old-space-size=8192 node_modules/rollup/dist/bin/rollup -wc .\\build-su95x\\src\\systems\\instruments\\buildSrc\\aceBuild.mjs",
 
-    "prettier": "prettier --write **/*.json **/*.yml build-su95x/src/systems/instruments/**/*.css",
-
-    "build-su95x:all": "npm run build-su95x:copy-base-files && npm run build-su95x:efb-translation && npm run build-su95x:model && npm run build-su95x:behavior && npm run build-su95x:atsu && npm run build-su95x:failures && npm run build-su95x:fmgc && npm run build-su95x:sentry-client && npm run build-su95x:simbridge-client && npm run build-su95x:tcas && npm run build-su95x:pfd && npm run build-su95x:systems && npm run build-su95x:fadec && npm run build-su95x:fbw && npm run build-su95x:flypad-backend && npm run build-su95x:metadata && npm run build-su95x:manifest",
+    "build-su95x:all": "npm run build-su95x:copy-base-files && npm run build-su95x:efb-translation && npm run build-su95x:model && npm run build-su95x:behavior && npm run build-su95x:atsu-common && npm run build-su95x:atsu-fms-client && npm run build-su95x:systems-host && npm run build-su95x:failures && npm run build-su95x:fmgc && npm run build-su95x:sentry-client && npm run build-su95x:simbridge-client && npm run build-su95x:tcas && npm run build-su95x:pfd && npm run build-su95x:systems && npm run build-su95x:fadec && npm run build-su95x:fbw && npm run build-su95x:flypad-backend && npm run build-su95x:metadata && npm run build-su95x:manifest",
 
     "====== COMMON ================": "==========================================",
-
     "lint": "eslint --cache **/*.{js,mjs,jsx,ts,tsx}",
     "lint-fix": "npm run lint -- --fix",
     "test": "jest"
@@ -100,6 +97,7 @@
     "lint-staged": "10.4.0",
     "postcss": "^8.4.5",
     "postcss-color-functional-notation": "^4.2.2",
+    "postcss-inset": "^1.0.0",
     "prettier": "2.1.2",
     "react-msfs": "^0.1.4",
     "redux-devtools-extension": "^2.13.8",
@@ -145,7 +143,7 @@
     "immer": "^9.0.3",
     "lodash": "^4.17.20",
     "msfs-geo": "^0.1.0-alpha3",
-    "msfssdk": "file:flybywire/fbw-common/msfs-avionics-mirror/src/sdk/build/msfssdk-0.1.0.tgz",
+    "@microsoft/msfs-sdk": "^0.4.0",
     "nanoid": "^3.3.1",
     "network": "^0.6.1",
     "pdf-to-printer": "^5.1.1",

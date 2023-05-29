@@ -12,8 +12,9 @@ mkdir -p ./build-su95x/out
 
 cp -rva ./flybywire/fbw-a32nx/src/behavior/. ./build-su95x/src/behavior
 cp -rva ./flybywire/fbw-a32nx/src/fonts/. ./build-su95x/src/fonts
-cp -rva ./flybywire/fbw-a32nx/src/systems/. ./build-su95x/src/systems
+cp -rva ./flybywire/fbw-a32nx/src/localization/. ./build-su95x/src/localization
 cp -rva ./flybywire/fbw-a32nx/src/model/. ./build-su95x/src/model
+cp -rva ./flybywire/fbw-a32nx/src/systems/. ./build-su95x/src/systems
 
 mkdir -p ./build-su95x/src/wasm
 cp -rva ./flybywire/fbw-a32nx/src/wasm/fadec_a320/. ./build-su95x/src/wasm/fadec_su95x
@@ -26,6 +27,7 @@ cp -rva ./hdw-su95x/.env ./build-su95x/.env
 cp -rva ./hdw-su95x/mach.config.js ./build-su95x/mach.config.js
 
 cp -rva ./hdw-su95x/src/behavior/. ./build-su95x/src/behavior
+cp -rva ./hdw-su95x/src/localization/. ./build-su95x/src/localization
 cp -rva ./hdw-su95x/src/model/. ./build-su95x/src/model
 cp -rva ./hdw-su95x/src/systems/. ./build-su95x/src/systems
 cp -rva ./hdw-su95x/src/wasm/. ./build-su95x/src/wasm

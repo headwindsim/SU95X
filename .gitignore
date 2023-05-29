@@ -51,3 +51,6 @@ hdw-su95x/src_old
 /build-su95x/
 !/hdw-su95x/mach.config.js
 !/hdw-su95x/.env
+cmake-build*
+
+localazy.keys.json

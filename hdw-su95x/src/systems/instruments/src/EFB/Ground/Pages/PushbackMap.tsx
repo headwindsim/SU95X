@@ -226,7 +226,7 @@ export const PushbackMap = () => {
                 {/* Map */}
                 {!process.env.VITE_BUILD && (
                     <BingMap
-                        configFolder="/Pages/VCockpit/Instruments/Headwind_SU95X/EFB/"
+                        configFolder="/Pages/VCockpit/Instruments/Airliners/Headwind_SU95X/EFB/"
                         centerLla={actualMapLatLon}
                         mapId="PUSHBACK_MAP"
                         range={mapRange}
@@ -241,9 +241,9 @@ export const PushbackMap = () => {
                             <div
                                 className="absolute"
                                 style={{
-                                    transform: `rotate(-90deg)
-                                scaleX(${tugCmdSpdFactor >= 0 ? 1 : -1})
-                                scaleY(${tugCmdHdgFactor >= 0 ? 1 : -1})
+                                    transform: `rotate(-90deg) 
+                                scaleX(${tugCmdSpdFactor >= 0 ? 1 : -1}) 
+                                scaleY(${tugCmdHdgFactor >= 0 ? 1 : -1}) 
                                 translateY(${turningRadius}px)`,
                                 }}
                             >

@@ -9,7 +9,7 @@ interface ChartWidgetProps {
     height: number,
     envelope: PerformanceEnvelope,
     limits: ChartLimits,
-    totalWeight: number,
+    gw: number,
     cg: number,
     mldw: number,
     mldwCg: number,
@@ -18,11 +18,11 @@ interface ChartWidgetProps {
 }
 
 export const ChartWidget: React.FC<ChartWidgetProps> = ({
-                                                            width, height, envelope, limits,
-                                                            totalWeight, cg,
-                                                            mldw, mldwCg,
-                                                            zfw, zfwCg,
-                                                        }) => {
+    width, height, envelope, limits,
+    gw, cg,
+    mldw, mldwCg,
+    zfw, zfwCg,
+}) => {
     const { usingMetric } = Units;
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const [ctx, setCtx] = useState<CanvasRenderingContext2D | null>(null);
@@ -35,25 +35,25 @@ export const ChartWidget: React.FC<ChartWidgetProps> = ({
         let secondary = '#84CC16';
         let alt = '#000';
         switch (theme) {
-            case 'dark':
-                base = '#fff';
-                primary = '#3B82F6';
-                secondary = '#84CC16';
-                alt = '#000';
-                break;
-            case 'light':
-                base = '#000';
-                primary = '#3B82F6';
-                secondary = '#84CC16';
-                alt = '#fff';
-                break;
-            case 'orange':
-                base = '#fff';
-                primary = '#e37e28';
-                secondary = '#84CC16';
-                alt = '#000';
-            default:
-                break;
+        case 'dark':
+            base = '#fff';
+            primary = '#3B82F6';
+            secondary = '#84CC16';
+            alt = '#000';
+            break;
+        case 'light':
+            base = '#000';
+            primary = '#3B82F6';
+            secondary = '#84CC16';
+            alt = '#fff';
+            break;
+        case 'orange':
+            base = '#fff';
+            primary = '#e37e28';
+            secondary = '#84CC16';
+            alt = '#000';
+        default:
+            break;
         }
         return [base, primary, secondary, alt];
     };
@@ -101,8 +101,8 @@ export const ChartWidget: React.FC<ChartWidgetProps> = ({
                     ctx.lineWidth = cgPercent % limits.cg.highlight ? 0.25 : 1;
                     ctx.strokeStyle = cgPercent % limits.cg.highlight ? '#2B313B' : '#394049';
 
-                    const [x1, y1] = cgWeightToXY(cgPercent, 27000);
-                    const [x2, y2] = cgWeightToXY(cgPercent, 50000);
+                    const [x1, y1] = cgWeightToXY(cgPercent, limits.weight.min);
+                    const [x2, y2] = cgWeightToXY(cgPercent, limits.weight.max);
                     ctx.beginPath();
                     ctx.moveTo(x1, y1);
                     ctx.lineTo(x2, y2);
@@ -190,7 +190,7 @@ export const ChartWidget: React.FC<ChartWidgetProps> = ({
             // MLW
             drawDiamond(mldwCg, mldw, secondary);
             // MTOW
-            drawDiamond(cg, totalWeight, primary);
+            drawDiamond(cg, gw, primary);
             // MZFW
             drawDiamond(zfwCg, zfw, base);
         };
