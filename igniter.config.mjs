@@ -142,6 +142,8 @@ export default new TaskOfTasks("all", [
                 ])
         ], true),
 
+
+
         // Create final package meta files.
         new TaskOfTasks("dist", [
             new ExecTask("metadata", "npm run build-su95x:metadata"),
@@ -149,4 +151,15 @@ export default new TaskOfTasks("all", [
         ])
     ]),
 
+    // SU95X Livery Package Task
+    new TaskOfTasks("su95x-livery-package", [
+        // Prepare the out folder and any other pre tasks.
+        // Currently, these can be run in parallel but in the future, we may need to run them in sequence if there are any dependencies.
+        new TaskOfTasks("preparation", [
+            new ExecTask("copy-base-files", "npm run build-su95x-livery-package:copy-base-files")
+        ], true),
+        new TaskOfTasks("dist", [
+            new ExecTask("manifests", "npm run build-su95x-livery-package:manifest")
+        ])
+    ])
 ]);

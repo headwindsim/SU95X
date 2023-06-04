@@ -38,6 +38,11 @@
 
     "build-su95x:all": "npm run build-su95x:copy-base-files && npm run build-su95x:efb-translation && npm run build-su95x:model && npm run build-su95x:behavior && npm run build-su95x:atsu-common && npm run build-su95x:atsu-fms-client && npm run build-su95x:systems-host && npm run build-su95x:failures && npm run build-su95x:fmgc && npm run build-su95x:sentry-client && npm run build-su95x:simbridge-client && npm run build-su95x:tcas && npm run build-su95x:pfd && npm run build-su95x:systems && npm run build-su95x:fadec && npm run build-su95x:fbw && npm run build-su95x:flypad-backend && npm run build-su95x:metadata && npm run build-su95x:manifest",
 
+    "====== SU95X LIVERY PACKAGE ====": "==========================================",
+    "build-su95x-livery-package:copy-base-package": "mkdir -p /hdw-su95x-liveries/out/headwindsim-su95x-livery-package && (rsync -a hdw-su95x-liveries/src/base/headwindsim-su95x-livery-package hdw-su95x-liveries/out || cp -a -u hdw-su95x-liveries/src/base/headwindsim-su95x-livery-package hdw-su95x-liveries/out)",
+    "build-su95x-livery-package:copy-base-files": "npm run build-su95x-livery-package:copy-base-package",
+    "build-su95x-livery-package:manifest": "node scripts/build-su95x-liveries.js",
+
     "====== COMMON ================": "==========================================",
     "lint": "eslint --cache **/*.{js,mjs,jsx,ts,tsx}",
     "lint-fix": "npm run lint -- --fix",
