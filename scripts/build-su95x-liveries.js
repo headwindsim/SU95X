@@ -61,8 +61,8 @@ const titleSuffix = ` (${titlePostfix})`;
 
 const MS_FILETIME_EPOCH = 116444736000000000n;
 
-const LIVERY_SRC = path.resolve(__dirname, '..', 'hdw-a339x-liveries/src');
-const LIVERY_OUT = path.resolve(__dirname, '..', 'hdw-a339x-liveries/out');
+const LIVERY_SRC = path.resolve(__dirname, '..', 'hdw-su95x-liveries/src');
+const LIVERY_OUT = path.resolve(__dirname, '..', 'hdw-su95x-liveries/out');
 
 function createPackageFiles(baseDir, manifestBaseFilename) {
     const contentEntries = [];
@@ -92,4 +92,4 @@ function createPackageFiles(baseDir, manifestBaseFilename) {
     }, null, 2));
 }
 
-createPackageFiles(path.resolve(LIVERY_OUT, 'headwindsim-a339x-livery-package'), 'manifest-base.json');
+createPackageFiles(path.resolve(LIVERY_OUT, 'headwindsim-su95x-livery-package'), 'manifest-base.json');

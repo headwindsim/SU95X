@@ -20,23 +20,11 @@ const execute = async () => {
                 name: 'Textures',
                 sourceDir: './SimObjects/Airplanes/Headwind_SU95/texture'
             }, {
-                name: 'Texture-Armavia',
-                sourceDir: './SimObjects/Airplanes/Headwind_SU95-Armavia'
-            }, {
-                name: 'Texture-RA89036',
-                sourceDir: './SimObjects/Airplanes/Headwind_SU95-RA89036'
-            }, {
-                name: 'Texture-RA89105',
-                sourceDir: './SimObjects/Airplanes/Headwind_SU95-RA89105'
-            }, {
-                name: 'Texture-RA97002',
-                sourceDir: './SimObjects/Airplanes/Headwind_SU95-RA97002'
-            }, {
-                name: 'Texture-RedWings',
-                sourceDir: './SimObjects/Airplanes/Headwind_SU95-RedWings'
-            }, {
                 name: 'Texture-Stable',
                 sourceDir: './SimObjects/Airplanes/Headwind_SU95/texture.A32NX_Stable'
+            }, {
+                name: 'Livery',
+                sourceDir: './SimObjects/Airplanes/_Headwind_SU95-Livery'
             }, {
                 name: 'Sound',
                 sourceDir: './SimObjects/Airplanes/Headwind_SU95/sound'
