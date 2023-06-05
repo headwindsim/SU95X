@@ -101,23 +101,19 @@ export class Slats extends DisplayComponent<SlatsProps> {
 
             const xFactor = -4.5766;
             const yFactor = 1.519;
-            const synchroFactor = 0.081;
+            const synchroFactor = 0.071;
 
             let synchroOffset = 0;
             let positionFactor = 0;
             let positionOffset = 0;
-            if (slats >= 0 && slats < 222.8) {
+            if (slats >= 0 && slats < 251.0) {
                 synchroOffset = 0;
                 positionFactor = 0.43;
                 positionOffset = 0;
-            } else if (slats >= 222.8 && slats < 272.8) {
+            } else if (slats >= 251.0 && slats < 346.0) {
                 synchroOffset = 18;
-                positionFactor = 1.8;
-                positionOffset = 7.71;
-            } else if (slats >= 272.8 && slats < 346) {
-                synchroOffset = 22;
-                positionFactor = 1.44;
-                positionOffset = 14.92;
+                positionFactor = 1.11;
+                positionOffset = 7.87;
             }
 
             const value = (slats * synchroFactor - synchroOffset) * positionFactor + positionOffset;
@@ -129,12 +125,10 @@ export class Slats extends DisplayComponent<SlatsProps> {
 
             if (this.configClean && slats > 6.1) {
                 this.slatsTargetPath.set('M -26,23 l -7,2 l -1,4 l 7,-2 Z');
-            } else if (this.config1 && (slats < 209.9 || slats > 234.6)) {
+            } else if (this.config1 && (slats < 238.3 || slats > 263.0)) {
                 this.slatsTargetPath.set('M -63,34 l -7,2 l -1,4 l 7,-2 Z');
-            } else if ((this.config2 || this.config3) && (slats < 259.3 || slats > 284)) {
+            } else if ((this.config2 || this.config3 || this.configFull) && (slats < 327.2 || slats > 339.5)) {
                 this.slatsTargetPath.set('M -96,45 l -7,2 l -1,4 l 7,-2 Z');
-            } else if (this.configFull && (slats < 327.2 || slats > 339.5)) {
-                this.slatsTargetPath.set('M -129,56 l -7,2 l -1,4 l 7,-2 Z');
             } else {
                 this.slatsTargetPath.set('');
             }
@@ -211,7 +205,6 @@ export class Slats extends DisplayComponent<SlatsProps> {
 
                     <path d="M -63,19 l -7,2 l -1,4 l 7,-2 Z" class="SlatsSmallWhite" />
                     <path d="M -96,30 l -7,2 l -1,4 l 7,-2 Z" class="SlatsSmallWhite" />
-                    <path d="M -129,41 l -7,2 l -1,4 l 7,-2 Z" class="SlatsSmallWhite" />
                     <path d={this.slatsTargetPath} class="SlatsSmallCyan" />
 
                     <path d="M 58,17 l 3,5 l 5,1 l 0,-4 Z" class="FlapsSmallWhite" />
