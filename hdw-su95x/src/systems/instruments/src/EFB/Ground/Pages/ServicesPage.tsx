@@ -122,8 +122,8 @@ export const ServicesPage = () => {
     const [isGroundEquipmentVisible] = useSimVar('L:A32NX_GND_EQP_IS_VISIBLE', 'bool', 500);
     const [wheelChocksEnabled] = useSimVar('L:A32NX_MODEL_WHEELCHOCKS_ENABLED', 'bool', 500);
     const [conesEnabled] = useSimVar('L:A32NX_MODEL_CONES_ENABLED', 'bool', 500);
-    const wheelChocksVisible = false; //wheelChocksEnabled && isGroundEquipmentVisible;
-    const conesVisible = false; //conesEnabled && isGroundEquipmentVisible;
+    const wheelChocksVisible = wheelChocksEnabled && isGroundEquipmentVisible;
+    const conesVisible = conesEnabled && isGroundEquipmentVisible;
 
     // Service events
     const toggleCabinDoor = () => SimVar.SetSimVarValue('K:TOGGLE_AIRCRAFT_EXIT', 'enum', 1);
