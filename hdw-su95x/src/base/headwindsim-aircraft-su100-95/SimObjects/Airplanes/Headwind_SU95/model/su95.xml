@@ -462,11 +462,23 @@
 
             <!-- GND CONES -->
             <UseTemplate Name="FBW_Gnd_Equipment">
-                <NODE_ID>PLOTS_R</NODE_ID>
+                <NODE_ID>CONE_B</NODE_ID>
                 <GND_ENABLE_OVRD>(L:A32NX_MODEL_CONES_ENABLED) (L:A32NX_IS_STATIONARY, bool) and</GND_ENABLE_OVRD>
             </UseTemplate>
             <UseTemplate Name="FBW_Gnd_Equipment">
-                <NODE_ID>PLOTS_L</NODE_ID>
+                <NODE_ID>CONE_R</NODE_ID>
+                <GND_ENABLE_OVRD>(L:A32NX_MODEL_CONES_ENABLED) (L:A32NX_IS_STATIONARY, bool) and</GND_ENABLE_OVRD>
+            </UseTemplate>
+            <UseTemplate Name="FBW_Gnd_Equipment">
+                <NODE_ID>CONE_L</NODE_ID>
+                <GND_ENABLE_OVRD>(L:A32NX_MODEL_CONES_ENABLED) (L:A32NX_IS_STATIONARY, bool) and</GND_ENABLE_OVRD>
+            </UseTemplate>
+            <UseTemplate Name="FBW_Gnd_Equipment">
+                <NODE_ID>CONE_ENG_L</NODE_ID>
+                <GND_ENABLE_OVRD>(L:A32NX_MODEL_CONES_ENABLED) (L:A32NX_IS_STATIONARY, bool) and</GND_ENABLE_OVRD>
+            </UseTemplate>
+            <UseTemplate Name="FBW_Gnd_Equipment">
+                <NODE_ID>CONE_ENG_R</NODE_ID>
                 <GND_ENABLE_OVRD>(L:A32NX_MODEL_CONES_ENABLED) (L:A32NX_IS_STATIONARY, bool) and</GND_ENABLE_OVRD>
             </UseTemplate>
 
