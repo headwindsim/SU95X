@@ -425,10 +425,28 @@
                 </UseTemplate>
             </Component>
         </Component>
+        <Component ID="FX_CONTRAIL_RIBBON">
+            <OverrideTemplateParameters>
+                <FX_CODE>(A:CONTRAILS CONDITIONS MET:1, Keyframe) 0 &gt;</FX_CODE>
+                <FX_OFFSET_X>0</FX_OFFSET_X>
+                <FX_OFFSET_Y>0</FX_OFFSET_Y>
+                <FX_OFFSET_Z>0</FX_OFFSET_Z>
+                <FX_GUID>{904EC2CE-F8DD-4480-99E7-B33F7CF6E114}</FX_GUID>
+                <FX_NAME>FX_CONTRAILS_RIBBON</FX_NAME>
+            </OverrideTemplateParameters>
+            <Component ID="FX_CONTRAIL_RIBBON_LEFT_OUT" Node="fx_exhaust_left">
+                <UseTemplate Name="ASOBO_GT_FX">
+                </UseTemplate>
+            </Component>
+            <Component ID="FX_CONTRAIL_RIBBON_RIGHT_OUT" Node="fx_exhaust_right">
+                <UseTemplate Name="ASOBO_GT_FX">
+                </UseTemplate>
+            </Component>
+        </Component>
+
         <Component ID="GND_EQUIPMENT">
 
-            <!-- GND CHOCKS (Disabled)-->
-            <!--
+            <!-- GND CHOCKS -->
             <UseTemplate Name="FBW_Gnd_Equipment">
                 <NODE_ID>CHOCKS_NOSE_GEAR</NODE_ID>
                 <GND_ENABLE_OVRD>(L:A32NX_MODEL_WHEELCHOCKS_ENABLED)</GND_ENABLE_OVRD>
@@ -440,10 +458,9 @@
             <UseTemplate Name="FBW_Gnd_Equipment">
                 <NODE_ID>CHOCKS_MAIN_GEAR_LEFT</NODE_ID>
                 <GND_ENABLE_OVRD>(L:A32NX_MODEL_WHEELCHOCKS_ENABLED)</GND_ENABLE_OVRD>
-            </UseTemplate> -->
+            </UseTemplate>
 
-            <!-- GND CONES (Disabled) -->
-            <!--
+            <!-- GND CONES -->
             <UseTemplate Name="FBW_Gnd_Equipment">
                 <NODE_ID>CONE_B</NODE_ID>
                 <GND_ENABLE_OVRD>(L:A32NX_MODEL_CONES_ENABLED) (L:A32NX_IS_STATIONARY, bool) and</GND_ENABLE_OVRD>
@@ -463,7 +480,7 @@
             <UseTemplate Name="FBW_Gnd_Equipment">
                 <NODE_ID>CONE_ENG_R</NODE_ID>
                 <GND_ENABLE_OVRD>(L:A32NX_MODEL_CONES_ENABLED) (L:A32NX_IS_STATIONARY, bool) and</GND_ENABLE_OVRD>
-            </UseTemplate> -->
+            </UseTemplate>
 
             <!-- Utility function for creating the A32NX_IS_STATIONARY and A32NX_GND_EQP_IS_VISIBLE L-vars. -->
             <UseTemplate Name="ASOBO_GT_Update">
@@ -474,24 +491,6 @@
                 </UPDATE_CODE>
             </UseTemplate>
 
-        </Component>
-        <Component ID="FX_CONTRAIL_RIBBON">
-            <OverrideTemplateParameters>
-                <FX_CODE>(A:CONTRAILS CONDITIONS MET:1, Keyframe) 0 &gt;</FX_CODE>
-                <FX_OFFSET_X>0</FX_OFFSET_X>
-                <FX_OFFSET_Y>0</FX_OFFSET_Y>
-                <FX_OFFSET_Z>0</FX_OFFSET_Z>
-                <FX_GUID>{904EC2CE-F8DD-4480-99E7-B33F7CF6E114}</FX_GUID>
-                <FX_NAME>FX_CONTRAILS_RIBBON</FX_NAME>
-            </OverrideTemplateParameters>
-            <Component ID="FX_CONTRAIL_RIBBON_LEFT_OUT" Node="fx_exhaust_left">
-                <UseTemplate Name="ASOBO_GT_FX">
-                </UseTemplate>
-            </Component>
-            <Component ID="FX_CONTRAIL_RIBBON_RIGHT_OUT" Node="fx_exhaust_right">
-                <UseTemplate Name="ASOBO_GT_FX">
-                </UseTemplate>
-            </Component>
         </Component>
     </Behaviors>
 </ModelInfo>
