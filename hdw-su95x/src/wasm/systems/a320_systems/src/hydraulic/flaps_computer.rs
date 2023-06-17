@@ -84,7 +84,7 @@ struct SlatFlapControlComputer {
 impl SlatFlapControlComputer {
     const EQUAL_ANGLE_DELTA_DEGREE: f64 = 0.177;
     const HANDLE_ONE_CONF_AIRSPEED_THRESHOLD_KNOTS: f64 = 100.;
-    const CONF1F_TO_CONF1_AIRSPEED_THRESHOLD_KNOTS: f64 = 210.;
+    const CONF1F_TO_CONF1_AIRSPEED_THRESHOLD_KNOTS: f64 = 220.;
 
     fn new(context: &mut InitContext) -> Self {
         Self {
@@ -112,7 +112,7 @@ impl SlatFlapControlComputer {
     fn demanded_flaps_fppu_angle_from_conf(flap_conf: FlapsConf) -> Angle {
         match flap_conf {
             FlapsConf::Conf0 => Angle::new::<degree>(0.),
-            FlapsConf::Conf1 => Angle::new::<degree>(0.),
+            FlapsConf::Conf1 => Angle::new::<degree>(89.7),
             FlapsConf::Conf1F => Angle::new::<degree>(120.22),
             FlapsConf::Conf2 => Angle::new::<degree>(145.51),
             FlapsConf::Conf3 => Angle::new::<degree>(168.35),
