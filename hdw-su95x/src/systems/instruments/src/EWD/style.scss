@@ -99,6 +99,10 @@ animation: pulsingS 1s step-end infinite;
             text-anchor: middle !important;
         }
 
+        &.Pre {
+            white-space: pre;
+        }
+
         &.End {
             text-anchor: end !important;
         }
@@ -205,6 +209,18 @@ animation: pulsingS 1s step-end infinite;
         stroke-width: 2;
     }
 
+    .WhiteBox {
+        stroke: $display-white;
+        fill: none;
+        stroke-width: 2;
+    }
+
+    .GreenBox {
+        stroke: $display-green;
+        fill: none;
+        stroke-width: 2;
+    }
+
     .AmberBox {
         stroke: $display-amber;
         fill: none;
@@ -223,13 +239,25 @@ animation: pulsingS 1s step-end infinite;
         stroke-linejoin: bevel;
     }
 
+    .DotsSmallWhite {
+        stroke: none;
+        fill: $display-white;
+    }
+
     .SlatsSmallCyan, .FlapsSmallCyan {
         stroke: $display-cyan;
         stroke-width: 2px;
-        stroke-linejoin: bevel;
+        fill: $display-cyan;
     }
 
-    .Slats, .Flaps {
+    .SFInactive {
+        stroke: $display-white !important;
+        stroke-width: 2px;
+        fill: none;
+        stroke-linejoin: bevel !important;
+    }
+
+    .SFActive {
         stroke: $display-green !important;
         stroke-width: 2px;
         fill: none;
