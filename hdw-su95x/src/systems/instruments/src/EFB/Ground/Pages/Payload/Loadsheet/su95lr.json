@@ -118,7 +118,7 @@
       ],
       "stationIndex": 1,
       "position": 15.8,
-      "fill": 0.184,
+      "fill": 0.1836,
       "simVar": "A32NX_PAX_A"
     },
     {
@@ -224,7 +224,7 @@
       ],
       "stationIndex": 2,
       "position": 5.0,
-      "fill": 0.204,
+      "fill": 0.2041,
       "simVar": "A32NX_PAX_B"
     },
     {
@@ -330,7 +330,7 @@
       ],
       "stationIndex": 3,
       "position": -6.4,
-      "fill": 0.204,
+      "fill": 0.2041,
       "simVar": "A32NX_PAX_C"
     },
     {
@@ -434,7 +434,7 @@
           "yOffset": 0
         }
       ],
-      "fill": 0.204,
+      "fill": 0.2041,
       "stationIndex": 4,
       "position": -16.6,
       "simVar": "A32NX_PAX_D"
@@ -540,7 +540,7 @@
           "yOffset": 0
         }
       ],
-      "fill": 0.204,
+      "fill": 0.2041,
       "stationIndex": 5,
       "position": -27.5,
       "simVar": "A32NX_PAX_E"
