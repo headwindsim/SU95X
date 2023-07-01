@@ -52,8 +52,8 @@ Face=1, 1, 1
 [ParticleAttributes.0]
 Blend Mode=2
 Bounce=0.00
-Color Start=80, 40, 0, 0
-Color End=80, 40, 0, 0
+Color Start=255, 173, 94, 1
+Color End=255, 173, 94, 1
 Jitter Distance=0.00
 Jitter Time=0.00
 X Scale Goal=0.00
@@ -61,12 +61,12 @@ Y Scale Goal=0.00
 Z Scale Goal=0.00
 
 [LightAttributes.0]
-Type=spot
+Type=omni
 Size=0.1
-Range=1
-Intensity=0.1
-Softness=1
-SpotInner=40
-SpotOuter=50
+Range=1.7
+Intensity=0.06
+Softness=0
+SpotInner=30.0
+SpotOuter=50.0
 Volumetric=0
 ScatDir=0.0
