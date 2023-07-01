@@ -22,13 +22,6 @@
 					</Parameter>
 				</Visibility>
 			</Component>
-            <Component ID="LIGHT_SSJ_STROBE_TAIL_off" Node="LIGHT_SSJ_STROBE_TAIL_off">
-				<Visibility>
-					<Parameter>
-						<Code>{ 0 }</Code>
-					</Parameter>
-				</Visibility>
-			</Component>
         </Component>
         <Component ID="HANDLING">
             <UseTemplate Name="FBW_HANDLING_Elevator_Template">
