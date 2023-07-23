@@ -1389,11 +1389,14 @@ class FMCMainDisplay extends BaseAirliners {
         this.computedVls = SimVar.GetSimVarValue("L:A32NX_SPEEDS_VLS", "number");
 
         let weight = this.tryEstimateLandingWeight();
+        const vnavPrediction = this.guidanceController.vnavDriver.getDestinationPrediction();
         // Actual weight is used during approach phase (FCOM bulletin 46/2), and we also assume during go-around
         // Fallback gross weight set to 40.0T (MZFW for SSJ), which is replaced by FMGW once input in FMS to avoid function returning undefined results.
         if (this.flightPhaseManager.phase >= FmgcFlightPhases.APPROACH || !isFinite(weight)) {
             weight = (this.getGW() == 0) ? 40.0 : this.getGW();
-        }
+        } else if (vnavPrediction && Number.isFinite(vnavPrediction.estimatedFuelOnBoard)) {
+                weight = this.zeroFuelWeight + Math.max(0, vnavPrediction.estimatedFuelOnBoard * 0.4535934 / 1000);
+            }
         // if pilot has set approach wind in MCDU we use it, otherwise fall back to current measured wind
         if (isFinite(this.perfApprWindSpeed) && isFinite(this.perfApprWindHeading)) {
             this.approachSpeeds = new NXSpeedsApp(weight, this.perfApprFlaps3, this._towerHeadwind);
@@ -1759,9 +1762,30 @@ class FMCMainDisplay extends BaseAirliners {
             (this.flightPhaseManager.phase === FmgcFlightPhases.CLIMB && _targetFl > this.cruiseFlightLevel) ||
             (this.flightPhaseManager.phase === FmgcFlightPhases.CRUISE && _targetFl !== this.cruiseFlightLevel)
         ) {
-            this.addMessageToQueue(NXSystemMessages.newCrzAlt.getModifiedMessage(_targetFl * 100));
+                this.deleteOutdatedCruiseSteps(this.cruiseFlightLevel, _targetFl);
+                this.addMessageToQueue(NXSystemMessages.newCrzAlt.getModifiedMessage(_targetFl * 100));
             this.cruiseFlightLevel = _targetFl;
             this._cruiseFlightLevel = _targetFl;
+        }
+    }
+
+    deleteOutdatedCruiseSteps(oldCruiseLevel, newCruiseLevel) {
+        const isClimbVsDescent = newCruiseLevel > oldCruiseLevel;
+
+        for (let i = this.flightPlanManager.getActiveWaypointIndex(); i < this.flightPlanManager.getWaypointsCount(); i++) {
+            const waypoint = this.flightPlanManager.getWaypoint(i);
+            if (!waypoint || !waypoint.additionalData.cruiseStep) {
+                continue;
+            }
+
+            const stepLevel = Math.round(waypoint.additionalData.cruiseStep.toAltitude / 100);
+
+            if (isClimbVsDescent && stepLevel >= oldCruiseLevel && stepLevel <= newCruiseLevel ||
+                    !isClimbVsDescent && stepLevel <= oldCruiseLevel && stepLevel >= newCruiseLevel
+            ) {
+                waypoint.additionalData.cruiseStep = undefined;
+                this.removeMessageFromQueue(NXSystemMessages.stepAhead.text);
+            }
         }
     }
 
@@ -2695,6 +2719,7 @@ class FMCMainDisplay extends BaseAirliners {
                     this.flightPlanManager.deleteFlightPlan(FlightPlans.Temporary);
                     SimVar.SetSimVarValue("L:FMC_FLIGHT_PLAN_IS_TEMPORARY", "number", 0);
                     SimVar.SetSimVarValue("L:MAP_SHOW_TEMPORARY_FLIGHT_PLAN", "number", 0);
+                    this.guidanceController.vnavDriver.invalidateFlightPlanProfile();
                     callback();
                 });
             }).catch(console.error);
@@ -2753,21 +2778,25 @@ class FMCMainDisplay extends BaseAirliners {
 
             return departureElevation;
         }
+    }
 
-        /**
-         * Gets the gross weight, if available.
-         * Prior to engine start this is based on ZFW + Fuel entries,
-         * after engine start ZFW entry + FQI FoB.
-         * @returns {number | null} gross weight in tons or null if not available.
-         */
-        getGrossWeight() {
-            const useFqi = this.isAnEngineOn();
+    getDepartureElevation() {
+        let departureElevation = null;
+        if (this.flightPlanManager.getOriginRunway()) {
+            departureElevation = this.flightPlanManager.getOriginRunway().thresholdElevation / 0.3048;
+        } else if (this.flightPlanManager.getOrigin()) {
+            departureElevation = this.flightPlanManager.getOrigin().infos.elevation;
+        }
 
-            if (this.zeroFuelWeight === undefined || (!useFqi && this.blockFuel === undefined)) {
-                return null;
-            }
+        return departureElevation;
+    }
 
-            return this.zeroFuelWeight + (useFqi ? this.getFOB() : this.blockFuel);
+    getToSpeedsTooLow() {
+        const departureElevation = this.getDepartureElevation();
+
+        const zp = departureElevation !== null ? this.getPressureAltAtElevation(departureElevation, this.getBaroCorrection1()) : this.getPressureAlt();
+        if (zp === null) {
+            return false;
         }
 
         getToSpeedsTooLow() {
@@ -4866,6 +4895,132 @@ class FMCMainDisplay extends BaseAirliners {
     //TODO: Can this be util?
     representsDecimalNumber(str) {
         return /^[+-]?\d*(?:\.\d+)?$/.test(str);
+    }
+
+    getZeroFuelWeight() {
+        return this.zeroFuelWeight * 2204.625;
+    }
+
+    getV2Speed() {
+        return SimVar.GetSimVarValue("L:AIRLINER_V2_SPEED", "knots");
+    }
+
+    getTropoPause() {
+        return this.tropo;
+    }
+
+    getManagedClimbSpeed() {
+        return this.managedSpeedClimb;
+    }
+
+    getManagedClimbSpeedMach() {
+        return this.managedSpeedClimbMach;
+    }
+
+    getManagedCruiseSpeed() {
+        return this.managedSpeedCruise;
+    }
+
+    getManagedCruiseSpeedMach() {
+        return this.managedSpeedCruiseMach;
+    }
+
+    getAccelerationAltitude() {
+        const plan = this.flightPlanManager.activeFlightPlan;
+        if (plan) {
+            return plan.accelerationAltitude;
+        }
+
+        return undefined;
+    }
+
+    getThrustReductionAltitude() {
+        const plan = this.flightPlanManager.activeFlightPlan;
+        if (plan) {
+            return plan.thrustReductionAltitude;
+        }
+
+        return undefined;
+    }
+
+    getOriginTransitionAltitude() {
+        return this.flightPlanManager.getOriginTransitionAltitude();
+    }
+
+    getCruiseAltitude() {
+        return this.cruiseFlightLevel * 100;
+    }
+
+    getFlightPhase() {
+        return this.flightPhaseManager.phase;
+    }
+    getClimbSpeedLimit() {
+        return {
+            speed: this.climbSpeedLimit,
+            underAltitude: this.climbSpeedLimitAlt,
+        };
+    }
+    getDescentSpeedLimit() {
+        return {
+            speed: this.descentSpeedLimit,
+            underAltitude: this.descentSpeedLimitAlt,
+        };
+    }
+    getPreSelectedClbSpeed() {
+        return this.preSelectedClbSpeed;
+    }
+    getPreSelectedCruiseSpeed() {
+        return this.preSelectedCrzSpeed;
+    }
+    getPreSelectedDescentSpeed() {
+        return this.preSelectedDesSpeed;
+    }
+    getTakeoffFlapsSetting() {
+        return this.flaps;
+    }
+    getManagedDescentSpeed() {
+        return this.managedSpeedDescend;
+    }
+    getManagedDescentSpeedMach() {
+        return this.managedSpeedDescendMach;
+    }
+    getApproachSpeed() {
+        return this.approachSpeeds && this.approachSpeeds.valid ? this.approachSpeeds.vapp : 0;
+    }
+    getFlapRetractionSpeed() {
+        return this.approachSpeeds && this.approachSpeeds.valid ? this.approachSpeeds.f : 0;
+    }
+    getSlatRetractionSpeed() {
+        return this.approachSpeeds && this.approachSpeeds.valid ? this.approachSpeeds.s : 0;
+    }
+    getCleanSpeed() {
+        return this.approachSpeeds && this.approachSpeeds.valid ? this.approachSpeeds.gd : 0;
+    }
+    getTripWind() {
+        return this.averageWind;
+    }
+    getWinds() {
+        return this.winds;
+    }
+    getApproachWind() {
+        const destination = this.flightPlanManager.getDestination();
+        if (!destination || !destination.infos && !destination.infos.coordinates || !isFinite(this.perfApprWindHeading)) {
+            return { direction: 0, speed: 0 };
+        }
+
+        const magVar = Facilities.getMagVar(destination.infos.coordinates.lat, destination.infos.coordinates.long);
+        const trueHeading = A32NX_Util.magneticToTrue(this.perfApprWindHeading, magVar);
+
+        return { direction: trueHeading, speed: this.perfApprWindSpeed };
+    }
+    getApproachQnh() {
+        return this.perfApprQNH;
+    }
+    getApproachTemperature() {
+        return this.perfApprTemp;
+    }
+    getDestinationElevation() {
+        return Number.isFinite(this.landingElevation) ? this.landingElevation : 0;
     }
 }
 
