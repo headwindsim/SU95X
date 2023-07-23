@@ -1137,17 +1137,13 @@ class FMCMainDisplay extends BaseAirliners {
                     break;
                 }
                 case FmgcFlightPhases.DESCENT: {
-                    let speed = this.managedSpeedDescend;
+                    // We fetch this data from VNAV
+                    vPfd = SimVar.GetSimVarValue("L:A32NX_SPEEDS_MANAGED_PFD", "knots");
+                    this.managedSpeedTarget = SimVar.GetSimVarValue("L:A32NX_SPEEDS_MANAGED_ATHR", "knots");
 
-                    if (this.descentSpeedLimit !== undefined && Math.round(SimVar.GetSimVarValue("INDICATED ALTITUDE", "feet") / 10) * 10 < 20 * (speed - this.descentSpeedLimit) + 300 + this.descentSpeedLimitAlt) {
-                        speed = Math.min(speed, this.descentSpeedLimit);
-                    }
-
-                    // TODO we really need VNAV to predict where along the leg we should slow to the constraint
-                    speed = Math.min(speed, this.getSpeedConstraint());
-
-                    [this.managedSpeedTarget, isMach] = this.getManagedTargets(speed, this.managedSpeedDescendMach);
-                    vPfd = this.managedSpeedTarget;
+                    // Whether to use Mach or not should be based on the original managed speed, not whatever VNAV uses under the hood to vary it.
+                    // Also, VNAV already does the conversion from Mach if necessary
+                    isMach = this.getManagedTargets(this.managedSpeedDescend, this.managedSpeedDescendMach)[1];
                     break;
                 }
                 case FmgcFlightPhases.APPROACH: {
@@ -2778,25 +2774,21 @@ class FMCMainDisplay extends BaseAirliners {
 
             return departureElevation;
         }
-    }
 
-    getDepartureElevation() {
-        let departureElevation = null;
-        if (this.flightPlanManager.getOriginRunway()) {
-            departureElevation = this.flightPlanManager.getOriginRunway().thresholdElevation / 0.3048;
-        } else if (this.flightPlanManager.getOrigin()) {
-            departureElevation = this.flightPlanManager.getOrigin().infos.elevation;
-        }
+        /**
+         * Gets the gross weight, if available.
+         * Prior to engine start this is based on ZFW + Fuel entries,
+         * after engine start ZFW entry + FQI FoB.
+         * @returns {number | null} gross weight in tons or null if not available.
+         */
+        getGrossWeight() {
+            const useFqi = this.isAnEngineOn();
 
-        return departureElevation;
-    }
+            if (this.zeroFuelWeight === undefined || (!useFqi && this.blockFuel === undefined)) {
+                return null;
+            }
 
-    getToSpeedsTooLow() {
-        const departureElevation = this.getDepartureElevation();
-
-        const zp = departureElevation !== null ? this.getPressureAltAtElevation(departureElevation, this.getBaroCorrection1()) : this.getPressureAlt();
-        if (zp === null) {
-            return false;
+            return this.zeroFuelWeight + (useFqi ? this.getFOB() : this.blockFuel);
         }
 
         getToSpeedsTooLow() {
