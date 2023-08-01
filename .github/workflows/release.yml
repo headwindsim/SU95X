@@ -15,6 +15,16 @@ jobs:
       RELEASE_ZIP_NAME: headwindsim-aircraft-su100-95-stable.zip
       BUILD_DIR_NAME: stable
     steps:
+      - name: Free Disk Space (Ubuntu)
+        uses: jlumbroso/free-disk-space@main
+        with:
+          tool-cache: false
+          android: true
+          dotnet: false
+          haskell: false
+          large-packages: false
+          docker-images: false
+          swap-storage: false
       - name: Checkout source
         uses: actions/checkout@v2
         with:
