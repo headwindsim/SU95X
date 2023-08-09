@@ -58,7 +58,7 @@ LateralNormalLaw::Parameters_LateralNormalLaw_T LateralNormalLaw::LateralNormalL
   { 1.1, 1.3, 1.8, 2.0, 2.2, 2.5, 2.7, 3.2, 3.8 },
 
 
-  { 1.4, 1.4, 1.4, 1.2, 1, 0.8, 0.8 },
+  { 0.63, 0.63, 0.63, 0.49, 0.28, 0.21, 0.21 },
 
 
   { 0.56, 0.56, 0.56, 0.48, 0.4, 0.32, 0.32 },
