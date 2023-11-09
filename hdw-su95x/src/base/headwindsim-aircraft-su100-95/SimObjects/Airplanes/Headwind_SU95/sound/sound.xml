@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright (c) 2022 FlyByWire Simulations -->
 <!-- SPDX-License-Identifier: GPL-3.0 -->
+<!-- SSJ100 Sound Pack ,  https://www.ftsimplus.com -->
+
 
 <SoundInfo Version="0.1">
 
@@ -65,10 +67,12 @@
 
     </MiscellaneousSounds>
 
-
+     <!--===================================================================================================== -->
+     <!--=============  SSJ100 Engines Sound Mod  , ©"FTSiM+Sounds" . https://www.ftsimplus.com ============== -->
+     <!--===================================================================================================== -->
 
      <!--===================================================================================================== -->
-     <!-- Engines =============================================================================================== -->
+     <!-- Engines ============================================================================================ -->
 	<!--===================================================================================================== -->
 
 	<EngineSoundTransitions>
@@ -76,22 +80,52 @@
 	<Sound WwiseData="true" WwiseEvent="CombStartL" EngineIndex="1" StateTo="On" StateFrom="Start" ConeHeading="180.0"  SimVar="GENERAL ENG COMBUSTION SOUND PERCENT" >
 	<Range LowerBound="0" />
 	<WwiseRTPC SimVar="TURB ENG N1" Units="PERCENT" Index="1" RTPCName="SIMVAR_TURB_ENG_N1"/>
+	<WwiseRTPC SimVar="AIRSPEED TRUE" Units="KNOTS" Index="1" RTPCName="SIMVAR_AIRSPEED_TRUE"/>
+	<WwiseRTPC SimVar="GENERAL ENG COMBUSTION" Units="PERCENT OVER 100" Index="1" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION"/>
     </Sound>
-
 	<Sound WwiseData="true" WwiseEvent="CombStartR" EngineIndex="2" StateTo="On" StateFrom="Start" ConeHeading="180.0"  SimVar="GENERAL ENG COMBUSTION SOUND PERCENT" >
 	<Range LowerBound="0" />
 	<WwiseRTPC SimVar="TURB ENG N1" Units="PERCENT" Index="2" RTPCName="SIMVAR_TURB_ENG_N1"/>
+	<WwiseRTPC SimVar="AIRSPEED TRUE" Units="KNOTS" Index="1" RTPCName="SIMVAR_AIRSPEED_TRUE"/>
+	<WwiseRTPC SimVar="GENERAL ENG COMBUSTION" Units="PERCENT OVER 100" Index="2" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION"/>
     </Sound>
 
 	<Sound WwiseData="true" WwiseEvent="CombStartLX" EngineIndex="1" StateTo="On" StateFrom="Start"  ConeHeading="0.0"  SimVar="GENERAL ENG COMBUSTION SOUND PERCENT" >
 	<Range LowerBound="0" />
 	<WwiseRTPC SimVar="TURB ENG N1" Units="PERCENT" Index="1" RTPCName="SIMVAR_TURB_ENG_N1"/>
+	<WwiseRTPC SimVar="AIRSPEED TRUE" Units="KNOTS" Index="1" RTPCName="SIMVAR_AIRSPEED_TRUE"/>
+	<WwiseRTPC SimVar="GENERAL ENG COMBUSTION" Units="PERCENT OVER 100" Index="1" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION"/>
     </Sound>
-
 	<Sound WwiseData="true" WwiseEvent="CombStartRX" EngineIndex="2" StateTo="On" StateFrom="Start"  ConeHeading="0.0"  SimVar="GENERAL ENG COMBUSTION SOUND PERCENT" >
 	<Range LowerBound="0" />
 	<WwiseRTPC SimVar="TURB ENG N1" Units="PERCENT" Index="2" RTPCName="SIMVAR_TURB_ENG_N1"/>
+	<WwiseRTPC SimVar="AIRSPEED TRUE" Units="KNOTS" Index="1" RTPCName="SIMVAR_AIRSPEED_TRUE"/>
+	<WwiseRTPC SimVar="GENERAL ENG COMBUSTION" Units="PERCENT OVER 100" Index="2" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION"/>
     </Sound>
+
+    <Sound WwiseData="true" WwiseEvent="ShutdownL" StateTo="Off" StateFrom="On" Continuous="false"   EngineIndex="1" >
+	<WwiseRTPC SimVar="GENERAL ENG COMBUSTION" Units="PERCENT OVER 100" Index="1" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION"/>
+	<WwiseRTPC SimVar="TURB ENG N1" Units="PERCENT" Index="1" RTPCName="SIMVAR_TURB_ENG_N1"/>
+	<WwiseRTPC SimVar="TURB ENG ITT" Units="RANKINE" Index="1" RTPCName="SIMVAR_TURB_ENG_ITT"/>
+    </Sound>
+    <Sound WwiseData="true" WwiseEvent="ShutdownR" StateTo="Off" StateFrom="On" Continuous="false"  EngineIndex="2"  >
+	<WwiseRTPC SimVar="GENERAL ENG COMBUSTION" Units="PERCENT OVER 100" Index="2" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION"/>
+	<WwiseRTPC SimVar="TURB ENG N1" Units="PERCENT" Index="2" RTPCName="SIMVAR_TURB_ENG_N1"/>
+	<WwiseRTPC SimVar="TURB ENG ITT" Units="RANKINE" Index="2" RTPCName="SIMVAR_TURB_ENG_ITT"/>
+    </Sound>
+
+	<Sound WwiseData="true" WwiseEvent="ShutdownLX" StateTo="Off" StateFrom="On" Continuous="false" ConeHeading="0" EngineIndex="1" >
+	<WwiseRTPC SimVar="GENERAL ENG COMBUSTION" Units="PERCENT OVER 100" Index="1" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION"/>
+	<WwiseRTPC SimVar="TURB ENG N1" Units="PERCENT" Index="1" RTPCName="SIMVAR_TURB_ENG_N1"/>
+	<WwiseRTPC SimVar="TURB ENG ITT" Units="RANKINE" Index="1" RTPCName="SIMVAR_TURB_ENG_ITT"/>
+    </Sound>
+    <Sound WwiseData="true" WwiseEvent="ShutdownRX" StateTo="Off" StateFrom="On" Continuous="false" ConeHeading="0" EngineIndex="2"  >
+	<WwiseRTPC SimVar="GENERAL ENG COMBUSTION" Units="PERCENT OVER 100" Index="2" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION"/>
+	<WwiseRTPC SimVar="TURB ENG N1" Units="PERCENT" Index="2" RTPCName="SIMVAR_TURB_ENG_N1"/>
+	<WwiseRTPC SimVar="TURB ENG ITT" Units="RANKINE" Index="2" RTPCName="SIMVAR_TURB_ENG_ITT"/>
+    </Sound>
+
+
 	</EngineSoundTransitions>
 
 
@@ -119,14 +153,14 @@
 	<WwiseRTPC SimVar="TURB ENG N1" Units="PERCENT" Index="1" RTPCName="SIMVAR_TURB_ENG_N1"/>
 	<WwiseRTPC SimVar="AIRSPEED TRUE" Units="KNOTS" Index="1" RTPCName="SIMVAR_AIRSPEED_TRUE"/>
 	<WwiseRTPC SimVar="TURB ENG REVERSE NOZZLE PERCENT" Units="PERCENT" Index="1" RTPCName="SIMVAR_TURB_ENG_REVERSE_NOZZLE_PERCENT"/>
-	<WwiseRTPC SimVar="PLANE ALT ABOVE GROUND" Units="FEET" Index="1" RTPCName="SIMVAR_PLANE_ALT_ABOVE_GROUND"/>
+	<WwiseRTPC SimVar="PLANE ALT ABOVE GROUND MINUS CG" Units="FEET" Index="1" RTPCName="SIMVAR_PLANE_ALT_ABOVE_GROUND_MINUS_CG"/>
     </Sound>
 
 	<Sound WwiseData="true" WwiseEvent="IntakeR" EngineIndex="2" RPMMin="2" StateOff="false" StateStart="true" StateOn="true" ConeHeading="0.0"  >
 	<WwiseRTPC SimVar="TURB ENG N1" Units="PERCENT" Index="2" RTPCName="SIMVAR_TURB_ENG_N1"/>
 	<WwiseRTPC SimVar="AIRSPEED TRUE" Units="KNOTS" Index="1" RTPCName="SIMVAR_AIRSPEED_TRUE"/>
 	<WwiseRTPC SimVar="TURB ENG REVERSE NOZZLE PERCENT" Units="PERCENT" Index="2" RTPCName="SIMVAR_TURB_ENG_REVERSE_NOZZLE_PERCENT"/>
-	<WwiseRTPC SimVar="PLANE ALT ABOVE GROUND" Units="FEET" Index="1" RTPCName="SIMVAR_PLANE_ALT_ABOVE_GROUND"/>
+	<WwiseRTPC SimVar="PLANE ALT ABOVE GROUND MINUS CG" Units="FEET" Index="1" RTPCName="SIMVAR_PLANE_ALT_ABOVE_GROUND_MINUS_CG"/>
     </Sound>
 
 	<Sound WwiseData="true" WwiseEvent="IntakeLX" EngineIndex="1" RPMMin="2" StateOff="false" StateStart="true" StateOn="true" ConeHeading="0.0" >
@@ -153,9 +187,11 @@
 
 	</EngineSoundStates>
 
+    <!-- SimvarSounds ========================================================================================== -->
 
+    <SimVarSounds>
 	<!--===================================================================================================== -->
-     <!--  Wind sounds  =========================================================================================== -->
+     <!--  Wind sounds  ====================================================================================== -->
 	<!--===================================================================================================== -->
 
 	<Sound WwiseData="true" WwiseEvent="Wind_Int" SimVar="AIRSPEED TRUE" NodeName="LIGHTS_AUTOPILOT" Units="KNOTS" Index="0">
@@ -164,7 +200,7 @@
 	<WwiseRTPC SimVar="PLANE ALT ABOVE GROUND MINUS CG" Units="FEET" Index="0" RTPCName="SIMVAR_PLANE_ALT_ABOVE_GROUND_MINUS_CG"/>
     </Sound>
 
-	  <!--== Wind Exterior ========================================================================================= -->
+	  <!--== Wind Exterior ===================================================================================== -->
 
 	<Sound WwiseData="true" WwiseEvent="WindX"  SimVar="AIRSPEED TRUE" Units="KNOTS" Index="0">
     <Range LowerBound="1" />
@@ -172,15 +208,9 @@
     </Sound>
 
      <!--===================================================================================================== -->
-     <!--=====================  A330_NEO Sound Pack  , ©"FTSiM+Sounds" . https://www.ftsimplus.com ============================= -->
+     <!--=============  SSJ100 Engines Sound Mod  , ©"FTSiM+Sounds" . https://www.ftsimplus.com ============== -->
      <!--===================================================================================================== -->
 
-
-
-
-    <!-- SimvarSounds ========================================================================================== -->
-
-    <SimVarSounds>
 
         <Sound WwiseData="true" WwiseEvent="flapsmovement" NodeName="HublotIn002" Continuous="true" FadeOutType="1" FadeOutTime="0.1" LocalVar="A32NX_IS_FLAPS_MOVING" Units="BOOL" Index="1">
             <Range LowerBound="1" />
@@ -1869,7 +1899,7 @@
         </Sound>
 
 
-        <Sound WwiseData="true" WwiseEvent="improved_tone_caution" NodeName="PEDALS_LEFT" ViewPoint="Inside" LocalVar="A32NX_MASTER_CAUTION" Continuous="false">
+        <Sound WwiseData="true" WwiseEvent="improved_tone_caution" NodeName="PEDALS_LEFT" ViewPoint="Inside" LocalVar="A32NX_FWC_SC" Continuous="false">
             <Range LowerBound="0.5" />
             <Requires SimVar="ELECTRICAL MAIN BUS VOLTAGE" Units="VOLTS" Index="1">
                 <Range LowerBound="28" />
