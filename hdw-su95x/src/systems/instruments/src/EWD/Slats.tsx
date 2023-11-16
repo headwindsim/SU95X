@@ -116,8 +116,8 @@ export class Slats extends DisplayComponent<SlatsProps> {
                 positionOffset = 0;
             } else if (slats >= 251.0 && slats < 346.0) {
                 synchroOffset = 18;
-                positionFactor = 1.15;
-                positionOffset = 7.87;
+                positionFactor = 1.21;
+                positionOffset = 7.94;
             }
 
             const value = (slats * synchroFactor - synchroOffset) * positionFactor + positionOffset;
